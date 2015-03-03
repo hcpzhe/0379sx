@@ -11,6 +11,7 @@ abstract class HomeBaseController extends Controller {
 	protected function _initialize() {
 		$model = new WebconfigModel();
 		$model->loadConfig();
+		
 	}
 	
 	public function _empty() {
