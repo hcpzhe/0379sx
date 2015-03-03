@@ -1,0 +1,9 @@
+/.buildpath
+/.project
+/.settings
+/data/cache
+/Runtime
+/Session
+/include/config.cache.php
+/mgr/rewriteurl.php
+/data/sessions
