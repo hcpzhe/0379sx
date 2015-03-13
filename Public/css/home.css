@@ -1,0 +1,179 @@
+@CHARSET "UTF-8";
+/**全局**/
+* {-webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box;}
+body{margin:0; padding:0; font-size:12px; color:#333; font-family:"Helvetica Neue","Microsoft Yahei",sans-serif;}
+form,ul,li,p,h1,h2,h3,h4,h5,h6,h9{margin:0; padding:0;}
+input,select{font-size:12px; line-height:16px;}
+img{border:0;}
+ul,li{list-style-type:none;}
+cite,em,i,h6{font-style:normal;}
+dt,dl,dd{padding:0;margin:0;}
+a {color:#333; text-decoration:none; cursor:pointer;}
+a:hover {color:#ff8800; text-decoration:underline;}
+/**通用**/ /*网站总宽1200px*/
+.fl{float:left; display:inline;}
+.fr{float:right;}
+.cl{clear:both;}
+.sitewidth {width: 1200px; margin: 0 auto;}
+.orange {color:#ff8800;}
+/*
+橙色  #ff8800
+绿色  #37c249
+*/
+
+/***顶部状态栏**********************************************************/
+.top_status {background:#fbfbfb; border-bottom:1px solid #f3f3f3;}
+	.top_status .sitewidth {height:30px; line-height:30px;padding:0 20px;}
+		.top_status .guanzhu {}
+			.top_status .guanzhu a {color: #999; font-size:18px; padding:0 10px;}
+			.top_status .guanzhu a:hover {color:#ff8800; text-decoration:none;}
+		.top_status .links {border-right:1px solid #e1e1e1;}
+			.top_status .links a {padding: 0 10px;}
+			.top_status .links a.orange {color:#e75210;}
+
+/***头部**********************************************************/
+.header .sitewidth {height:120px;}
+	.header .logo {height: 120px; width:240px; padding: 20px 0 29px 6px;}
+		.header .logo img {height: 71px;}
+	.header .search_hotline {width:960px;height:38px;margin:41px 0;padding-left:236px;}
+		.header .search {width:490px; border: 2px solid #ff8800;}
+			.header .search input {height:34px;border: none; background:none;}
+			.header .search input:focus {outline:none;}
+			.header .search .
+		.header .hotline {width:229px;margin-left:5px;border: 1px solid #dfdfdf;overflow: hidden;}
+			.header .hotline .hotline_img {width:77px;height:36px;background: url("../images/hotline_img.png");}
+			.header .hotline .hotline_text {width:150px;line-height:36px;text-align:center; font-size:22px;font-weight: bold;color:#37c249;font-family: Times, serif;padding:0 5px;}
+/***banner**********************************************************/
+
+
+
+
+/**动画定义**/
+.icon-animated-vertical {
+	display: inline-block;
+	-moz-animation: vertical 2s 8 ease 3s;
+	-webkit-animation: vertical 2s 8 ease 3s;
+	-o-animation: vertical 2s 8 ease 3s;
+	-ms-animation: vertical 2s 8 ease 3s;
+	animation: vertical 2s 8 ease 3s
+}
+
+@-moz-keyframes vertical {
+    0% {
+        -moz-transform: translate(0,0)
+    }
+
+    4% {
+        -moz-transform: translate(0,3px)
+    }
+
+    8% {
+        -moz-transform: translate(0,-3px)
+    }
+
+    12% {
+        -moz-transform: translate(0,3px)
+    }
+
+    16% {
+        -moz-transform: translate(0,-3px)
+    }
+
+    20% {
+        -moz-transform: translate(0,3px)
+    }
+
+    22% {
+        -moz-transform: translate(0,0)
+    }
+}
+
+@-webkit-keyframes vertical {
+    0% {
+        -webkit-transform: translate(0,0)
+    }
+
+    4% {
+        -webkit-transform: translate(0,3px)
+    }
+
+    8% {
+        -webkit-transform: translate(0,-3px)
+    }
+
+    12% {
+        -webkit-transform: translate(0,3px)
+    }
+
+    16% {
+        -webkit-transform: translate(0,-3px)
+    }
+
+    20% {
+        -webkit-transform: translate(0,3px)
+    }
+
+    22% {
+        -webkit-transform: translate(0,0)
+    }
+}
+
+@-ms-keyframes vertical {
+    0% {
+        -ms-transform: translate(0,0)
+    }
+
+    4% {
+        -ms-transform: translate(0,3px)
+    }
+
+    8% {
+        -ms-transform: translate(0,-3px)
+    }
+
+    12% {
+        -ms-transform: translate(0,3px)
+    }
+
+    16% {
+        -ms-transform: translate(0,-3px)
+    }
+
+    20% {
+        -ms-transform: translate(0,3px)
+    }
+
+    22% {
+        -ms-transform: translate(0,0)
+    }
+}
+
+@keyframes vertical {
+    0% {
+        transform: translate(0,0)
+    }
+
+    4% {
+        transform: translate(0,3px)
+    }
+
+    8% {
+        transform: translate(0,-3px)
+    }
+
+    12% {
+        transform: translate(0,3px)
+    }
+
+    16% {
+        transform: translate(0,-3px)
+    }
+
+    20% {
+        transform: translate(0,3px)
+    }
+
+    22% {
+        transform: translate(0,0)
+    }
+}

@@ -5,6 +5,6 @@ use Common\Controller\HomeBaseController;
 class IndexController extends HomeBaseController {
 	
 	public function index() {
-		die('123');
+		$this->display();
 	}
 }
