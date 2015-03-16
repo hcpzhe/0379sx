@@ -55,7 +55,7 @@ a:hover {color:#ff8800; text-decoration:underline;}
 			.navicat ul.nav a:HOVER {color: #e64905;text-decoration:none;}
 .banner {}
 	.banner .sitewidth {padding-left:238px;height:415px;}
-		/*幻灯Banner*/
+		/***幻灯Banner***************/
 		#slideplay {width:724px;height:415px;position:relative;overflow:hidden; float:left;}
 		#slideplay ul{position:absolute;}
 		#slideplay ul li{height:415px;position:relative;float:left;background:#000;overflow:hidden;}
@@ -73,20 +73,88 @@ a:hover {color:#ff8800; text-decoration:underline;}
 				.banner .news .notice .content {height:40px;overflow: hidden;}
 				.banner .news .notice .date {text-align: right;}
 			.banner .news .dongtai {padding:73px 20px 0;height:223px; line-height:20px; overflow: hidden;}
+				/***游客动态滚动************************/
 				#yk_dt p {background: url("../images/cart.png") no-repeat scroll 0px 6px;height: 50px;line-height: 23px;overflow: hidden; padding: 2px 5px 2px 20px;}
 					#yk_dt a {color: #109c05;}
 /***热门旅游**********************************************************/
 .hotlvyou {margin-top: 8px;}
 	.hotlvyou .title {padding:10px 0 0 15px;height: 52px;line-height: 38px;font-size:22px; border-bottom: 4px solid #ff6600;background: url("../images/idx-pic1.png") no-repeat 152px 1px;}
-		.hotlvyou .title .tab {margin-right: 35px;}
-			.hotlvyou .title .tab a {display: inline-block;font-size:16px;padding: 10px 10px 0;line-height:28px;}
+		.hotlvyou .title .tab {margin-right: 35px;height:38px;}
+			.hotlvyou .title .tab a {display: inline-block;font-size:16px;line-height:34px;height:34px;padding:0 10px;}
 			.hotlvyou .title .tab a.active, .hotlvyou .title .tab a:HOVER {color:#fff; background: #ff6600;text-decoration: none;}
-	.hotlvyou .piclist {height:261px; border: 1px solid #d7d7d7;border-top:none;}
-			
-			
-			
-			
-/**动画定义**/
+	.hotlvyou .piclist {height:251px; border: 1px solid #d7d7d7;border-top:none;}
+		.hotlvyou .piclist ul li {width:239px;height:250px;border-left:1px dashed #d7d7d7;float:left;text-align: center;}
+		.hotlvyou .piclist ul li:FIRST-CHILD {border-left:none;}
+			.hotlvyou .piclist .pic {padding:10px 19px 10px 20px;border-bottom: 1px solid #d7d7d7;}
+				.hotlvyou .piclist .pic img {border-radius:5px; width:100%;height:100%;}
+			.hotlvyou .piclist .text {text-align: left;padding: 0 20px;}
+				.hotlvyou .piclist .text .head a {color: #109c05;font-size:16px;line-height:30px;}
+				.hotlvyou .piclist .text .body {}
+					.hotlvyou .piclist .text .body .miaoshu {line-height:20px;width:137px;height:40px;overflow: hidden;}
+						.hotlvyou .piclist .text .body .miaoshu .red {color:#B3051C;}
+					.hotlvyou .piclist .text .body .chakan {margin:10px 0 0 5px;}
+						.hotlvyou .piclist .text .body .chakan a {display: block;padding: 4px;background: #F0F0F0;}
+/***当季热门,周末去哪儿**********************************************************/
+.idx_list {margin-top:15px;}
+	.idx_list .head {height:62px;}
+	.idx_list .head .title {width:245px;height:62px;line-height:62px;color:#fff;font-size:24px;text-align: center;}
+	.idx_list .head .group {width:955px;height:62px;}
+		.idx_list .head .group .remen {width:745px;height:58px;overflow:hidden;text-align: right;line-height:20px;padding:38px 10px 0 40px;font-size:14px;}
+			.idx_list .head .group .remen a {padding: 0 7px;color:#8a8989;}
+		.idx_list .head .group .tab {width:210px;height:58px;padding-right: 35px;padding-top:24px;}
+			.idx_list .head .group .tab a {display: inline-block;font-size:16px;line-height:34px;height:34px;padding:0 10px;}
+			.idx_list .head .group .tab a.active, .idx_list .head .group .tab a:HOVER {color:#fff;text-decoration: none;}
+	.idx_list .body {height: 506px;}
+	.idx_list .body .bigimg {width:245px; height:506px;}
+		.idx_list .body .bigimg img {width:100%;height:100%;}
+	.idx_list .body .piclist {width:955px;height:506px; border:1px solid #dfdfdf;border-left: none;padding-left:45px}
+		.idx_list .body .piclist li {float:left; width:303px;height:252px;padding:15px 45px 5px 0;}
+			.idx_list .body .piclist .pic img {width:100%;height:100%;}
+			.idx_list .body .piclist .title {width:100%;line-height:22px;height:22px;overflow: hidden;}
+			.idx_list .body .piclist .price {color:#ff8800;height:26px;line-height:26px;}
+				.idx_list .body .piclist .price span {font-size:20px;}
+			.idx_list .body .piclist .manyi {color:#bbbbbb;height:26px;line-height:26px;}
+	/***当季热门****************/
+	.dangji .head .title {background: url("../images/pink-tit.jpg") no-repeat;}
+	.dangji .head .group {border-bottom: 4px solid #ff3a88;}
+	.dangji .head .group .tab a.active, .dangji .head .group .tab a:HOVER {background: #ff3a88;}
+	/***周末去哪儿***************/
+	.zhoumo .head .title {background: url("../images/green-tit.jpg") no-repeat;}
+	.zhoumo .head .group {border-bottom: 4px solid #a6d604;}
+	.zhoumo .head .group .tab a.active, .zhoumo .head .group .tab a:HOVER {background: #a6d604;}
+/***特价,推荐,风采**********************************************************/
+.t-t-f {margin-top:15px;height:835px;}
+	.t-t-f .left {width:876px;height:835px;padding-right:10px;}
+		.t-t-f .tejia .head {font-size:22px;line-height:30px;padding:18px 0 0 15px;height:48px;background: url("../images/idx-pic2.jpg") no-repeat 126px 0px;}
+			.t-t-f .tejia .head .more a {display:block; font-size:14px; color:#b9b9b9;line-height:20px; padding:10px 3px 0 0;}
+		.t-t-f .tejia .body {border: 1px solid #dfdfdf;border-top: 4px solid #64a10a;height:421px; overflow: hidden;}
+			.t-t-f .tejia .body .list {float:left;width:288px;height:416px;padding:18px 24px;}
+		.t-t-f .tuandui .head {font-size:22px;line-height:30px;padding:30px 0 0 15px;height:60px;background: url("../images/idx-pic3.png") no-repeat 126px 0px;}
+			.t-t-f .tuandui .head .more a {display:block; font-size:14px; color:#b9b9b9;line-height:20px; padding:10px 3px 0 0;}
+		.t-t-f .tuandui .body {border: 1px solid #dfdfdf;border-top: 4px solid #ff390f;height:306px;overflow: hidden;}
+			.t-t-f .tuandui .body .list {float:left;width:288px;height:416px;padding:18px 24px;}
+		
+	.t-t-f .right {width:324px;height:835px;border: 1px solid #dfdfdf;border-top: 2px solid #64a10a;}
+		.t-t-f .right .head {height:94px;}
+		.t-t-f .right .list {height:246px;}
+			.t-t-f .right .list .tit {padding:0 20px;color:#64a10a;font-size:20px;height:36px;line-height:36px;background: #f3f3f3;}
+				.t-t-f .right .list .tit .dis {color:#999999;font-size:14px;line-height:20px;margin-left:10px;}
+			.t-t-f .right .list ul {width:322px;height:210px;background: url("../images/tuijian_ul_bg.png") no-repeat;}
+				
+/***底部**********************************************************/
+.footer {margin-top:15px;}
+	.footer .pinzhi {background: #2dc270;}
+		.footer .pinzhi .sitewidth {height:56px;background: url("../images/footer_pinzhi_bg.jpg") no-repeat #2dc270;}
+	.footer .article {background: #37c249;height:228px;padding:36px 0;}
+		.footer .article .logo {padding:42px 0;}
+		.footer .article .artlist {padding-left:40px;}
+			.footer .article .artlist ul.list {float: left;width:230px;height:158px;border-left: 1px solid #61cf6f;overflow: hidden;}
+				.footer .article .artlist ul.list li {padding:0 20px;line-height:30px;}
+				.footer .article .artlist ul.list li.tit a {color:#1d6827;font-size:16px;font-weight: 600;}
+				.footer .article .artlist ul.list li a {color:#fff;font-size:14px;}
+	.banquan {border-top: 1px solid #258231;background:#2da03c; line-height:59px;color:#fff;}
+		.banquan a {color:#fff;}
+/**动画定义*************************************************************************/
 .icon-animated-vertical {
 	display: inline-block;
 	-moz-animation: vertical 2s 8 ease 3s;
