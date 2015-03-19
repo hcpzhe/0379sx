@@ -1,0 +1,38 @@
+
+<!-- 底部start -->
+<div class="footer">
+	<div class="pinzhi">
+		<div class="sitewidth"></div>
+	</div>
+	<div class="article">
+		<div class="sitewidth">
+			<div class="logo fl"><img src="__IMG__/logo-footer.png" /></div>
+			<div class="artlist fl">
+			<!-- <foreach name="list" item="vo" > -->
+				<ul class="list">
+					<li class="tit"><a href="{:U('Article/lists?cid='.$vo['id'])}">{$vo['classname']}</a></li>
+					<!-- <foreach name="vo['art']" item="art" > -->
+					<li><a href="{:U('Article/info?id='.$art['id'])}">{$art['title']}</a></li>
+					<!-- </foreach> -->
+				</ul>
+			<!-- </foreach> -->
+			</div>
+		</div>
+	</div>
+	<div class="banquan">
+		<div class="sitewidth">
+			地址：河南省洛阳市*****
+		</div>
+	</div>
+</div>
+<!-- 底部end -->
+
+<!-- JS script include start -->
+<!--[if !IE]> -->
+<script src="__JS__/jquery.2.1.1.min.js"></script>
+<!-- <![endif]-->
+
+<!--[if IE]>
+<script src="__JS__/jquery.1.11.1.min.js"></script>
+<![endif]-->
+<!-- JS script include start end -->

@@ -1,0 +1,110 @@
+
+<!-- 顶部状态栏start -->
+<div class="top_status">
+	<div class="sitewidth">
+		<div class="fl">{$Think.config.cfg_welcome}</div>
+		<div class="fr guanzhu">
+			<a href="#"><i class="fa fa-weibo"></i></a>
+			<a href="#"><i class="fa fa-mobile" style="font-size:22px;"></i></a>
+			<a href="#"><i class="fa fa-weixin"></i></a>
+		</div>
+		<div class="fr links">
+			<a class="orange" href="#">一键收藏</a>
+			<a href="#">关于我们</a>
+			<a href="#">联系我们</a>
+		</div>
+	</div>
+</div>
+<!-- 顶部状态栏end -->
+
+<!-- 头部start -->
+<div class="header">
+	<div class="sitewidth">
+		<div class="fl logo"><img src="__IMG__/logo.png" /></div>
+		<div class="fl search_hotline">
+			<div class="fl search">
+				<form name="topsearch" method="get" action="{:U('Line/lists')}">
+					<input class="search_text fl" type="search" name="keywords" placeholder="请输入目的地名称或线路关键词" />
+					<input class="search_btn fl" type="submit" value="" />
+				</form>
+			</div>
+			<div class="fl hotline">
+				<div class="hotline_img fl"></div>
+				<div class="hotline_text fl">18736322037</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- 头部end -->
+
+<!-- 导航 start -->
+<div class="navicat">
+	<div class="sitewidth">
+		<div class="first fl" id="cate-menu">
+			热门产品分类
+			<div class="category" id="category">
+				<ul>
+					<li>
+						<strong><a href="{:U('Line/lists?cid=16')}">当季热门</a></strong>
+						<p>
+							<a href="{:U('Line/lists?cid=16')}">滑雪场</a>
+							<a href="{:U('Line/lists?cid=16')}">蜜月</a>
+							<a href="{:U('Line/lists?cid=16')}">周末</a>
+							<a href="{:U('Line/lists?cid=16')}">跟团</a>
+						</p>
+					</li>
+					<li>
+						<strong><a href="{:U('Line/lists?cid=3')}">洛阳周边</a></strong>
+						<p>
+							<a href="{:U('Line/lists?cid=3')}">王城公园</a>
+							<a href="{:U('Line/lists?cid=3')}">滑雪场</a>
+							<a href="{:U('Line/lists?cid=3')}">重渡沟</a>
+							<a href="{:U('Line/lists?cid=3')}">重渡沟</a>
+						</p>
+					</li>
+					<li>
+						<strong><a href="{:U('Line/lists?cid=4')}">国内旅游</a></strong>
+						<p>
+							<a href="{:U('Line/lists?cid=4')}">桂林</a>
+							<a href="{:U('Line/lists?cid=4')}">云南</a>
+							<a href="{:U('Line/lists?cid=4')}">四川</a>
+							<a href="{:U('Line/lists?cid=4')}">哈尔滨</a>
+							<a href="{:U('Line/lists?cid=4')}">哈尔滨</a>
+						</p>
+					</li>
+					<li>
+						<strong><a href="{:U('Line/lists?cid=5')}">出境旅游</a></strong>
+						<p>
+							<a href="{:U('Line/lists?cid=5')}">马尔代夫</a>
+							<a href="{:U('Line/lists?cid=5')}">韩国</a>
+							<a href="{:U('Line/lists?cid=5')}">日本</a>
+							<a href="{:U('Line/lists?cid=5')}">新西兰</a>
+							<a href="{:U('Line/lists?cid=5')}">法国</a>
+						</p>
+					</li>
+					<li>
+						<strong><a href="{:U('Line/lists?cid=17')}">特价旅游</a></strong>
+						<p>
+							<a href="{:U('Line/lists?cid=17')}">团购</a>
+							<a href="{:U('Line/lists?cid=17')}">亲子</a>
+							<a href="{:U('Line/lists?cid=17')}">组团</a>
+						</p>
+					</li>
+					<li>
+						<strong><a href="{:U('Article/lists?cid=8')}">旅游咨询</a></strong>
+						<p>
+							<a href="{:U('Article/lists?cid=8')}">旅游向导</a>
+							<a href="{:U('Article/lists?cid=8')}">攻略</a>
+						</p>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<ul class="nav fl">
+			<!-- <foreach name="menu_list" item="vo" > -->
+			<li><a href="{:U($vo['linkurl'])}">{$vo['classname']}</a></li>
+			<!-- </foreach> -->
+		</ul>
+	</div>
+</div>
+<!-- 导航 end -->

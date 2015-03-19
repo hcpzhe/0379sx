@@ -4,6 +4,7 @@ return array(
 	'SITEID'					=>	'1', //phpMywind 站点ID
 	'DEFAULT_MODULE'			=>	'Home', //默认模块
 	'DEFAULT_TIMEZONE'			=>	'PRC', //时区
+	'TMPL_STRIP_SPACE'			=>	true, //是否去除模板文件里面的html空格与换行
 	'URL_PATHINFO_DEPR'			=>	'-', //参数之间的分割符号  默认是'/'
 	'URL_CASE_INSENSITIVE'		=>	true, //默认false 表示URL区分大小写 true则表示不区分大小写
     'URL_MODEL'                 =>  2, // 1:PATHINFO  2:rewrite 如果你的环境不支持PATHINFO 请设置为3

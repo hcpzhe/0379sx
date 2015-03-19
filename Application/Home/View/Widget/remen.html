@@ -1,0 +1,29 @@
+<div class="hotlvyou">
+	<div class="sitewidth">
+		<div class="title">
+			<div class="fl">热门旅游</div>
+			<div class="tab fr">
+				<a href="#" class="active">舒翔推荐</a>
+				<a href="#">周边旅游</a>
+			</div>
+		</div>
+		<div class="piclist">
+			<ul>
+				<!-- <foreach name="remen" item="vo" > -->
+				<li>
+					<div class="pic">
+						<a href="{:U('Line/info?id='.$vo['id'])}"><img src="{$vo['picurl']}" /></a>
+					</div>
+					<div class="text">
+						<div class="head"><a href="{:U('Line/info?id='.$vo['id'])}" title="{$vo['title']}">{$vo['title']}</a></div>
+						<div class="body">
+							<div class="miaoshu fl"><a href="{:U('Line/info?id='.$vo['id'])}">{:intval($vo['price'])}元起，吃喝住行全包<br/>顾客满意度：<span class="red">100</span></a></div>
+							<div class="chakan fl"><a href="{:U('Line/info?id='.$vo['id'])}">查看详情</a></div>
+						</div>
+					</div>
+				</li>
+				<!-- </foreach> -->
+			</ul>
+		</div>
+	</div>
+</div>

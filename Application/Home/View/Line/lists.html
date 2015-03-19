@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<include file="Widget/head" />
+	<style type="text/css">
+	#category {display: none;}
+	</style>
+</head>
+<body>
+{:W('Page/Menu')}
+
+<!-- 面包屑 start -->
+<div class="bread">
+	<div class="sitewidth">
+		<a class="toindex" href="{:U('Index/index')}">返回首页</a>
+		<!-- <foreach name="bread" item="vo" key="k" > -->
+		&nbsp;〉<a href="{:U('lists?cid='.$k)}">{$vo}</a>
+		<!-- </foreach> -->
+		<!-- <if condition="$keywords" > -->
+		&nbsp;〉搜索" {$keywords} "
+		<!-- </if> -->
+	</div>
+</div>
+<!-- 面包屑 end -->
+
+<!-- 列表页内容 start -->
+<div class="main">
+	<div class="sitewidth">
+		<!-- 左侧栏 start -->
+		<include file="Widget/sider" />
+		<!-- 左侧栏 end -->
+		<div class="main-content fl">
+			<div><img alt="" src="__IMG__/main-content-head.jpg" width="100%"></div>
+			<div class="paixu">
+				<div class="none">排序方式：</div>
+				<span id="recommands" class="onon"><a href="#">推荐</a></span>
+				<span id="ctrq"><a href="#">人气</a></span> 
+				<span id="price"><a href="#">价格 <img src="__IMG__/down-arrow.jpg" width="7" height="10"></a></span>
+				<form name="linesearch" method="get" action="">
+				<p><input type="text" name="blowprice" id="blowprice" onfocus="this.value='';" onblur="if(this.value.length < 1) this.value='￥';"></p> <p> &nbsp;-&nbsp;</p> <p><input type="text" name="highprice" id="highprice" onfocus="this.value='';" onblur="if(this.value.length < 1) this.value='￥';"></p>
+				<p>&nbsp;<input class="search_btn fl" type="submit" value="确定" /></p>
+				</form>
+			</div>
+			<div class="volist">
+			<!-- <foreach name="list" item="vo" > -->
+				<div class="li">
+					<div class="pic fl">
+						<a href="{:U('Line/info?id='.$vo['id'])}"><img alt="{$vo['title']}" src="{$vo['picurl']}" /></a>
+					</div>
+					<div class="text fl">
+						<div class="tit"><a href="{:U('Line/info?id='.$vo['id'])}"><i>【{$classlist[$vo['classid']]}】</i>{$vo['title']}</a></div>
+						<div class="tags">
+							<i class="a">住宿</i>
+							<i class="b">用餐</i>
+							<i class="c">景交</i>
+							<i class="d">门票</i>
+							<i class="e">保险</i>
+						</div>
+						<div class="dis">{$vo['description']}</div>
+						<div class="price">￥{$vo['price']}<i>起</i></div>
+					</div>
+				</div>
+			<!-- </foreach> -->
+			</div>
+			{$_page}
+		</div>
+	</div>
+</div>
+<div class="cl"></div>
+<!-- 列表页内容 end -->
+
+<!-- 热门旅游start -->
+{:W('Page/Remen')}
+<!-- 热门旅游end -->
+
+{:W('Page/Foot')}
+
+<script type="text/javascript" src="__JS__/slideplay.js"></script>
+<script type="text/javascript" src="__JS__/index.js"></script>
+<script type="text/javascript" src="__JS__/jquery.SuperSlide.2.1.1.js"></script>
+
+<script type="text/javascript">
+jQuery(".t-t-f .tuandui .body").slide({mainCell:"#tuandui_pics",autoPage:true,effect:"left",autoPlay:true,scroll:1,vis:3,easing:"swing",delayTime:500,pnLoop:true,trigger:"mouseover",mouseOverStop:true});
+$(function($) {
+	
+	$("#cate-menu").mouseenter(function(){
+			$("#category").show();
+	});
+	$("#cate-menu").mouseleave(function(){
+		$("#category").hide();
+	});
+	
+});
+</script>
+
+</body>
+</html>

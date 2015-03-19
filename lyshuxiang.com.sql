@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50542
 File Encoding         : 65001
 
-Date: 2015-03-13 19:17:58
+Date: 2015-03-19 08:49:22
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -34,11 +34,17 @@ CREATE TABLE `dx_admanage` (
   `posttime` int(10) unsigned NOT NULL COMMENT '提交时间',
   `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of dx_admanage
 -- ----------------------------
+INSERT INTO `dx_admanage` VALUES ('1', '1', '2', '0', '0,', '首页当季热门 侧栏 test', 'image', 'uploads/image/20150318/1426692587.jpg', '', '', '1', '1426690887', 'true');
+INSERT INTO `dx_admanage` VALUES ('2', '1', '3', '0', '0,', '首页周末去哪儿 侧栏 test', 'image', 'uploads/image/20150318/1426693827.jpg', '', '', '2', '1426692389', 'true');
+INSERT INTO `dx_admanage` VALUES ('3', '1', '4', '0', '0,', '首页特价旅游 test1', 'image', 'uploads/image/20150318/1426697774.jpg', '', '', '3', '1426692613', 'true');
+INSERT INTO `dx_admanage` VALUES ('4', '1', '4', '0', '0,', '首页特价旅游 test2', 'image', 'uploads/image/20150318/1426696300.jpg', '', '', '4', '1426692680', 'true');
+INSERT INTO `dx_admanage` VALUES ('5', '1', '4', '0', '0,', '首页特价旅游 test3', 'image', 'uploads/image/20150318/1426696402.jpg', '', '', '5', '1426692706', 'true');
+INSERT INTO `dx_admanage` VALUES ('6', '1', '1', '0', '0,', '1', 'image', 'uploads/image/20150319/1426729254.jpg', '', '', '6', '1426719513', 'true');
 
 -- ----------------------------
 -- Table structure for `dx_admin`
@@ -61,7 +67,7 @@ CREATE TABLE `dx_admin` (
 -- ----------------------------
 -- Records of dx_admin
 -- ----------------------------
-INSERT INTO `dx_admin` VALUES ('1', 'admin', '0c909a141f1f2c0a1cb602b0b2d7d050', '', '0', '', '1', 'true', '127.0.0.1', '1425369450');
+INSERT INTO `dx_admin` VALUES ('1', 'admin', '0c909a141f1f2c0a1cb602b0b2d7d050', '', '0', '', '1', 'true', '127.0.0.1', '1426685452');
 
 -- ----------------------------
 -- Table structure for `dx_admingroup`
@@ -152,11 +158,15 @@ CREATE TABLE `dx_adtype` (
   `orderid` smallint(5) unsigned NOT NULL COMMENT '排列顺序',
   `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of dx_adtype
 -- ----------------------------
+INSERT INTO `dx_adtype` VALUES ('1', '1', '0', '0,', '首页轮播图', '724', '415', '1', 'true');
+INSERT INTO `dx_adtype` VALUES ('2', '1', '0', '0,', '首页当季热门 侧栏', '245', '506', '2', 'true');
+INSERT INTO `dx_adtype` VALUES ('3', '1', '0', '0,', '首页周末去哪儿 侧栏', '245', '506', '3', 'true');
+INSERT INTO `dx_adtype` VALUES ('4', '1', '0', '0,', '首页特价旅游 三个', '240', '380', '4', 'true');
 
 -- ----------------------------
 -- Table structure for `dx_cascade`
@@ -3487,11 +3497,13 @@ CREATE TABLE `dx_diyfield` (
   `orderid` smallint(6) NOT NULL COMMENT '排列排序',
   `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of dx_diyfield
 -- ----------------------------
+INSERT INTO `dx_diyfield` VALUES ('1', '2', '2,16,3,4,5,17,18,19,20,21,22,23,24,25,26,27', 'price', '价格', '每人单价, 单位元', 'decimal', '10,2', '', '', '', '1', 'true');
+INSERT INTO `dx_diyfield` VALUES ('2', '0', '6,7', 'hits', '点击次数', '', 'int', '8', '', '', '', '2', 'true');
 
 -- ----------------------------
 -- Table structure for `dx_diymenu`
@@ -3765,12 +3777,14 @@ CREATE TABLE `dx_info` (
   `picurl` varchar(100) NOT NULL COMMENT '缩略图片',
   `content` mediumtext NOT NULL COMMENT '内容',
   `posttime` int(10) unsigned NOT NULL COMMENT '更新时间',
+  `hits` int(8) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of dx_info
 -- ----------------------------
+INSERT INTO `dx_info` VALUES ('1', '6', '-1', '', '<strong style=\"color:#333333;font-family:微软雅黑, Arial, 宋体;line-height:normal;white-space:normal;\">护照签证</strong><strong style=\"color:#333333;font-family:微软雅黑, Arial, 宋体;line-height:normal;white-space:normal;\">护照签证</strong><strong style=\"color:#333333;font-family:微软雅黑, Arial, 宋体;line-height:normal;white-space:normal;\">护照签证</strong><strong style=\"color:#333333;font-family:微软雅黑, Arial, 宋体;line-height:normal;white-space:normal;\">护照签证</strong>', '1426672650', '16');
 
 -- ----------------------------
 -- Table structure for `dx_infoclass`
@@ -3793,25 +3807,37 @@ CREATE TABLE `dx_infoclass` (
   `orderid` smallint(5) unsigned NOT NULL COMMENT '排列排序',
   `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of dx_infoclass
 -- ----------------------------
-INSERT INTO `dx_infoclass` VALUES ('2', '1', '0', '0,', '4', '旅游线路', '', '', '', '', '', '', '', '1', 'true');
-INSERT INTO `dx_infoclass` VALUES ('3', '1', '2', '0,2,', '4', '洛阳周边', '', '', '', '', '', '', '', '2', 'true');
-INSERT INTO `dx_infoclass` VALUES ('4', '1', '2', '0,2,', '4', '国内旅游', '', '', '', '', '', '', '', '3', 'true');
-INSERT INTO `dx_infoclass` VALUES ('5', '1', '2', '0,2,', '4', '出境旅游', '', '', '', '', '', '', '', '4', 'true');
-INSERT INTO `dx_infoclass` VALUES ('6', '1', '0', '0,', '0', '护照签证', '', '', '', '', '', '', '', '5', 'true');
-INSERT INTO `dx_infoclass` VALUES ('7', '1', '0', '0,', '0', '旅游租车', '', '', '', '', '', '', '', '6', 'true');
-INSERT INTO `dx_infoclass` VALUES ('8', '1', '0', '0,', '1', '旅游攻略', '', '', '', '', '', '', '', '7', 'true');
-INSERT INTO `dx_infoclass` VALUES ('9', '1', '0', '0,', '1', '关于我们', '', '', '', '', '', '', '', '8', 'true');
-INSERT INTO `dx_infoclass` VALUES ('10', '1', '0', '0,', '1', '文章', '', '', '', '', '', '', '', '9', 'true');
-INSERT INTO `dx_infoclass` VALUES ('11', '1', '10', '0,10,', '1', '网站公告', '', '', '', '', '', '', '', '10', 'true');
-INSERT INTO `dx_infoclass` VALUES ('12', '1', '10', '0,10,', '1', '预定常见问题', '', '', '', '', '', '', '', '11', 'true');
-INSERT INTO `dx_infoclass` VALUES ('13', '1', '10', '0,10,', '1', '付款和发票', '', '', '', '', '', '', '', '12', 'true');
-INSERT INTO `dx_infoclass` VALUES ('14', '1', '10', '0,10,', '1', '签署旅游合同', '', '', '', '', '', '', '', '13', 'true');
-INSERT INTO `dx_infoclass` VALUES ('15', '1', '10', '0,10,', '1', '其它事项', '', '', '', '', '', '', '', '14', 'true');
+INSERT INTO `dx_infoclass` VALUES ('2', '1', '0', '0,', '2', '旅游线路', '', '', '', '', '', '', '', '1', 'true');
+INSERT INTO `dx_infoclass` VALUES ('3', '1', '2', '0,2,', '2', '洛阳周边', '', '', '', '', '', '', '', '3', 'true');
+INSERT INTO `dx_infoclass` VALUES ('4', '1', '2', '0,2,', '2', '国内旅游', '', '', '', '', '', '', '', '4', 'true');
+INSERT INTO `dx_infoclass` VALUES ('5', '1', '2', '0,2,', '2', '出境旅游', '', '', '', '', '', '', '', '5', 'true');
+INSERT INTO `dx_infoclass` VALUES ('6', '1', '0', '0,', '0', '护照签证', '', '', '', '', '', '', '', '7', 'true');
+INSERT INTO `dx_infoclass` VALUES ('7', '1', '0', '0,', '0', '旅游租车', '', '', '', '', '', '', '', '8', 'true');
+INSERT INTO `dx_infoclass` VALUES ('8', '1', '0', '0,', '1', '旅游攻略', '', '', '', '', '', '', '', '9', 'true');
+INSERT INTO `dx_infoclass` VALUES ('9', '1', '0', '0,', '1', '关于我们', '', '', '', '', '', '', '', '10', 'true');
+INSERT INTO `dx_infoclass` VALUES ('10', '1', '0', '0,', '1', '帮助', '', '', '', '', '', '', '', '11', 'true');
+INSERT INTO `dx_infoclass` VALUES ('11', '1', '0', '0,', '1', '网站公告', '', '', '', '', '', '', '', '12', 'true');
+INSERT INTO `dx_infoclass` VALUES ('12', '1', '10', '0,10,', '1', '预定常见问题', '', '', '', '', '', '', '', '13', 'true');
+INSERT INTO `dx_infoclass` VALUES ('13', '1', '10', '0,10,', '1', '付款和发票', '', '', '', '', '', '', '', '14', 'true');
+INSERT INTO `dx_infoclass` VALUES ('14', '1', '10', '0,10,', '1', '签署旅游合同', '', '', '', '', '', '', '', '15', 'true');
+INSERT INTO `dx_infoclass` VALUES ('15', '1', '10', '0,10,', '1', '其它事项', '', '', '', '', '', '', '', '16', 'true');
+INSERT INTO `dx_infoclass` VALUES ('16', '1', '2', '0,2,', '2', '当季热门', '', '', '', '', '', '', '', '2', 'true');
+INSERT INTO `dx_infoclass` VALUES ('17', '1', '2', '0,2,', '2', '特价旅游', '', '', '', '', '', '', '', '6', 'true');
+INSERT INTO `dx_infoclass` VALUES ('18', '1', '3', '0,2,3,', '2', '少林', '', '', '', '', '', '', '', '17', 'true');
+INSERT INTO `dx_infoclass` VALUES ('19', '1', '3', '0,2,3,', '2', '白马寺', '', '', '', '', '', '', '', '18', 'true');
+INSERT INTO `dx_infoclass` VALUES ('20', '1', '3', '0,2,3,', '2', '牡丹园', '', '', '', '', '', '', '', '19', 'true');
+INSERT INTO `dx_infoclass` VALUES ('21', '1', '3', '0,2,3,', '2', '龙门', '', '', '', '', '', '', '', '20', 'true');
+INSERT INTO `dx_infoclass` VALUES ('22', '1', '3', '0,2,3,', '2', '龙潭峡', '', '', '', '', '', '', '', '21', 'true');
+INSERT INTO `dx_infoclass` VALUES ('23', '1', '3', '0,2,3,', '2', '小浪底', '', '', '', '', '', '', '', '22', 'true');
+INSERT INTO `dx_infoclass` VALUES ('24', '1', '16', '0,2,16,', '2', '新马泰', '', '', '', '', '', '', '', '23', 'true');
+INSERT INTO `dx_infoclass` VALUES ('25', '1', '16', '0,2,16,', '2', '欧洲', '', '', '', '', '', '', '', '24', 'true');
+INSERT INTO `dx_infoclass` VALUES ('26', '1', '16', '0,2,16,', '2', '香港', '', '', '', '', '', '', '', '25', 'true');
+INSERT INTO `dx_infoclass` VALUES ('27', '1', '16', '0,2,16,', '2', '丽江', '', '', '', '', '', '', '', '26', 'true');
 
 -- ----------------------------
 -- Table structure for `dx_infoflag`
@@ -3828,9 +3854,8 @@ CREATE TABLE `dx_infoflag` (
 -- ----------------------------
 -- Records of dx_infoflag
 -- ----------------------------
-INSERT INTO `dx_infoflag` VALUES ('1', 'r', '当季热门', '1');
+INSERT INTO `dx_infoflag` VALUES ('1', 'r', '热门旅游', '1');
 INSERT INTO `dx_infoflag` VALUES ('2', 'z', '周末去哪儿', '2');
-INSERT INTO `dx_infoflag` VALUES ('3', 't', '特价旅游', '3');
 
 -- ----------------------------
 -- Table structure for `dx_infoimg`
@@ -3863,12 +3888,21 @@ CREATE TABLE `dx_infoimg` (
   `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
   `delstate` set('true') NOT NULL COMMENT '删除状态',
   `deltime` int(10) unsigned NOT NULL COMMENT '删除时间',
+  `price` decimal(10,2) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of dx_infoimg
 -- ----------------------------
+INSERT INTO `dx_infoimg` VALUES ('1', '1', '18', '3', '0,2,3,', '-1', '-1', '', '少林寺+白马寺+牡丹一日游', '', '', 'r', '', 'admin', '', '', '', '<p style=\"text-align:center;\">\r\n	<img src=\"/business/lyshuxiang.com/uploads/image/20150318/1426691819.png\" width=\"228\" height=\"231\" alt=\"\" style=\"line-height:1.5;\" /><img src=\"/business/lyshuxiang.com/uploads/image/20150318/1426692285.png\" alt=\"\" width=\"226\" height=\"231\" title=\"\" align=\"\" style=\"line-height:1.5;\" /><img src=\"/business/lyshuxiang.com/uploads/image/20150318/1426693567.png\" alt=\"\" width=\"237\" height=\"231\" title=\"\" align=\"\" style=\"line-height:1.5;\" /><span style=\"line-height:1.5;\"></span> \r\n</p>\r\n<p style=\"text-align:left;\">\r\n	<span style=\"line-height:1.5;\"> </span>\r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<b><span style=\"font-size:15.0pt;font-family:宋体;color:#3333FF;\">行程安排：</span></b><b><span style=\"font-size:15.0pt;color:#3333FF;\"></span></b> \r\n</p>\r\n<p class=\"MsoNormal\" align=\"left\" style=\"text-indent:29.5pt;\">\r\n	<b><span style=\"font-size:15.0pt;line-height:150%;font-family:宋体;color:blue;\">早<span>8</span>；<span>00</span>乘车赴少林寺景区游览，包括：（少林寺、 功夫表演、 塔林、），中餐后乘车赴中国第一座官办寺院——白马寺，参观结束后游览神州牡丹园国色天香的牡丹花，下午<span>6:30</span>左右返回古都洛阳。结束愉快旅程。</span></b><b><span style=\"font-size:15.0pt;line-height:150%;color:#1F497D;\"> <span></span></span></b> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<b><span style=\"font-size:15.0pt;color:red;\"> </span></b><b><span style=\"font-size:18.0pt;color:red;\"></span></b> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-family:宋体;\">服务标准：<b><span></span></b></span> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-family:宋体;\">门票：景点首道大门票<b><span></span></b></span> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-family:宋体;\">导游：全程优秀导游服务<b><span></span></b></span> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-family:宋体;\">餐：不含餐<b><span></span></b></span> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-family:宋体;\">交通：往返空调旅游车<b><span></span></b></span> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-family:宋体;\">保险：旅行社责任险<b><span></span></b></span> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-family:宋体;\">特别提醒：导游将在前一天晚上<span>19</span>：<span>00</span>前打电话给客人，告知集合时间，地点，车牌号！<b><span></span></b></span> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<u><span style=\"font-family:宋体;\">备注：</span></u><u><span>1.4</span></u><u><span style=\"font-family:宋体;\">米</span></u><u><span style=\"font-family:宋体;\">上儿童未持学生证的按成人收费；</span></u><u><span>1.2</span></u><u><span style=\"font-family:宋体;\">米</span></u><u><span style=\"font-family:宋体;\">至</span></u><u><span>1.4</span></u><u><span style=\"font-family:宋体;\">米</span></u><u><span style=\"font-family:宋体;\">儿童占车、保险费收取</span></u><u><span>60</span></u><u><span style=\"font-family:宋体;\">元</span></u><u><span>/</span></u><u><span style=\"font-family:宋体;\">人；</span></u><u><span>1.2</span></u><u><span style=\"font-family:宋体;\">米</span></u><u><span style=\"font-family:宋体;\">以下儿童每人收取</span></u><u><span>20</span></u><u><span style=\"font-family:宋体;\">元保险综合费。</span></u><u><span>70</span></u><u><span style=\"font-family:宋体;\">岁以上老年人</span></u><u><span>240</span></u><u><span style=\"font-family:宋体;\">元，</span></u><u><span>60-70</span></u><u><span style=\"font-family:宋体;\">岁老年人</span></u><u><span>290</span></u><u><span style=\"font-family:宋体;\">元！（儿童若虚报身高，产生一切费用由家长自理）</span></u><u><span></span></u> \r\n</p>\r\n<br />\r\n<p>\r\n	<br />\r\n</p>', 'uploads/image/20150318/1426695729.jpg', '', '62', '1', '1426686273', 'true', '', '0', '340.00');
+INSERT INTO `dx_infoimg` VALUES ('2', '1', '21', '3', '0,2,3,', '-1', '-1', '', '龙门石窟 + 白马寺一日游', '', '', 'r,z', '', 'admin', '', '', '', '<p style=\"text-align:center;\">\r\n	<img src=\"/business/lyshuxiang.com/uploads/image/20150318/1426689029.png\" alt=\"\" width=\"276\" height=\"260\" title=\"\" align=\"\" style=\"line-height:1.5;\" /><img src=\"/business/lyshuxiang.com/uploads/image/20150318/1426693567.png\" width=\"237\" height=\"231\" alt=\"\" style=\"line-height:1.5;\" /> \r\n</p>\r\n<p style=\"text-align:left;\">\r\n	<br />\r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-size:15.0pt;font-family:宋体;\">早</span><span style=\"font-size:15.0pt;\">8:00</span><span style=\"font-size:15.0pt;font-family:宋体;\">乘车前往世界文化遗产之称的——龙门石窟参观，含（龙门石窟、香山寺、白园）。午餐后（餐费自理），乘车赴中国的第一个官办寺院白马寺，下午</span><span style=\"font-size:15.0pt;\">5:00</span><span style=\"font-size:15.0pt;font-family:宋体;\">左右返回古都洛阳，结束一天愉快旅程。</span><span style=\"font-size:15.0pt;\"> </span> \r\n</p>\r\n<p class=\"MsoNormal\" style=\"text-indent:308.7pt;\">\r\n	<b><span style=\"font-size:15.0pt;\"></span></b> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<b><span style=\"font-family:宋体;\">服务标准：<span></span></span></b> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<b><span style=\"font-family:宋体;\">门票：景点首道大门票<span></span></span></b> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<b><span style=\"font-family:宋体;\">导游：全程优秀导游服务<span></span></span></b> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<b><span style=\"font-family:宋体;\">餐：不含餐<span></span></span></b> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<b><span style=\"font-family:宋体;\">交通：往返空调旅游车<span></span></span></b> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<b><span style=\"font-family:宋体;\">保险：旅行社责任险<span></span></span></b> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<b><span style=\"font-family:宋体;\">特别提醒：导游将在前一天晚上<span>19</span>：<span>00</span>前打电话给客人，告知集合时间，地点，车牌号！<span></span></span></b> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<b><u><span style=\"font-size:12pt;font-family:宋体;\">备注：</span></u></b><b><u><span style=\"font-size:12pt;\">1.4</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">米</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">上儿童未持学生证的按成人收费；</span></u></b><b><u><span style=\"font-size:12pt;\">1.2</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">米</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">至</span></u></b><b><u><span style=\"font-size:12pt;\">1.4</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">米</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">儿童占车、保险费收取</span></u></b><b><u><span style=\"font-size:12pt;\">60</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">元</span></u></b><b><u><span style=\"font-size:12pt;\">/</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">人；</span></u></b><b><u><span style=\"font-size:12pt;\">1.2</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">米</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">以下儿童每人收取</span></u></b><b><u><span style=\"font-size:12pt;\">20</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">元保险综合费。</span></u></b><b><u><span style=\"font-size:12pt;\">70</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">岁以上老年人</span></u></b><b><u><span style=\"font-size:12pt;\">190</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">元，</span></u></b><b><u><span style=\"font-size:12pt;\">60-70</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">岁老年人</span></u></b><b><u><span style=\"font-size:12pt;\">260</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">元！（儿童若虚报身高，产生一切费用由家长自理</span></u></b><u><span style=\"font-size:12pt;font-family:宋体;\">）</span></u><u><span style=\"font-size:12pt;\"></span></u> \r\n</p>\r\n<p>\r\n	<br />\r\n</p>', 'uploads/image/20150318/1426689094.jpg', '', '91', '2', '1426686674', 'true', '', '0', '330.00');
+INSERT INTO `dx_infoimg` VALUES ('3', '1', '18', '3', '0,2,3,', '-1', '-1', '', '嵩山少林寺一日游 高品团天天发', '', '', 'r,z', '', 'admin', '', '', '', '<p style=\"text-align:center;\">\r\n	<img src=\"/business/lyshuxiang.com/uploads/image/20150318/1426695538.jpg\" width=\"500\" height=\"350\" alt=\"\" style=\"line-height:1.5;\" /> \r\n</p>\r\n<p style=\"text-align:left;\">\r\n	<br />\r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<b><span style=\"font-size:22.0pt;font-family:宋体;color:#3333FF;\">行程安排：<span></span></span></b> \r\n</p>\r\n<p class=\"MsoNormal\" align=\"left\" style=\"text-indent:31.5pt;\">\r\n	<b><span style=\"font-size:16.0pt;line-height:150%;font-family:宋体;color:blue;\">早<span>8:00</span>乘车赴嵩山少林寺景区游览，包括：（少林寺、 功夫表演、 塔林、会善寺、嵩阳书院），下午返回洛阳途中如果时间允许参观结束后可以游览中国第一座官办寺院——白马寺（可自由选择费用不包含），下午<span>6:30</span>左右返回洛阳。结束愉快旅程。<span></span></span></b> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<b><span style=\"font-size:18.0pt;color:red;\"></span></b> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-family:宋体;\">服务标准：<b><span></span></b></span> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-family:宋体;\">门票：景点首道大门票<b><span></span></b></span> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-family:宋体;\">导游：全程优秀导游服务<b><span></span></b></span> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-family:宋体;\">餐：不含餐<b><span></span></b></span> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-family:宋体;\">交通：往返空调旅游车<b><span></span></b></span> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-family:宋体;\">保险：旅行社责任险<b><span></span></b></span> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-family:宋体;\">特别提醒：导游将在前一天晚上<span>19</span>：<span>00</span>前打电话给客人，告知集合时间，地点，车牌号！<b><span></span></b></span> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<u><span style=\"font-family:宋体;\">备注：</span></u><u><span>1.4</span></u><u><span style=\"font-family:宋体;\">米</span></u><u><span style=\"font-family:宋体;\">上儿童未持学生证的按成人收费；</span></u><u><span>1.2</span></u><u><span style=\"font-family:宋体;\">米</span></u><u><span style=\"font-family:宋体;\">至</span></u><u><span>1.4</span></u><u><span style=\"font-family:宋体;\">米</span></u><u><span style=\"font-family:宋体;\">儿童占车、保险费收取</span></u><u><span>60</span></u><u><span style=\"font-family:宋体;\">元</span></u><u><span>/</span></u><u><span style=\"font-family:宋体;\">人；</span></u><u><span>1.2</span></u><u><span style=\"font-family:宋体;\">米</span></u><u><span style=\"font-family:宋体;\">以下儿童每人收取</span></u><u><span>20</span></u><u><span style=\"font-family:宋体;\">元保险综合费。</span></u><u><span>70</span></u><u><span style=\"font-family:宋体;\">岁以上老年人</span></u><u><span>160</span></u><u><span style=\"font-family:宋体;\">元，</span></u><u><span>60-70</span></u><u><span style=\"font-family:宋体;\">岁老年人</span></u><u><span>220</span></u><u><span style=\"font-family:宋体;\">元！（儿童若虚报身高，产生一切费用由家长自理）</span></u><u><span></span></u> \r\n</p>\r\n<p>\r\n	<br />\r\n</p>', 'uploads/image/20150318/1426695538.jpg', '', '157', '3', '1426687153', 'true', '', '0', '290.00');
+INSERT INTO `dx_infoimg` VALUES ('4', '1', '23', '3', '0,2,3,', '-1', '-1', '', '小浪底 + 龙门石窟 一日游 天天发车', '', '', 'r,z', '', 'admin', '', '', '', '<p style=\"text-align:center;\">\r\n	<img src=\"/business/lyshuxiang.com/uploads/image/20150318/1426690042.jpg\" width=\"300\" height=\"210\" alt=\"\" title=\"\" align=\"\" style=\"line-height:1.5;\" /><img src=\"/business/lyshuxiang.com/uploads/image/20150318/1426689094.jpg\" width=\"300\" height=\"210\" alt=\"\" style=\"line-height:1.5;\" /> \r\n</p>\r\n<p style=\"text-align:left;\">\r\n	<br />\r\n</p>\r\n<p class=\"MsoNormal\" align=\"left\" style=\"text-indent:30.1pt;\">\r\n	<b><span style=\"font-size:15.0pt;line-height:150%;font-family:宋体;color:blue;\">早<span>8:00</span>乘车赴黄河上最大的水利枢纽工程——小浪底（门票<span>+</span>豪华游艇<span>120</span>元<span>/</span>人），中餐后（餐费自理，可自费品尝黄河大鲤鱼）参观世界文化遗产——龙门石窟、香山寺、白园。下午<span>6:00</span>左右返回古都洛阳。<span></span></span></b> \r\n</p>\r\n<p class=\"MsoNormal\" align=\"right\" style=\"text-align:right;\">\r\n	<b><span style=\"font-size:15.0pt;line-height:150%;color:red;\"> </span></b> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-family:宋体;\">服务标准：<b><span></span></b></span> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-family:宋体;\">门票：景点首道大门票<b><span></span></b></span> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-family:宋体;\">导游：全程优秀导游服务<b><span></span></b></span> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-family:宋体;\">餐：不含餐<span> <b></b></span></span> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-family:宋体;\">交通：往返空调旅游车<b><span></span></b></span> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-family:宋体;\">保险：旅行社责任险<b><span></span></b></span> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-family:宋体;\">特别提醒：导游将在前一天晚上<span>19</span>：<span>00</span>前打电话给客人，告知集合时间，地点，车牌号！<b><span></span></b></span> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<u><span style=\"font-family:宋体;\">备注：</span></u><u><span>1.4</span></u><u><span style=\"font-family:宋体;\">米</span></u><u><span style=\"font-family:宋体;\">上儿童未持学生证的按成人收费；</span></u><u><span>1.2</span></u><u><span style=\"font-family:宋体;\">米</span></u><u><span style=\"font-family:宋体;\">至</span></u><u><span>1.4</span></u><u><span style=\"font-family:宋体;\">米</span></u><u><span style=\"font-family:宋体;\">儿童占车、保险费收取</span></u><u><span>60</span></u><u><span style=\"font-family:宋体;\">元</span></u><u><span>/</span></u><u><span style=\"font-family:宋体;\">人；</span></u><u><span>1.2</span></u><u><span style=\"font-family:宋体;\">米</span></u><u><span style=\"font-family:宋体;\">以下儿童每人收取</span></u><u><span>20</span></u><u><span style=\"font-family:宋体;\">元保险综合费。</span></u><u><span>70</span></u><u><span style=\"font-family:宋体;\">岁以上老年人</span></u><u><span>200</span></u><u><span style=\"font-family:宋体;\">元，</span></u><u><span>60-70</span></u><u><span style=\"font-family:宋体;\">岁老年人</span></u><u><span>275</span></u><u><span style=\"font-family:宋体;\">元！（儿童若虚报身高，产生一切费用由家长自理）</span></u><u><span></span></u> \r\n</p>\r\n<p>\r\n	<br />\r\n</p>', 'uploads/image/20150318/1426690042.jpg', '', '79', '4', '1426687589', 'true', '', '0', '330.00');
+INSERT INTO `dx_infoimg` VALUES ('5', '1', '22', '3', '0,2,3,', '-1', '-1', '', '龙潭大峡谷一日游', '', '', 'r,z', '', 'admin', '', '', '', '<p class=\"MsoNormal\">\r\n	<br />\r\n</p>\r\n<p class=\"MsoNormal\" align=\"left\" style=\"text-indent:19.5pt;\">\r\n	<span style=\"font-size:9pt;font-family:Arial, sans-serif;\">2006</span><span style=\"font-size:9pt;font-family:宋体;\">年</span><span style=\"font-size:9pt;font-family:Arial, sans-serif;\">8</span><span style=\"font-size:9pt;font-family:宋体;\">月</span><span style=\"font-size:9pt;font-family:Arial, sans-serif;\">18</span><span style=\"font-size:9pt;font-family:宋体;\">日</span><span style=\"font-size:9pt;font-family:宋体;\">，龙潭大峡谷接受联合国教科文组织世界地质公园评审专家的验收，被库穆博士盛赞为</span><span style=\"font-size:9pt;font-family:Arial, sans-serif;\">“</span><span style=\"font-size:9pt;font-family:宋体;\">世界上最美的峡谷</span><span style=\"font-size:9pt;font-family:Arial, sans-serif;\">”</span><span style=\"font-size:9pt;font-family:宋体;\">；</span><span style=\"font-size:9pt;font-family:Arial, sans-serif;\">9</span><span style=\"font-size:9pt;font-family:宋体;\">月</span><span style=\"font-size:9pt;font-family:Arial, sans-serif;\">18</span><span style=\"font-size:9pt;font-family:宋体;\">日</span><span style=\"font-size:9pt;font-family:宋体;\">被正式命名为</span><span style=\"font-size:9pt;font-family:Arial, sans-serif;\">“</span><span style=\"font-size:9pt;font-family:宋体;\">世界地质公园</span><span style=\"font-size:9pt;font-family:Arial, sans-serif;\">”</span><span style=\"font-size:9pt;font-family:宋体;\">；</span><span style=\"font-size:9pt;font-family:Arial, sans-serif;\">2006</span><span style=\"font-size:9pt;font-family:宋体;\">年</span><span style=\"font-size:9pt;font-family:Arial, sans-serif;\">9</span><span style=\"font-size:9pt;font-family:宋体;\">月</span><span style=\"font-size:9pt;font-family:Arial, sans-serif;\">29</span><span style=\"font-size:9pt;font-family:宋体;\">日</span><span style=\"font-size:9pt;font-family:宋体;\">，龙潭大峡谷景区顺利通过了</span><span style=\"font-size:9pt;font-family:Arial, sans-serif;\">“</span><span style=\"font-size:9pt;font-family:宋体;\">质量、环境、职业健康安全</span><span style=\"font-size:9pt;font-family:Arial, sans-serif;\">”</span><span style=\"font-size:9pt;font-family:宋体;\">三项国际性标准管理体系认证；</span><span style=\"font-size:9pt;font-family:Arial, sans-serif;\">2006</span><span style=\"font-size:9pt;font-family:宋体;\">年</span><span style=\"font-size:9pt;font-family:Arial, sans-serif;\">11</span><span style=\"font-size:9pt;font-family:宋体;\">月又被评选为</span><span style=\"font-size:9pt;font-family:Arial, sans-serif;\">“</span><span style=\"font-size:9pt;font-family:宋体;\">洛阳市新八大景</span><span style=\"font-size:9pt;font-family:Arial, sans-serif;\">”</span><span style=\"font-size:9pt;font-family:宋体;\">之一。</span><span style=\"font-size:9pt;font-family:Arial, sans-serif;\">2007</span><span style=\"font-size:9pt;font-family:宋体;\">年</span><span style=\"font-size:9pt;font-family:Arial, sans-serif;\">9</span><span style=\"font-size:9pt;font-family:宋体;\">月</span><span style=\"font-size:9pt;font-family:Arial, sans-serif;\">28</span><span style=\"font-size:9pt;font-family:宋体;\">日</span><span style=\"font-size:9pt;font-family:宋体;\">顺利通过国家旅游局</span><span style=\"font-size:9pt;font-family:Arial, sans-serif;\">AAAA</span><span style=\"font-size:9pt;font-family:宋体;\">级景区验收。</span><span style=\"font-size:9pt;font-family:Arial, sans-serif;\">2009</span><span style=\"font-size:9pt;font-family:宋体;\">年公司积极申报</span><span style=\"font-size:9pt;font-family:Arial, sans-serif;\">5A</span><span style=\"font-size:9pt;font-family:宋体;\">级景区。龙潭峡谷就是这黛眉山峡谷群地质公园中的典型代表。</span><span style=\"font-size:9.0pt;font-family:宋体;color:blue;\"> <span></span></span>\r\n</p>\r\n<p class=\"MsoNormal\" align=\"left\" style=\"text-indent:19.5pt;\">\r\n	<span style=\"font-size:9pt;font-family:Arial, sans-serif;\"></span>\r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-size:14pt;font-family:宋体;\">简单行程：</span><span style=\"font-size:14pt;font-family:宋体;\"></span>\r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-size:14.0pt;font-family:宋体;\">洛阳早上七点半火车站集合，后乘车赴新安县（</span><span style=\"font-size:14.0pt;\">1.5</span><span style=\"font-size:14.0pt;font-family:宋体;\">小时）游览世界地质公园，山水画廊——<b><span style=\"color:red;\">龙潭大峡谷</span></b></span><b><span style=\"font-size:14.0pt;color:red;\">70</span></b><b><span style=\"font-size:14.0pt;font-family:宋体;color:red;\">元</span></b><span style=\"font-size:14.0pt;font-family:宋体;\">（</span><span style=\"font-size:14.0pt;\">4</span><span style=\"font-size:14.0pt;font-family:宋体;\">小时）黛眉山峡谷群地质公园中的典型代表被库穆博士盛赞为“世界上最美的峡谷”下午四点左右乘车返回洛阳，结束愉快的行程！</span><span style=\"font-size:14.0pt;\"></span>\r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-size:14.0pt;\">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style=\"font-size:15.0pt;\"></span></b>\r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<b><span style=\"font-family:宋体;\">服务标准：<span></span></span></b>\r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<b><span style=\"font-family:宋体;\">门票：景点首道大门票<span></span></span></b>\r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<b><span style=\"font-family:宋体;\">导游：全程优秀导游服务<span></span></span></b>\r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<b><span style=\"font-family:宋体;\">餐：不含餐<span></span></span></b>\r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<b><span style=\"font-family:宋体;\">交通：往返空调旅游车<span></span></span></b>\r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<b><span style=\"font-family:宋体;\">保险：旅行社责任险<span></span></span></b>\r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<b><span style=\"font-family:宋体;\">特别提醒：导游将在前一天晚上<span>8</span>：<span>00</span>前打电话给客人，告知集合时间，地点，车牌号！<span></span></span></b>\r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<b><u><span style=\"font-size:12pt;font-family:宋体;\">备注：</span></u></b><b><u><span style=\"font-size:12pt;\">1.4</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">米</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">上儿童按成人收费；</span></u></b><b><u><span style=\"font-size:12pt;\">1.2</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">米</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">至</span></u></b><b><u><span style=\"font-size:12pt;\">1.4</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">米</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">儿童占车、保险费收取</span></u></b><b><u><span style=\"font-size:12pt;\">60</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">元</span></u></b><b><u><span style=\"font-size:12pt;\">/</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">人；</span></u></b><b><u><span style=\"font-size:12pt;\">1.2</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">米</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">以下儿童每人收取</span></u></b><b><u><span style=\"font-size:12pt;\">20</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">元保险综合费。</span></u></b><b><u><span style=\"font-size:12pt;\">70</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">岁以上老年人</span></u></b><b><u><span style=\"font-size:12pt;\">78</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">元，</span></u></b><b><u><span style=\"font-size:12pt;\">60-70</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">岁老年人</span></u></b><b><u><span style=\"font-size:12pt;\">103</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">元！（儿童若虚报身高，产生一切费用由家长自理</span></u></b><u><span style=\"font-size:12pt;font-family:宋体;\">）</span></u><u><span style=\"font-size:12pt;\"></span></u>\r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<b><span style=\"color:red;\">&nbsp;</span></b><b><span style=\"font-family:宋体;color:red;\">火车站天香饭店</span><span style=\"color:red;\">8</span></b><b><span style=\"font-family:宋体;color:red;\">：</span><span style=\"color:red;\">00</span></b><b><span style=\"font-family:宋体;color:red;\">出发。如果在洛阳市区</span><span style=\"color:red;\"> </span></b><b><span style=\"font-family:宋体;color:red;\">我们车可以考虑去接</span><span style=\"color:red;\"></span></b>\r\n</p>', 'uploads/image/20150318/1426694191.jpg', '', '157', '5', '1426687867', 'true', '', '0', '138.00');
+INSERT INTO `dx_infoimg` VALUES ('6', '1', '20', '3', '0,2,3,', '-1', '-1', '', '龙门石窟、白马寺、牡丹园一日游', '', '', 'r,z', '', 'admin', '', '', '', '<p style=\"text-align:center;\">\r\n	<img src=\"/business/lyshuxiang.com/uploads/image/20150318/1426689094.jpg\" width=\"300\" height=\"210\" alt=\"\" style=\"line-height:1.5;\" /><img src=\"/business/lyshuxiang.com/uploads/image/20150318/1426693567.png\" width=\"237\" height=\"231\" alt=\"\" style=\"line-height:1.5;\" /><img src=\"/business/lyshuxiang.com/uploads/image/20150318/1426692342.jpg\" width=\"300\" height=\"210\" alt=\"\" style=\"line-height:1.5;\" />\r\n</p>\r\n<p style=\"text-align:left;\">\r\n	<br />\r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<b><span style=\"font-size:16.0pt;font-family:宋体;color:#3333FF;\">行程安排：</span></b><b><span style=\"font-size:16.0pt;color:#3333FF;\"></span></b>\r\n</p>\r\n<p class=\"MsoNormal\" style=\"margin-left:31.9pt;\">\r\n	<span style=\"font-size:14.0pt;font-family:宋体;color:#3333FF;\">早</span><span style=\"font-size:14.0pt;color:#3333FF;\">8:00</span><span style=\"font-size:14.0pt;font-family:宋体;color:#3333FF;\">乘车前往世界文化遗产——龙门石窟，参观龙门石窟、卢舍那大佛、香山寺、白园等。中餐后（餐费自理），乘车赴中国第一个官办寺院</span><span style=\"font-size:14.0pt;color:#3333FF;\">---</span><span style=\"font-size:14.0pt;font-family:宋体;color:#3333FF;\">白马寺，后赴神州牡丹园参观国色天香的牡丹，下午</span><span style=\"font-size:14.0pt;color:#3333FF;\">5:00</span><span style=\"font-size:14.0pt;font-family:宋体;color:#3333FF;\">左右返回古都洛阳，结束一天愉快旅程。</span><span style=\"font-size:14.0pt;color:#3333FF;\">&nbsp; </span>\r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-size:14.0pt;color:#3333FF;\"></span>\r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<b><span style=\"font-family:宋体;\">服务标准：<span></span></span></b>\r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<b><span style=\"font-family:宋体;\">门票：景点首道大门票<span></span></span></b>\r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<b><span style=\"font-family:宋体;\">导游：全程优秀导游服务<span></span></span></b>\r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<b><span style=\"font-family:宋体;\">餐<span>&nbsp; </span>： 不含餐<span></span></span></b>\r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<b><span style=\"font-family:宋体;\">交通：往返空调旅游车<span></span></span></b>\r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<b><span style=\"font-family:宋体;\">保险：旅行社责任险<span></span></span></b>\r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<b><span style=\"font-family:宋体;\">特别提醒：导游将在前一天晚上<span>19</span>：<span>00</span>前打电话给客人，告知集合时间，地点，车牌号！<span></span></span></b>\r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<b><u><span style=\"font-size:12pt;font-family:宋体;\">备注：</span></u></b><b><u><span style=\"font-size:12pt;\">1.4</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">米</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">上儿童未持学生证的按成人收费；</span></u></b><b><u><span style=\"font-size:12pt;\">1.2</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">米</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">至</span></u></b><b><u><span style=\"font-size:12pt;\">1.4</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">米</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">儿童占车、保险费收取</span></u></b><b><u><span style=\"font-size:12pt;\">60</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">元</span></u></b><b><u><span style=\"font-size:12pt;\">/</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">人；</span></u></b><b><u><span style=\"font-size:12pt;\">1.2</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">米</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">以下儿童每人收取</span></u></b><b><u><span style=\"font-size:12pt;\">20</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">元</span></u></b><b><u><span style=\"font-size:12pt;\">/</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">人保险综合费。</span></u></b><b><u><span style=\"font-size:12pt;\">70</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">岁以上老年人退门票差价，</span></u></b><b><u><span style=\"font-size:12pt;\">60-70</span></u></b><b><u><span style=\"font-size:12pt;font-family:宋体;\">岁老年人退门票半价差价！（儿童若虚报身高，产生一切费用由家长自理</span></u></b><u><span style=\"font-size:12pt;font-family:宋体;\">）</span></u><u><span style=\"font-size:12pt;\"></span></u>\r\n</p>\r\n<p>\r\n	<br />\r\n</p>', 'uploads/image/20150318/1426692342.jpg', '', '96', '6', '1426688086', 'true', '', '0', '350.00');
+INSERT INTO `dx_infoimg` VALUES ('7', '1', '16', '2', '0,2,', '-1', '-1', '', '少林寺 + 牡丹 一日游', '', '', 'z', '', 'admin', '', '', '', '<p style=\"text-align:center;\">\r\n	<img src=\"/business/lyshuxiang.com/uploads/image/20150318/1426695538.jpg\" width=\"300\" height=\"210\" alt=\"\" style=\"line-height:1.5;\" /><img src=\"/business/lyshuxiang.com/uploads/image/20150318/1426692342.jpg\" width=\"300\" height=\"210\" alt=\"\" style=\"line-height:1.5;\" />\r\n</p>\r\n<p style=\"text-align:left;\">\r\n	<p class=\"MsoNormal\" align=\"left\" style=\"text-indent:23.6pt;\">\r\n		<b><span style=\"font-size:12.0pt;line-height:150%;font-family:宋体;color:blue;\">早<span>8</span>；<span>00</span>乘车赴少林寺景区游览，包括：（少林寺、 功夫表演、 塔林、），下午去神州牡丹园参观国色天香的牡丹，如果时间允许参观结束后可以游览中国第一座官办寺院——白马寺（可自由选择费用不包含），下午<span>6:30</span>左右返回洛阳。结束愉快旅程。<span></span></span></b>\r\n	</p>\r\n	<p class=\"MsoNormal\" align=\"right\" style=\"text-align:right;\">\r\n		<b><span style=\"font-size:18.0pt;color:#1F497D;\"></span></b>\r\n	</p>\r\n	<p class=\"MsoNormal\">\r\n		<span style=\"font-family:宋体;\">服务标准：<b><span></span></b></span>\r\n	</p>\r\n	<p class=\"MsoNormal\">\r\n		<span style=\"font-family:宋体;\">门票：景点首道大门票<b><span></span></b></span>\r\n	</p>\r\n	<p class=\"MsoNormal\">\r\n		<span style=\"font-family:宋体;\">导游：全程优秀导游服务<b><span></span></b></span>\r\n	</p>\r\n	<p class=\"MsoNormal\">\r\n		<span style=\"font-family:宋体;\">餐：不含餐<b><span></span></b></span>\r\n	</p>\r\n	<p class=\"MsoNormal\">\r\n		<span style=\"font-family:宋体;\">交通：往返空调旅游车<b><span></span></b></span>\r\n	</p>\r\n	<p class=\"MsoNormal\">\r\n		<span style=\"font-family:宋体;\">保险：旅行社责任险<b><span></span></b></span>\r\n	</p>\r\n	<p class=\"MsoNormal\">\r\n		<span style=\"font-family:宋体;\">特别提醒：导游将在前一天晚上<span>19</span>：<span>00</span>前打电话给客人，告知集合时间，地点，车牌号！<b><span></span></b></span>\r\n	</p>\r\n	<p class=\"MsoNormal\">\r\n		<u><span style=\"font-family:宋体;\">备注：</span></u><u><span>1.4</span></u><u><span style=\"font-family:宋体;\">米</span></u><u><span style=\"font-family:宋体;\">上儿童未持学生证的按成人收费；</span></u><u><span>1.2</span></u><u><span style=\"font-family:宋体;\">米</span></u><u><span style=\"font-family:宋体;\">至</span></u><u><span>1.4</span></u><u><span style=\"font-family:宋体;\">米</span></u><u><span style=\"font-family:宋体;\">儿童占车、保险费收取</span></u><u><span>60</span></u><u><span style=\"font-family:宋体;\">元</span></u><u><span>/</span></u><u><span style=\"font-family:宋体;\">人；</span></u><u><span>1.2</span></u><u><span style=\"font-family:宋体;\">米</span></u><u><span style=\"font-family:宋体;\">以下儿童每人收取</span></u><u><span>20</span></u><u><span style=\"font-family:宋体;\">元保险综合费。</span></u><u><span>70</span></u><u><span style=\"font-family:宋体;\">岁以上老年人</span></u><u><span>160</span></u><u><span style=\"font-family:宋体;\">元，</span></u><u><span>60-70</span></u><u><span style=\"font-family:宋体;\">岁老年人</span></u><u><span>220</span></u><u><span style=\"font-family:宋体;\">元！（儿童若虚报身高，产生一切费用由家长自理）</span></u><u><span></span></u>\r\n	</p>\r\n</p>', 'uploads/image/20150318/1426695538.jpg', '', '169', '7', '1426689522', 'true', '', '0', '260.00');
+INSERT INTO `dx_infoimg` VALUES ('8', '1', '16', '2', '0,2,', '-1', '-1', '', '少林寺 一日游', '', '', '', '', 'admin', '', '', '', '<p style=\"text-align:center;\">\r\n	<img src=\"/business/lyshuxiang.com/uploads/image/20150318/1426695538.jpg\" width=\"500\" height=\"350\" alt=\"\" style=\"line-height:1.5;\" /> \r\n</p>\r\n<p style=\"text-align:left;\">\r\n	<br />\r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<b><span style=\"font-size:14.0pt;font-family:宋体;color:#3333FF;\">行程安排：<span></span></span></b> \r\n</p>\r\n<p class=\"MsoNormal\" align=\"left\" style=\"text-indent:27.55pt;\">\r\n	<b><span style=\"font-size:14.0pt;line-height:150%;font-family:宋体;color:blue;\">早<span>8:00</span>乘车赴少林寺景区游览，包括：（少林寺、 功夫表演、 塔林、会善寺、），下午返回洛阳途中如果时间允许参观结束后可以游览中国第一座官办寺院——白马寺（可自由选择费用不包含），下午<span>6:30</span>左右返回洛阳。结束愉快旅程。<span></span></span></b> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-family:宋体;\"> </span> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-family:宋体;\">服务标准：<b><span></span></b></span> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-family:宋体;\">门票：景点首道大门票<b><span></span></b></span> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-family:宋体;\">导游：全程优秀导游服务<b><span></span></b></span> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-family:宋体;\">餐：不含餐<b><span></span></b></span> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-family:宋体;\">交通：往返空调旅游车<b><span></span></b></span> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-family:宋体;\">保险：旅行社责任险<b><span></span></b></span> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<span style=\"font-family:宋体;\">特别提醒：导游将在前一天晚上<span>19</span>：<span>00</span>前打电话给客人，告知集合时间，地点，车牌号！<b><span></span></b></span> \r\n</p>\r\n<p class=\"MsoNormal\">\r\n	<u><span style=\"font-family:宋体;\">备注：</span></u><u><span>1.4</span></u><u><span style=\"font-family:宋体;\">米</span></u><u><span style=\"font-family:宋体;\">上儿童未持学生证的按成人收费；</span></u><u><span>1.2</span></u><u><span style=\"font-family:宋体;\">米</span></u><u><span style=\"font-family:宋体;\">至</span></u><u><span>1.4</span></u><u><span style=\"font-family:宋体;\">米</span></u><u><span style=\"font-family:宋体;\">儿童占车、保险费收取</span></u><u><span>60</span></u><u><span style=\"font-family:宋体;\">元</span></u><u><span>/</span></u><u><span style=\"font-family:宋体;\">人；</span></u><u><span>1.2</span></u><u><span style=\"font-family:宋体;\">米</span></u><u><span style=\"font-family:宋体;\">以下儿童每人收取</span></u><u><span>20</span></u><u><span style=\"font-family:宋体;\">元保险综合费。</span></u><u><span>70</span></u><u><span style=\"font-family:宋体;\">岁以上老年人</span></u><u><span>150</span></u><u><span style=\"font-family:宋体;\">元，</span></u><u><span>60-70</span></u><u><span style=\"font-family:宋体;\">岁老年人</span></u><u><span>200</span></u><u><span style=\"font-family:宋体;\">元！（儿童若虚报身高，产生一切费用由家长自理）</span></u><u><span></span></u> \r\n</p>\r\n<p>\r\n	<br />\r\n</p>', 'uploads/image/20150318/1426695538.jpg', '', '140', '8', '1426689800', 'true', '', '0', '240.00');
 
 -- ----------------------------
 -- Table structure for `dx_infolist`
@@ -3902,11 +3936,29 @@ CREATE TABLE `dx_infolist` (
   `delstate` set('true') NOT NULL COMMENT '删除状态',
   `deltime` int(10) unsigned NOT NULL COMMENT '删除时间',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of dx_infolist
 -- ----------------------------
+INSERT INTO `dx_infolist` VALUES ('1', '1', '11', '0', '0,', '-1', '-1', '', '庆祝改版', '', '', '', '', 'admin', '', '', '', '<p>\r\n	洛阳舒翔假期旅行社网站改版新上线~~!\r\n</p>\r\n<p>\r\n	<span style=\"white-space:normal;\">洛阳舒翔假期旅行社网站改版新上线~~!</span>\r\n</p>\r\n<p>\r\n	<span style=\"white-space:normal;\"><span style=\"white-space:normal;\">洛阳舒翔假期旅行社网站改版新上线~~!</span><br />\r\n</span>\r\n</p>', '', '', '118', '1', '1426671458', 'true', '', '0');
+INSERT INTO `dx_infolist` VALUES ('2', '1', '8', '0', '0,', '-1', '-1', '', '哈哈', '', '', '', '', 'admin', '', '', '', '<p>\r\n	<span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span>\r\n</p>\r\n<p>\r\n	<span style=\"white-space:normal;\"><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span></span>\r\n</p>\r\n<p>\r\n	<span style=\"white-space:normal;\"><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span></span>\r\n</p>\r\n<p>\r\n	<span style=\"white-space:normal;\"><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span></span>\r\n</p>\r\n<p>\r\n	<span style=\"white-space:normal;\"><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span></span>\r\n</p>\r\n<p>\r\n	<span style=\"white-space:normal;\"><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span></span>\r\n</p>\r\n<p>\r\n	<span style=\"white-space:normal;\"><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span></span>\r\n</p>\r\n<p>\r\n	<span style=\"white-space:normal;\"><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span></span>\r\n</p>\r\n<p>\r\n	<span style=\"white-space:normal;\"><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span></span>\r\n</p>\r\n<p>\r\n	<span style=\"white-space:normal;\"><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><span style=\"white-space:normal;\">啊啊</span><br />\r\n</span>\r\n</p>', '', '', '164', '2', '1426723246', 'true', '', '0');
+INSERT INTO `dx_infolist` VALUES ('3', '1', '12', '10', '0,10,', '-1', '-1', '', '纯玩是什么意思？', '', '', '', '', 'admin', '', '', '', '纯玩是什么意思？纯玩是什么意思？纯玩是什么意思？纯玩是什么意思？纯玩是什么意思？纯玩是什么意思？纯玩是什么意思？纯玩是什么意思？', '', '', '91', '3', '1426725442', 'true', '', '0');
+INSERT INTO `dx_infolist` VALUES ('4', '1', '12', '10', '0,10,', '-1', '-1', '', '单房差是什么？', '', '', '', '', 'admin', '', '', '', '单房差是什么？单房差是什么？单房差是什么？单房差是什么？单房差是什么？单房差是什么？单房差是什么？单房差是什么？单房差是什么？单房差是什么？单房差是什么？单房差是什么？单房差是什么？单房差是什么？', '', '', '174', '4', '1426725487', 'true', '', '0');
+INSERT INTO `dx_infolist` VALUES ('5', '1', '12', '10', '0,10,', '-1', '-1', '', '双飞、双卧都是什么意思？', '', '', '', '', 'admin', '', '', '', '双飞、双卧都是什么意思？双飞、双卧都是什么意思？双飞、双卧都是什么意思？双飞、双卧都是什么意思？双飞、双卧都是什么意思？双飞、双卧都是什么意思？双飞、双卧都是什么意思？', '', '', '195', '5', '1426725650', 'true', '', '0');
+INSERT INTO `dx_infolist` VALUES ('6', '1', '12', '10', '0,10,', '-1', '-1', '', '满意度是怎么计算的？', '', '', '', '', 'admin', '', '', '', '满意度是怎么计算的？满意度是怎么计算的？满意度是怎么计算的？满意度是怎么计算的？满意度是怎么计算的？满意度是怎么计算的？', '', '', '87', '6', '1426725678', 'true', '', '0');
+INSERT INTO `dx_infolist` VALUES ('7', '1', '13', '10', '0,10,', '-1', '-1', '', '签约可以刷卡吗？', '', '', '', '', 'admin', '', '', '', '签约可以刷卡吗？签约可以刷卡吗？签约可以刷卡吗？签约可以刷卡吗？签约可以刷卡吗？签约可以刷卡吗？签约可以刷卡吗？签约可以刷卡吗？', '', '', '98', '7', '1426725692', 'true', '', '0');
+INSERT INTO `dx_infolist` VALUES ('8', '1', '13', '10', '0,10,', '-1', '-1', '', '付款方式有哪些？', '', '', '', '', 'admin', '', '', '', '付款方式有哪些？付款方式有哪些？付款方式有哪些？付款方式有哪些？付款方式有哪些？付款方式有哪些？付款方式有哪些？', '', '', '112', '8', '1426725707', 'true', '', '0');
+INSERT INTO `dx_infolist` VALUES ('9', '1', '13', '10', '0,10,', '-1', '-1', '', '怎么网上支付？', '', '', '', '', 'admin', '', '', '', '怎么网上支付？怎么网上支付？怎么网上支付？怎么网上支付？怎么网上支付？怎么网上支付？怎么网上支付？怎么网上支付？', '', '', '169', '9', '1426725720', 'true', '', '0');
+INSERT INTO `dx_infolist` VALUES ('10', '1', '13', '10', '0,10,', '-1', '-1', '', '如何获取发票？', '', '', '', '', 'admin', '', '', '', '如何获取发票？如何获取发票？如何获取发票？如何获取发票？如何获取发票？如何获取发票？如何获取发票？如何获取发票？如何获取发票？如何获取发票？如何获取发票？如何获取发票？如何获取发票？如何获取发票？', '', '', '50', '10', '1426725734', 'true', '', '0');
+INSERT INTO `dx_infolist` VALUES ('11', '1', '14', '10', '0,10,', '-1', '-1', '', '有旅游合同范本下载吗？', '', '', '', '', 'admin', '', '', '', '有旅游合同范本下载吗？有旅游合同范本下载吗？有旅游合同范本下载吗？有旅游合同范本下载吗？有旅游合同范本下载吗？有旅游合同范本下载吗？有旅游合同范本下载吗？有旅游合同范本下载吗？有旅游合同范本下载吗？有旅游合同范本下载吗？有旅游合同范本下载吗？', '', '', '117', '11', '1426725798', 'true', '', '0');
+INSERT INTO `dx_infolist` VALUES ('12', '1', '14', '10', '0,10,', '-1', '-1', '', '门市地址在哪里？', '', '', '', '', 'admin', '', '', '', '门市地址在哪里？门市地址在哪里？门市地址在哪里？门市地址在哪里？门市地址在哪里？门市地址在哪里？门市地址在哪里？门市地址在哪里？门市地址在哪里？门市地址在哪里？门市地址在哪里？', '', '', '118', '12', '1426725813', 'true', '', '0');
+INSERT INTO `dx_infolist` VALUES ('13', '1', '14', '10', '0,10,', '-1', '-1', '', '能传真签合同吗？', '', '', '', '', 'admin', '', '', '', '能传真签合同吗？能传真签合同吗？能传真签合同吗？能传真签合同吗？能传真签合同吗？能传真签合同吗？能传真签合同吗？能传真签合同吗？', '', '', '155', '13', '1426725826', 'true', '', '0');
+INSERT INTO `dx_infolist` VALUES ('14', '1', '14', '10', '0,10,', '-1', '-1', '', '可以不签合同吗？', '', '', '', '', 'admin', '', '', '', '可以不签合同吗？可以不签合同吗？可以不签合同吗？可以不签合同吗？可以不签合同吗？可以不签合同吗？可以不签合同吗？可以不签合同吗？可以不签合同吗？可以不签合同吗？可以不签合同吗？', '', '', '120', '14', '1426725838', 'true', '', '0');
+INSERT INTO `dx_infolist` VALUES ('15', '1', '15', '10', '0,10,', '-1', '-1', '', '签证相关问题解答', '', '', '', '', 'admin', '', '', '', '签证相关问题解答签证相关问题解答签证相关问题解答签证相关问题解答签证相关问题解答签证相关问题解答签证相关问题解答签证相关问题解答签证相关问题解答签证相关问题解答签证相关问题解答签证相关问题解答', '', '', '130', '15', '1426725852', 'true', '', '0');
+INSERT INTO `dx_infolist` VALUES ('16', '1', '15', '10', '0,10,', '-1', '-1', '', '旅游保险问题解答', '', '', '', '', 'admin', '', '', '', '旅游保险问题解答旅游保险问题解答旅游保险问题解答旅游保险问题解答旅游保险问题解答旅游保险问题解答旅游保险问题解答旅游保险问题解答旅游保险问题解答旅游保险问题解答旅游保险问题解答旅游保险问题解答旅游保险问题解答', '', '', '132', '16', '1426725864', 'true', '', '0');
+INSERT INTO `dx_infolist` VALUES ('17', '1', '15', '10', '0,10,', '-1', '-1', '', '退款问题解答', '', '', '', '', 'admin', '', '', '', '退款问题解答退款问题解答退款问题解答退款问题解答退款问题解答退款问题解答退款问题解答退款问题解答退款问题解答退款问题解答退款问题解答退款问题解答', '', '', '183', '17', '1426725878', 'true', '', '0');
+INSERT INTO `dx_infolist` VALUES ('18', '1', '15', '10', '0,10,', '-1', '-1', '', '旅途中的问题', '', '', '', '', 'admin', '', '', '', '旅途中的问题旅途中的问题旅途中的问题旅途中的问题旅途中的问题旅途中的问题旅途中的问题旅途中的问题旅途中的问题旅途中的问题旅途中的问题旅途中的问题', '', '', '103', '18', '1426725889', 'true', '', '0');
 
 -- ----------------------------
 -- Table structure for `dx_infosrc`
@@ -4090,11 +4142,22 @@ CREATE TABLE `dx_nav` (
   `orderid` smallint(5) unsigned NOT NULL COMMENT '排列排序',
   `checkinfo` enum('true','false') NOT NULL COMMENT '隐藏导航',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of dx_nav
 -- ----------------------------
+INSERT INTO `dx_nav` VALUES ('1', '1', '0', '0,', 'menu', '#', '', '', '', '1', 'true');
+INSERT INTO `dx_nav` VALUES ('2', '1', '0', '0,', 'category', '#', '', '', '', '2', 'true');
+INSERT INTO `dx_nav` VALUES ('3', '1', '1', '0,1,', '首页', 'Index/index', '', '', '', '3', 'true');
+INSERT INTO `dx_nav` VALUES ('4', '1', '1', '0,1,', '出境', 'Line/lists?cid=5', '', '', '', '4', 'true');
+INSERT INTO `dx_nav` VALUES ('5', '1', '1', '0,1,', '国内', 'Line/lists?cid=4', '', '', '', '5', 'true');
+INSERT INTO `dx_nav` VALUES ('6', '1', '1', '0,1,', '洛阳周边', 'Line/lists?cid=3', '', '', '', '6', 'true');
+INSERT INTO `dx_nav` VALUES ('7', '1', '1', '0,1,', '护照签证', 'Article/one?id=6', '', '', '', '7', 'true');
+INSERT INTO `dx_nav` VALUES ('8', '1', '1', '0,1,', '旅游租车', 'Article/one?id=7', '', '', '', '8', 'true');
+INSERT INTO `dx_nav` VALUES ('9', '1', '1', '0,1,', '旅游攻略', 'Article/lists?cid=8', '', '', '', '9', 'true');
+INSERT INTO `dx_nav` VALUES ('10', '1', '1', '0,1,', '客户留言', 'Index/index', '', '', '', '10', 'true');
+INSERT INTO `dx_nav` VALUES ('11', '1', '1', '0,1,', '关于我们', 'Article/lists?cid=9', '', '', '', '11', 'true');
 
 -- ----------------------------
 -- Table structure for `dx_paymode`
@@ -4215,7 +4278,7 @@ CREATE TABLE `dx_sysevent` (
   `posttime` int(10) NOT NULL COMMENT '操作时间',
   `ip` varchar(20) NOT NULL COMMENT '操作ip',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=108 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=265 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of dx_sysevent
@@ -4327,6 +4390,163 @@ INSERT INTO `dx_sysevent` VALUES ('104', 'admin', '1', 'site', '0', 'all', '1425
 INSERT INTO `dx_sysevent` VALUES ('105', 'admin', '1', 'web_config', '0', 'all', '1425376331', '127.0.0.1');
 INSERT INTO `dx_sysevent` VALUES ('106', 'admin', '1', 'site', '0', 'all', '1425379180', '127.0.0.1');
 INSERT INTO `dx_sysevent` VALUES ('107', 'admin', '1', 'web_config', '0', 'all', '1425379188', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('108', 'admin', '1', 'login', '0', '', '1426590640', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('109', 'admin', '1', 'infoimg', '0', 'all', '1426590647', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('110', 'admin', '1', 'infoclass', '0', 'all', '1426590670', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('111', 'admin', '1', 'goods', '0', 'all', '1426590673', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('112', 'admin', '1', 'login', '0', '', '1426661180', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('113', 'admin', '1', 'infoclass', '0', 'all', '1426661785', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('114', 'admin', '1', 'goods', '2', 'update', '1426661794', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('115', 'admin', '1', 'infoclass', '0', 'all', '1426661972', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('116', 'admin', '1', 'goods', '5', 'update', '1426661977', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('117', 'admin', '1', 'infoclass', '0', 'all', '1426662056', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('118', 'admin', '1', 'infoimg', '2', 'add', '1426662073', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('119', 'admin', '1', 'infoclass', '0', 'all', '1426662592', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('120', 'admin', '1', 'nav', '0', 'all', '1426662827', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('121', 'admin', '1', 'diymenu', '0', 'all', '1426662830', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('122', 'admin', '1', 'nav', '0', 'all', '1426662903', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('123', 'admin', '1', 'nav', '0', 'all', '1426665106', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('124', 'admin', '1', 'nav', '0', 'all', '1426665167', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('125', 'admin', '1', 'infoclass', '0', 'all', '1426665231', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('126', 'admin', '1', 'nav', '0', 'all', '1426665265', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('127', 'admin', '1', 'nav', '0', 'all', '1426668034', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('128', 'admin', '1', 'infoclass', '0', 'all', '1426670891', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('129', 'admin', '1', 'nav', '0', 'all', '1426670894', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('130', 'admin', '1', 'infolist', '0', 'all', '1426671131', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('131', 'admin', '1', 'infoclass', '0', 'all', '1426671140', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('132', 'admin', '1', 'nav', '0', 'all', '1426671156', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('133', 'admin', '1', 'diymenu', '0', 'all', '1426671158', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('134', 'admin', '1', 'maintype', '0', 'all', '1426671194', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('135', 'admin', '1', 'infoclass', '0', 'all', '1426671201', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('136', 'admin', '1', 'infoimg', '0', 'all', '1426671216', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('137', 'admin', '1', 'infosrc', '0', 'all', '1426671239', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('138', 'admin', '1', 'web_config', '0', 'all', '1426671289', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('139', 'admin', '1', 'fragment', '0', 'all', '1426671304', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('140', 'admin', '1', 'diymodel', '0', 'all', '1426671306', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('141', 'admin', '1', 'site', '0', 'all', '1426671321', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('142', 'admin', '1', 'infoclass', '0', 'all', '1426671325', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('143', 'admin', '1', 'infoclass', '0', 'all', '1426671394', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('144', 'admin', '1', 'infolist', '0', 'all', '1426671395', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('145', 'admin', '1', 'infosrc', '0', 'all', '1426671426', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('146', 'admin', '1', 'infoflag', '0', 'all', '1426671429', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('147', 'admin', '1', 'infoimg', '0', 'all', '1426671440', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('148', 'admin', '1', 'infolist', '0', 'all', '1426671458', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('149', 'admin', '1', 'infolist', '11', 'add', '1426671498', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('150', 'admin', '1', 'infolist', '0', 'all', '1426671851', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('151', 'admin', '1', 'infolist', '11', 'update', '1426671866', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('152', 'admin', '1', 'infolist', '0', 'all', '1426671913', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('153', 'admin', '1', 'infoclass', '0', 'all', '1426672647', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('154', 'admin', '1', 'info', '0', 'all', '1426672650', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('155', 'admin', '1', 'info', '6', 'update', '1426672656', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('156', 'admin', '1', 'login', '0', '', '1426685452', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('157', 'admin', '1', 'infoflag', '0', 'all', '1426685458', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('158', 'admin', '1', 'infoimg', '0', 'all', '1426685520', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('159', 'admin', '1', 'infoclass', '0', 'all', '1426685536', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('160', 'admin', '1', 'infoclass', '0', 'all', '1426685600', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('161', 'admin', '1', 'infoimg', '3', 'add', '1426685600', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('162', 'admin', '1', 'infoclass', '0', 'all', '1426685681', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('163', 'admin', '1', 'infoimg', '3', 'add', '1426685686', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('164', 'admin', '1', 'infoimg', '0', 'all', '1426685700', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('165', 'admin', '1', 'infoimg', '0', 'all', '1426686273', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('166', 'admin', '1', 'infoimg', '0', 'all', '1426686371', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('167', 'admin', '1', 'infoimg', '18', 'add', '1426686371', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('168', 'admin', '1', 'diyfield', '0', 'all', '1426686383', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('169', 'admin', '1', 'diyfield', '0', 'all', '1426686488', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('170', 'admin', '1', 'infoimg', '0', 'all', '1426686493', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('171', 'admin', '1', 'diyfield', '0', 'all', '1426686549', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('172', 'admin', '1', 'infoimg', '0', 'all', '1426686555', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('173', 'admin', '1', 'infoclass', '0', 'all', '1426686557', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('174', 'admin', '1', 'infoimg', '0', 'all', '1426686617', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('175', 'admin', '1', 'infoimg', '18', 'update', '1426686617', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('176', 'admin', '1', 'infoimg', '0', 'all', '1426687138', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('177', 'admin', '1', 'infoimg', '21', 'add', '1426687138', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('178', 'admin', '1', 'infoimg', '0', 'all', '1426687425', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('179', 'admin', '1', 'infoimg', '18', 'add', '1426687425', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('180', 'admin', '1', 'infoimg', '0', 'all', '1426687589', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('181', 'admin', '1', 'infoclass', '0', 'all', '1426687679', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('182', 'admin', '1', 'infoimg', '0', 'all', '1426687692', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('183', 'admin', '1', 'infoimg', '0', 'all', '1426687823', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('184', 'admin', '1', 'infoimg', '23', 'add', '1426687823', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('185', 'admin', '1', 'infoimg', '23', 'update', '1426687833', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('186', 'admin', '1', 'infoimg', '0', 'all', '1426688028', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('187', 'admin', '1', 'infoimg', '22', 'add', '1426688028', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('188', 'admin', '1', 'infoclass', '0', 'all', '1426688070', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('189', 'admin', '1', 'infoimg', '20', 'update', '1426688081', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('190', 'admin', '1', 'infoimg', '0', 'all', '1426688319', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('191', 'admin', '1', 'infoimg', '20', 'add', '1426688319', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('192', 'admin', '1', 'infoclass', '0', 'all', '1426689297', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('193', 'admin', '1', 'infoclass', '0', 'all', '1426689382', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('194', 'admin', '1', 'infoimg', '16', 'add', '1426689392', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('195', 'admin', '1', 'infoflag', '0', 'all', '1426689426', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('196', 'admin', '1', 'diyfield', '0', 'all', '1426689480', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('197', 'admin', '1', 'infoimg', '0', 'all', '1426689497', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('198', 'admin', '1', 'infoimg', '0', 'all', '1426689562', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('199', 'admin', '1', 'infoimg', '0', 'all', '1426689695', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('200', 'admin', '1', 'infoimg', '16', 'add', '1426689695', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('201', 'admin', '1', 'infoimg', '0', 'all', '1426689757', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('202', 'admin', '1', 'infoimg', '18', 'update', '1426689793', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('203', 'admin', '1', 'infoimg', '0', 'all', '1426689855', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('204', 'admin', '1', 'infoimg', '16', 'add', '1426689855', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('205', 'admin', '1', 'infoclass', '0', 'all', '1426689948', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('206', 'admin', '1', 'infoimg', '0', 'all', '1426690578', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('207', 'admin', '1', 'infoimg', '16', 'update', '1426690583', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('208', 'admin', '1', 'admanage', '0', 'all', '1426690723', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('209', 'admin', '1', 'adtype', '0', 'all', '1426690744', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('210', 'admin', '1', 'adtype', '0', 'all', '1426690829', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('211', 'admin', '1', 'admanage', '0', 'all', '1426690885', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('212', 'admin', '1', 'admanage', '0', 'all', '1426690973', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('213', 'admin', '1', 'admanage', '0', 'all', '1426691806', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('214', 'admin', '1', 'adtype', '0', 'all', '1426692120', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('215', 'admin', '1', 'admanage', '0', 'all', '1426692387', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('216', 'admin', '1', 'adtype', '0', 'all', '1426692484', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('217', 'admin', '1', 'admanage', '0', 'all', '1426692611', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('218', 'admin', '1', 'admanage', '0', 'all', '1426692674', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('219', 'admin', '1', 'admanage', '0', 'all', '1426692871', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('220', 'admin', '1', 'infoimg', '0', 'all', '1426693059', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('221', 'admin', '1', 'infoimg', '23', 'update', '1426693075', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('222', 'admin', '1', 'goodsorder', '0', 'all', '1426713202', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('223', 'admin', '1', 'usercomment', '0', 'all', '1426713237', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('224', 'admin', '1', 'message', '0', 'all', '1426713249', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('225', 'admin', '1', 'goodstype', '0', 'all', '1426713273', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('226', 'admin', '1', 'goods', '0', 'all', '1426713274', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('227', 'admin', '1', 'message', '0', 'all', '1426713328', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('228', 'admin', '1', 'vote', '0', 'all', '1426713343', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('229', 'admin', '1', 'mobile', '0', 'all', '1426713357', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('230', 'admin', '1', 'upload_file', '0', 'all', '1426713370', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('231', 'admin', '1', 'syscount', '0', 'all', '1426713385', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('232', 'admin', '1', 'infoimg', '0', 'all', '1426713730', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('233', 'admin', '1', 'web_config', '0', 'all', '1426717942', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('234', 'admin', '1', 'diymenu', '0', 'all', '1426718798', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('235', 'admin', '1', 'nav', '0', 'all', '1426718800', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('236', 'admin', '1', 'admanage', '0', 'all', '1426719509', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('237', 'admin', '1', 'infoclass', '0', 'all', '1426720597', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('238', 'admin', '1', 'infolist', '10', 'update', '1426720622', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('239', 'admin', '1', 'diymenu', '0', 'all', '1426720715', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('240', 'admin', '1', 'nav', '0', 'all', '1426720722', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('241', 'admin', '1', 'nav', '0', 'all', '1426720785', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('242', 'admin', '1', 'nav', '0', 'all', '1426720931', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('243', 'admin', '1', 'info', '0', 'all', '1426721532', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('244', 'admin', '1', 'info', '0', 'all', '1426721847', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('245', 'admin', '1', 'diyfield', '0', 'all', '1426721855', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('246', 'admin', '1', 'info', '0', 'all', '1426721908', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('247', 'admin', '1', 'infoclass', '0', 'all', '1426722576', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('248', 'admin', '1', 'infolist', '11', 'update', '1426722632', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('249', 'admin', '1', 'infolist', '0', 'all', '1426723246', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('250', 'admin', '1', 'infolist', '8', 'add', '1426723260', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('251', 'admin', '1', 'infolist', '0', 'all', '1426724047', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('252', 'admin', '1', 'infolist', '8', 'update', '1426724059', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('253', 'admin', '1', 'infolist', '0', 'all', '1426725442', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('254', 'admin', '1', 'infolist', '12', 'add', '1426725471', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('255', 'admin', '1', 'infolist', '0', 'all', '1426725650', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('256', 'admin', '1', 'infolist', '12', 'add', '1426725666', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('257', 'admin', '1', 'infolist', '0', 'all', '1426725715', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('258', 'admin', '1', 'infolist', '13', 'add', '1426725729', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('259', 'admin', '1', 'site', '0', 'all', '1426725777', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('260', 'admin', '1', 'web_config', '0', 'all', '1426725780', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('261', 'admin', '1', 'infolist', '0', 'all', '1426725793', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('262', 'admin', '1', 'infolist', '14', 'add', '1426725807', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('263', 'admin', '1', 'infolist', '0', 'all', '1426725859', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('264', 'admin', '1', 'infolist', '15', 'add', '1426725871', '127.0.0.1');
 
 -- ----------------------------
 -- Table structure for `dx_uploads`
@@ -4340,11 +4560,27 @@ CREATE TABLE `dx_uploads` (
   `type` enum('image','soft','media') NOT NULL COMMENT '文件类型',
   `posttime` int(10) NOT NULL COMMENT '上传日期',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of dx_uploads
 -- ----------------------------
+INSERT INTO `dx_uploads` VALUES ('1', '1426695729.jpg', 'uploads/image/20150318/1426695729.jpg', '13079', 'image', '1426685950');
+INSERT INTO `dx_uploads` VALUES ('2', '1426691819.png', 'uploads/image/20150318/1426691819.png', '81627', 'image', '1426686246');
+INSERT INTO `dx_uploads` VALUES ('3', '1426692285.png', 'uploads/image/20150318/1426692285.png', '103043', 'image', '1426686323');
+INSERT INTO `dx_uploads` VALUES ('4', '1426693567.png', 'uploads/image/20150318/1426693567.png', '84576', 'image', '1426686324');
+INSERT INTO `dx_uploads` VALUES ('5', '1426689029.png', 'uploads/image/20150318/1426689029.png', '137831', 'image', '1426686707');
+INSERT INTO `dx_uploads` VALUES ('6', '1426689094.jpg', 'uploads/image/20150318/1426689094.jpg', '22032', 'image', '1426687130');
+INSERT INTO `dx_uploads` VALUES ('7', '1426695538.jpg', 'uploads/image/20150318/1426695538.jpg', '28732', 'image', '1426687387');
+INSERT INTO `dx_uploads` VALUES ('8', '1426690042.jpg', 'uploads/image/20150318/1426690042.jpg', '24272', 'image', '1426687599');
+INSERT INTO `dx_uploads` VALUES ('9', '1426694191.jpg', 'uploads/image/20150318/1426694191.jpg', '29993', 'image', '1426688001');
+INSERT INTO `dx_uploads` VALUES ('10', '1426692342.jpg', 'uploads/image/20150318/1426692342.jpg', '38780', 'image', '1426688219');
+INSERT INTO `dx_uploads` VALUES ('11', '1426692587.jpg', 'uploads/image/20150318/1426692587.jpg', '34733', 'image', '1426690940');
+INSERT INTO `dx_uploads` VALUES ('12', '1426693827.jpg', 'uploads/image/20150318/1426693827.jpg', '34230', 'image', '1426692400');
+INSERT INTO `dx_uploads` VALUES ('13', '1426697774.jpg', 'uploads/image/20150318/1426697774.jpg', '21303', 'image', '1426692638');
+INSERT INTO `dx_uploads` VALUES ('14', '1426696300.jpg', 'uploads/image/20150318/1426696300.jpg', '41374', 'image', '1426692698');
+INSERT INTO `dx_uploads` VALUES ('15', '1426696402.jpg', 'uploads/image/20150318/1426696402.jpg', '32573', 'image', '1426692716');
+INSERT INTO `dx_uploads` VALUES ('16', '1426729254.jpg', 'uploads/image/20150319/1426729254.jpg', '50038', 'image', '1426719537');
 
 -- ----------------------------
 -- Table structure for `dx_usercomment`

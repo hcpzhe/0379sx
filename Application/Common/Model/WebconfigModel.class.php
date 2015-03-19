@@ -16,6 +16,7 @@ class WebconfigModel extends Model {
 		$config = $this->where($map)->getField('varname,varvalue');
 		if ($config) {
 			C($config); //添加配置
+			C('LIST_ROWS',$config['cfg_pagenum']);
 		}
 		return null;
 	}

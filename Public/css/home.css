@@ -89,13 +89,14 @@ a:hover {color:#ff8800; text-decoration:underline;}
 		.hotlvyou .title .tab {margin-right: 35px;height:38px;}
 			.hotlvyou .title .tab a {display: inline-block;font-size:16px;line-height:34px;height:34px;padding:0 10px;}
 			.hotlvyou .title .tab a.active, .hotlvyou .title .tab a:HOVER {color:#fff; background: #ff6600;text-decoration: none;}
-	.hotlvyou .piclist {height:251px; border: 1px solid #d7d7d7;border-top:none;}
+	.hotlvyou .piclist {height:251px; border: 1px solid #d7d7d7;border-top:none;overflow: hidden;}
 		.hotlvyou .piclist ul li {width:239px;height:250px;border-left:1px dashed #d7d7d7;float:left;text-align: center;}
 		.hotlvyou .piclist ul li:FIRST-CHILD {border-left:none;}
-			.hotlvyou .piclist .pic {padding:10px 19px 10px 20px;border-bottom: 1px solid #d7d7d7;}
+			.hotlvyou .piclist .pic {padding:10px 19px 10px 20px;border-bottom: 1px solid #d7d7d7;width:238px;height:163px;}
 				.hotlvyou .piclist .pic img {border-radius:5px; width:100%;height:100%;}
 			.hotlvyou .piclist .text {text-align: left;padding: 0 20px;}
-				.hotlvyou .piclist .text .head a {color: #109c05;font-size:16px;line-height:30px;}
+				.hotlvyou .piclist .text .head {height:30px;font-size:16px;line-height:30px;overflow: hidden;}
+					.hotlvyou .piclist .text .head a {color: #109c05;}
 				.hotlvyou .piclist .text .body {}
 					.hotlvyou .piclist .text .body .miaoshu {line-height:20px;width:137px;height:40px;overflow: hidden;}
 						.hotlvyou .piclist .text .body .miaoshu .red {color:#B3051C;}
@@ -111,12 +112,13 @@ a:hover {color:#ff8800; text-decoration:underline;}
 		.idx_list .head .group .tab {width:210px;height:58px;padding-right: 35px;padding-top:24px;}
 			.idx_list .head .group .tab a {display: inline-block;font-size:16px;line-height:34px;height:34px;padding:0 10px;}
 			.idx_list .head .group .tab a.active, .idx_list .head .group .tab a:HOVER {color:#fff;text-decoration: none;}
-	.idx_list .body {height: 506px;}
+	.idx_list .body {height: 506px;overflow: hidden;}
 	.idx_list .body .bigimg {width:245px; height:506px;}
 		.idx_list .body .bigimg img {width:100%;height:100%;}
-	.idx_list .body .piclist {width:955px;height:506px; border:1px solid #dfdfdf;border-left: none;padding-left:45px}
-		.idx_list .body .piclist li {float:left; width:303px;height:252px;padding:15px 45px 5px 0;}
-			.idx_list .body .piclist .pic img {width:100%;height:100%;}
+	.idx_list .body .piclist {width:955px;height:506px; border:1px solid #dfdfdf;border-left: none;padding-left:45px;overflow: hidden;}
+		.idx_list .body .piclist li {float:left; width:303px;height:252px;padding:15px 45px 5px 0;overflow: hidden;}
+			.idx_list .body .piclist .pic {width:258px;height:181px;}
+				.idx_list .body .piclist .pic img {width:100%;height:100%;}
 			.idx_list .body .piclist .title {width:100%;line-height:22px;height:22px;overflow: hidden;}
 			.idx_list .body .piclist .price {color:#ff8800;height:26px;line-height:26px;}
 				.idx_list .body .piclist .price span {font-size:20px;}
@@ -164,7 +166,7 @@ a:hover {color:#ff8800; text-decoration:underline;}
 		.footer .pinzhi .sitewidth {height:56px;background: url("../images/footer_pinzhi_bg.jpg") no-repeat #2dc270;}
 	.footer .article {background: #37c249;height:228px;padding:36px 0;}
 		.footer .article .logo {padding:42px 0;}
-		.footer .article .artlist {padding-left:40px;}
+		.footer .article .artlist {padding-left:40px;width:960px;height:158px;overflow: hidden;}
 			.footer .article .artlist ul.list {float: left;width:230px;height:158px;border-left: 1px solid #61cf6f;overflow: hidden;}
 				.footer .article .artlist ul.list li {padding:0 20px 0 35px;line-height:30px;}
 				.footer .article .artlist ul.list li.tit a {color:#1d6827;font-size:16px;font-weight: 600;}
@@ -188,7 +190,7 @@ a:hover {color:#ff8800; text-decoration:underline;}
 				.main-sider .line-search .search .search_btn {letter-spacing:5px; padding:0 0 0 4px; color:#fff;width:44px;margin:0; cursor:pointer;background:#ffaf1e; }
 			.main-sider .line-search .hot {line-height:40px;padding: 0px 5px 26px 10px;}
 				.main-sider .line-search .hot a {display: inline-block;padding-right:10px;}
-	.main .main-content {width:954px;}
+	.main .main-content,.main .main-info {width:954px;}
 		/*排序*/
 		.paixu{margin-top:15px; width:100%; height:48px; border:#e8e8e8 1px solid; background:#f7f7f7; padding-left:15px; padding-top:10px;}
 		.paixu img{border:none;}
@@ -200,12 +202,12 @@ a:hover {color:#ff8800; text-decoration:underline;}
 		.paixu p{float:left; line-height:25px;}
 		.paixu p input{border:1px solid #dfdfdf; height: 25px; line-height: 25px; width:80px; padding:0 2px;}
 		.paixu p .search_btn {background: #ffaf1e;border: none; color:#fff; width: 60px; cursor:pointer;letter-spacing:5px;padding-left:6px;margin-left:15px;}
-		/*旅游路线列表*/
+		/***旅游路线列表***********************/
 		.main-content .volist {margin-top:15px;}
 			.main-content .volist .li {padding:15px; height:230px; border: 1px solid #e9e9e9;margin-bottom: 20px;}
 			.main-content .volist .li:HOVER {background: #f2f2f2;}
 				.main-content .volist .li .pic {height:200px; width:286px;}
-					.main-content .volist .li .pic img {height: 100%;}
+					.main-content .volist .li .pic img {width:100%;height: 100%;}
 				.main-content .volist .li .text {height: 200px; width:636px; padding-left:28px;}
 					.main-content .volist .li .tit {font-weight: bold; font-size: 16px;padding-top:20px;height:46px;overflow: hidden;}
 						.main-content .volist .li .tit i {font-size:20px;color:#568d00;}
@@ -220,7 +222,38 @@ a:hover {color:#ff8800; text-decoration:underline;}
 					.main-content .volist .li .dis {padding:8px 0;font-size:14px;color:#666;line-height:30px;height:76px;overflow: hidden;}
 					.main-content .volist .li .price {height:41px;font-size:38px;color:#568d00;line-height:41px;}
 						.main-content .volist .li .price i {font-size:16px;}
-
+		/***旅游路线内容***********************/
+		.main-info-title {border:#ddd 1px solid;border-top: #e75210 2px solid;padding:12px;}
+			.main-info .title {color:#1CBC14;font-size:20px;line-height:34px;font-weight: bold;}
+			.main-info .dis {line-height: 24px; padding-bottom: 8px; border-bottom: 1px dotted #D1D1D1;font-size: 14px;}
+			.main-info .attr {margin-top: 16px;height:342px;overflow: hidden;}
+				.main-info .attr .pic {width:500px;height:342px;overflow: hidden;border:#ddd 1px solid;padding: 5px;}
+					.main-info .attr .pic img {width:100%;height:100%;}
+				.main-info .attr .text {width:428px;height:342px;overflow: hidden;padding-left:20px;}
+					.main-info .attr .text div {height: 35px;line-height: 35px;font-size:14px;overflow: hidden;}
+						.main-info .attr .text .price em {color: #FF6300;}
+							.main-info .attr .text .price em b {font-size: 30px;}
+					.main-info .attr .text .yuding {margin-top:15px;}
+			.main-info .content {margin-top:10px;}
+				.main-info .content .head {height:35px;border-bottom: #e75210 2px solid;}
+					.main-info .content .head span {display: inline-block;height:33px;line-height:33px;font-size: 15px;color:#fff;background: #e75210;padding: 0 20px;}
+				.main-info .content .body {border: #ddd 1px solid; padding: 12px; overflow-x: hidden;}
+		/***文章列表***********************/
+		.main-content .art-list {width:954px;border:#ddd 1px solid;border-top: #e75210 2px solid;}
+			.main-content .art-list .li {padding:15px; height:117px; border-bottom: 1px dotted #e9e9e9;margin-bottom: 20px;}
+			.main-content .art-list .li:HOVER {background: #f2f2f2;}
+			.main-content .art-list .li a:HOVER {text-decoration: none;}
+				.main-content .art-list .title {height:26px;overflow: hidden;}
+					.main-content .art-list .text {padding-left:10px;font-size:16px;height: 26px;line-height: 26px; color:#109c05;}
+					.main-content .art-list .time {height: 26px;line-height: 26px;color:#333;}
+				.main-content .art-list .content {color:#919191; line-height: 20px;font-size:14px;}
+			
+		/***文章内容***********************/
+		.main-art {width:954px;border:#ddd 1px solid;border-top: #e75210 2px solid;padding:12px;}
+			.main-art-title {text-align: center; }
+				.main-art-title .title {line-height: 35px; font-size: 16px; color: #009900; font-weight: bold; border-bottom: 1px dotted #CCCCCC;}
+				.main-art-title .attr {line-height: 22px;color: #999999; margin-bottom: 15px; margin-top: 5px;}
+		
 
 /* = 分页
 ------------------------------------------ */

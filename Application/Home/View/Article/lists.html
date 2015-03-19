@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<include file="Widget/head" />
+	<style type="text/css">
+	#category {display: none;}
+	</style>
+</head>
+<body>
+{:W('Page/Menu')}
+
+<!-- 面包屑 start -->
+<div class="bread">
+	<div class="sitewidth">
+		<a class="toindex" href="{:U('Index/index')}">返回首页</a>
+		<!-- <foreach name="bread" item="vo" key="k" > -->
+		&nbsp;〉<a href="{:U('lists?cid='.$k)}">{$vo}</a>
+		<!-- </foreach> -->
+	</div>
+</div>
+<!-- 面包屑 end -->
+
+<!-- 列表页内容 start -->
+<div class="main">
+	<div class="sitewidth">
+		<!-- 左侧栏 start -->
+		<include file="Widget/sider" />
+		<!-- 左侧栏 end -->
+		<div class="main-content fl">
+			<div class="art-list">
+			<!-- <foreach name="list" item="vo" > -->
+				<div class="li">
+					<a href="{:U('info?id='.$vo['id'])}">
+					<div class="title">
+						<div class="text fl">{$vo['title']}</div>
+						<div class="time fr">{:date('Y-m-d')}</div>
+					</div>
+					<div class="content">{:ReStrLen(strip_tags($vo['content']),180)}</div>
+					</a>
+				</div>
+			<!-- </foreach> -->
+			</div>
+			{$_page}
+		</div>
+	</div>
+</div>
+<div class="cl"></div>
+<!-- 列表页内容 end -->
+
+<!-- 热门旅游start -->
+{:W('Page/Remen')}
+<!-- 热门旅游end -->
+
+{:W('Page/Foot')}
+
+<script type="text/javascript" src="__JS__/slideplay.js"></script>
+<script type="text/javascript" src="__JS__/index.js"></script>
+<script type="text/javascript" src="__JS__/jquery.SuperSlide.2.1.1.js"></script>
+
+<script type="text/javascript">
+jQuery(".t-t-f .tuandui .body").slide({mainCell:"#tuandui_pics",autoPage:true,effect:"left",autoPlay:true,scroll:1,vis:3,easing:"swing",delayTime:500,pnLoop:true,trigger:"mouseover",mouseOverStop:true});
+$(function($) {
+	
+	$("#cate-menu").mouseenter(function(){
+			$("#category").show();
+	});
+	$("#cate-menu").mouseleave(function(){
+		$("#category").hide();
+	});
+	
+});
+</script>
+
+</body>
+</html>

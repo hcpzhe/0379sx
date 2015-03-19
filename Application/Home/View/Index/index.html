@@ -1,157 +1,32 @@
 <!DOCTYPE html>
 <html lang="zh-cn">
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-	<title>{$Think.config.cfg_seotitle}</title>
-	<meta name="keywords" content="{$Think.config.cfg_keyword}" />
-	<meta name="description" content="{$Think.config.cfg_description}" />
-	
-	<!-- font-awesome -->
-	<link href="__PUBLIC__/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet"/>
-	
-	<!-- home basic css -->
-	<link href="__CSS__/home.css" rel="stylesheet">
-	
-	<!--[if lt IE 9]>
-	<script src="__JS__/html5shiv.min.js"></script>
-	<script src="__JS__/respond.min.js"></script>
-	<![endif]-->
+	<include file="Widget/head" />
 </head>
 <body>
-<!-- 顶部状态栏start -->
-<div class="top_status">
-	<div class="sitewidth">
-		<div class="fl">{$Think.config.cfg_welcome}</div>
-		<div class="fr guanzhu">
-			<a href="#"><i class="fa fa-weibo"></i></a>
-			<a href="#"><i class="fa fa-mobile" style="font-size:22px;"></i></a>
-			<a href="#"><i class="fa fa-weixin"></i></a>
-		</div>
-		<div class="fr links">
-			<a class="orange" href="#">一键收藏</a>
-			<a href="#">关于我们</a>
-			<a href="#">联系我们</a>
-		</div>
-	</div>
-</div>
-<!-- 顶部状态栏end -->
+{:W('Page/Menu')}
 
-<!-- 头部start -->
-<div class="header">
-	<div class="sitewidth">
-		<div class="fl logo"><img src="__IMG__/logo.png" /></div>
-		<div class="fl search_hotline">
-			<div class="fl search">
-				<form name="topsearch" method="get" action="">
-					<input class="search_text fl" type="search" name="keywords" placeholder="请输入目的地名称或线路关键词" />
-					<input class="search_btn fl" type="submit" value="" />
-				</form>
-			</div>
-			<div class="fl hotline">
-				<div class="hotline_img fl"></div>
-				<div class="hotline_text fl">18736322037</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-<!-- 头部end -->
-
-<!-- 导航 start -->
-<div class="navicat">
-	<div class="sitewidth">
-		<div class="first fl">
-			热门产品分类
-			<div class="category">
-				<ul>
-					<li>
-						<strong><a href="#">当季热门</a></strong>
-						<p>
-							<a href="#">滑雪场</a>
-							<a href="#">蜜月</a>
-							<a href="#">周末</a>
-							<a href="#">跟团</a>
-							<a href="#">哈哈</a>
-							<a href="#">滑雪场</a>
-						</p>
-					</li>
-					<li>
-						<strong><a href="#">洛阳周边</a></strong>
-						<p>
-							<a href="#">王城公园</a>
-							<a href="#">滑雪场</a>
-							<a href="#">重渡沟</a>
-							<a href="#">重渡沟</a>
-						</p>
-					</li>
-					<li>
-						<strong><a href="#">国内旅游</a></strong>
-						<p>
-							<a href="#">桂林</a>
-							<a href="#">云南</a>
-							<a href="#">四川</a>
-							<a href="#">哈尔滨</a>
-							<a href="#">哈尔滨</a>
-						</p>
-					</li>
-					<li>
-						<strong><a href="#">出境旅游</a></strong>
-						<p>
-							<a href="#">马尔代夫</a>
-							<a href="#">韩国</a>
-							<a href="#">日本</a>
-							<a href="#">新西兰</a>
-							<a href="#">法国</a>
-						</p>
-					</li>
-					<li>
-						<strong><a href="#">特价旅游</a></strong>
-						<p>
-							<a href="#">团购</a>
-							<a href="#">亲子</a>
-							<a href="#">组团</a>
-						</p>
-					</li>
-					<li>
-						<strong><a href="#">旅游咨询</a></strong>
-						<p>
-							<a href="#">旅游向导</a>
-							<a href="#">攻略</a>
-						</p>
-					</li>
-				</ul>
-			</div>
-		</div>
-		<ul class="nav fl">
-			<li><a href="#">首页</a></li>
-			<li><a href="#">出境</a></li>
-			<li><a href="#">国内</a></li>
-			<li><a href="#">洛阳周边</a></li>
-			<li><a href="#">护照签证</a></li>
-			<li><a href="#">旅游租车</a></li>
-			<li><a href="#">旅游攻略</a></li>
-			<li><a href="#">客户留言</a></li>
-			<li><a href="#">关于我们</a></li>
-		</ul>
-	</div>
-</div>
 <div class="banner">
 	<div class="sitewidth">
 		<div id="slideplay">
 			<ul>
-				<li><a href="javascript:;"><img src="templates/default/images/imgdata/slideimg_5.jpg" alt="亚洲首台千吨级全地面起重机SAC12000 2.0兆风电吊装圆满成功" /></a></li>
-				<li><a href="javascript:;"><img src="templates/default/images/imgdata/slideimg_4.jpg" alt="唐家璇：三一重工为国家争了光" /></a></li>
-				<li><a href="javascript:;"><img src="templates/default/images/imgdata/slideimg_3.jpg" alt="三一获评《财富》十大“最受赞赏中国公司”" /></a></li>
-				<li><a href="javascript:;"><img src="templates/default/images/imgdata/slideimg_2.jpg" alt="三一产品获八项第一" /></a></li>
-				<li><a href="javascript:;"><img src="templates/default/images/imgdata/slideimg_1.jpg" alt="三一重工86米世界最长臂架泵车下线" /></a></li>
+			<!-- <foreach name="ads[1]" item="vo" > -->
+				<li>
+					<!-- <if condition="$vo['linkurl']"> -->
+					<a href="{$vo['linkurl']}">
+						<img src="{$vo['picurl']}" alt="" />
+					</a>
+					<!-- <else /> -->
+						<img alt="" src="{$vo['picurl']}">
+					<!-- </if> -->
+				</li>
+			<!-- </foreach> -->
 			</ul>
 		</div>
 		<div class="news fl">
 			<div class="notice">
-				<div class="content">三天的行程整体安排很好，紧凑但是不累，主要节奏还是看自己···      2015-01-26	三天的行程整体安排很好，紧凑但是不累，主要节奏还是看自己···</div>
-				<div class="date">2015-01-26</div>
+				<div class="content"><a href="{:U('Article/info?id='.$gonggao['id'])}" target="_blank">{:ReStrLen(strip_tags($gonggao['content']),32)}</a></div>
+				<div class="date">{:date('Y-m-d',$gonggao['posttime'])}</div>
 			</div>
 			<div class="dongtai" id="yk_dt">
 				<p>杨** 等2人 今日预定了 <a href='#' target='_blank'> 品质团—九寨沟、岷江源汽车4日游（无自费）</a></p>
@@ -163,84 +38,9 @@
 		</div>
 	</div>
 </div>
-<!-- 导航 end -->
 
 <!-- 热门旅游start -->
-<div class="hotlvyou">
-	<div class="sitewidth">
-		<div class="title">
-			<div class="fl">热门旅游</div>
-			<div class="tab fr">
-				<a href="#" class="active">舒翔推荐</a>
-				<a href="#">周边旅游</a>
-			</div>
-		</div>
-		<div class="piclist">
-			<ul>
-				<li>
-					<div class="pic">
-						<a href="#"><img src="__IMG__/tmp_pro.jpg" /></a>
-					</div>
-					<div class="text">
-						<div class="head"><a href="#">洛阳邙山滑雪场</a></div>
-						<div class="body">
-							<div class="miaoshu fl"><a href="#">1000元起，吃喝住行全包<br/>顾客满意度：<span class="red">100</span></a></div>
-							<div class="chakan fl"><a href="#">查看详情</a></div>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="pic">
-						<a href="#"><img src="__IMG__/tmp_pro.jpg" /></a>
-					</div>
-					<div class="text">
-						<div class="head"><a href="#">洛阳邙山滑雪场</a></div>
-						<div class="body">
-							<div class="miaoshu fl"><a href="#">1000元起，吃喝住行全包<br/>顾客满意度：<span class="red">100</span></a></div>
-							<div class="chakan fl"><a href="#">查看详情</a></div>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="pic">
-						<a href="#"><img src="__IMG__/tmp_pro.jpg" /></a>
-					</div>
-					<div class="text">
-						<div class="head"><a href="#">洛阳邙山滑雪场</a></div>
-						<div class="body">
-							<div class="miaoshu fl"><a href="#">1000元起，吃喝住行全包<br/>顾客满意度：<span class="red">100</span></a></div>
-							<div class="chakan fl"><a href="#">查看详情</a></div>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="pic">
-						<a href="#"><img src="__IMG__/tmp_pro.jpg" /></a>
-					</div>
-					<div class="text">
-						<div class="head"><a href="#">洛阳邙山滑雪场</a></div>
-						<div class="body">
-							<div class="miaoshu fl"><a href="#">1000元起，吃喝住行全包<br/>顾客满意度：<span class="red">100</span></a></div>
-							<div class="chakan fl"><a href="#">查看详情</a></div>
-						</div>
-					</div>
-				</li>
-				<li>
-					<div class="pic">
-						<a href="#"><img src="__IMG__/tmp_pro.jpg" /></a>
-					</div>
-					<div class="text">
-						<div class="head"><a href="#">洛阳邙山滑雪场</a></div>
-						<div class="body">
-							<div class="miaoshu fl"><a href="#">1000元起，吃喝住行全包<br/>顾客满意度：<span class="red">100</span></a></div>
-							<div class="chakan fl"><a href="#">查看详情</a></div>
-						</div>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
-</div>
+{:W('Page/Remen')}
 <!-- 热门旅游end -->
 
 <!-- 当季热门start -->
@@ -251,12 +51,12 @@
 			<div class="group fl">
 				<div class="remen fl">
 					热门：
-					<a href="#">云南</a>
-					<a href="#">大理</a>
-					<a href="#">海南</a>
-					<a href="#">桂林</a>
-					<a href="#">丽江</a>
-					<a href="#">昆明</a>
+					<a href="{:U('Line/lists?keywords=云南')}" target="_blank">云南</a>
+					<a href="{:U('Line/lists?keywords=大理')}" target="_blank">大理</a>
+					<a href="{:U('Line/lists?keywords=海南')}" target="_blank">海南</a>
+					<a href="{:U('Line/lists?keywords=桂林')}" target="_blank">桂林</a>
+					<a href="{:U('Line/lists?keywords=丽江')}" target="_blank">丽江</a>
+					<a href="{:U('Line/lists?keywords=昆明')}" target="_blank">昆明</a>
 				</div>
 				<div class="tab fl">
 					<a href="#" class="active">国内旅游</a>
@@ -265,45 +65,21 @@
 			</div>
 		</div>
 		<div class="body">
-			<div class="bigimg fl"><img src="__IMG__/tmp_img1.jpg"></div>
+			<div class="bigimg fl">
+				<!-- <if condition="$ads[2][0]['picurl']"> -->
+				<img src="{$ads[2][0]['picurl']}">
+				<!-- </if> -->
+			</div>
 			<div class="piclist fl">
 				<ul>
+				<!-- <foreach name="dangji" item="vo" > -->
 					<li>
-						<div class="pic"><a href="#"><img src="__IMG__/tmp_pro.jpg" /></a></div>
-						<div class="title"><a href="#">云南旅游 蓝色宣言*丽江、大理双廊双飞五日游</a></div>
-						<div class="price fl">￥<span>590</span>起</div>
+						<div class="pic"><a href="{:U('Line/info?id='.$vo['id'])}"><img src="{$vo['picurl']}" /></a></div>
+						<div class="title"><a href="{:U('Line/info?id='.$vo['id'])}" title="{$vo['title']}">{$vo['title']}</a></div>
+						<div class="price fl">￥<span>{:intval($vo['price'])}</span>起</div>
 						<div class="manyi fr">满意度 100%</div>
 					</li>
-					<li>
-						<div class="pic"><a href="#"><img src="__IMG__/tmp_pro.jpg" /></a></div>
-						<div class="title"><a href="#">云南旅游 蓝色宣言*丽江、大理双廊双飞五日游</a></div>
-						<div class="price fl">￥<span>590</span>起</div>
-						<div class="manyi fr">满意度 100%</div>
-					</li>
-					<li>
-						<div class="pic"><a href="#"><img src="__IMG__/tmp_pro.jpg" /></a></div>
-						<div class="title"><a href="#">云南旅游 蓝色宣言*丽江、大理双廊双飞五日游</a></div>
-						<div class="price fl">￥<span>590</span>起</div>
-						<div class="manyi fr">满意度 100%</div>
-					</li>
-					<li>
-						<div class="pic"><a href="#"><img src="__IMG__/tmp_pro.jpg" /></a></div>
-						<div class="title"><a href="#">云南旅游 蓝色宣言*丽江、大理双廊双飞五日游</a></div>
-						<div class="price fl">￥<span>590</span>起</div>
-						<div class="manyi fr">满意度 100%</div>
-					</li>
-					<li>
-						<div class="pic"><a href="#"><img src="__IMG__/tmp_pro.jpg" /></a></div>
-						<div class="title"><a href="#">云南旅游 蓝色宣言*丽江、大理双廊双飞五日游</a></div>
-						<div class="price fl">￥<span>590</span>起</div>
-						<div class="manyi fr">满意度 100%</div>
-					</li>
-					<li>
-						<div class="pic"><a href="#"><img src="__IMG__/tmp_pro.jpg" /></a></div>
-						<div class="title"><a href="#">云南旅游 蓝色宣言*丽江、大理双廊双飞五日游</a></div>
-						<div class="price fl">￥<span>590</span>起</div>
-						<div class="manyi fr">满意度 100%</div>
-					</li>
+				<!-- </foreach> -->
 				</ul>
 			</div>
 		</div>
@@ -319,58 +95,34 @@
 			<div class="group fl">
 				<div class="remen fl">
 					热门：
-					<a href="#">龙门石窟</a>
-					<a href="#">白马寺</a>
-					<a href="#">少林寺</a>
-					<a href="#">关公故里</a>
-					<a href="#">古墓博物馆</a>
+					<a href="{:U('Line/lists?keywords=龙门石窟')}" target="_blank">龙门石窟</a>
+					<a href="{:U('Line/lists?keywords=白马寺')}" target="_blank">白马寺</a>
+					<a href="{:U('Line/lists?keywords=少林寺')}" target="_blank">少林寺</a>
+					<a href="{:U('Line/lists?keywords=关公故里')}" target="_blank">关公故里</a>
+					<a href="{:U('Line/lists?keywords=古墓博物馆')}" target="_blank">古墓博物馆</a>
 				</div>
 				<div class="tab fl">
-					<a href="#" class="active">洛阳市去</a>
+					<a href="#" class="active">洛阳市区</a>
 					<a href="#">洛阳周边</a>
 				</div>
 			</div>
 		</div>
 		<div class="body">
-			<div class="bigimg fl"><img src="__IMG__/tmp_img2.jpg"></div>
+			<div class="bigimg fl">
+				<!-- <if condition="$ads[2][0]['picurl']"> -->
+				<img src="{$ads[2][0]['picurl']}">
+				<!-- </if> -->
+			</div>
 			<div class="piclist fl">
 				<ul>
+				<!-- <foreach name="zhoumo" item="vo" > -->
 					<li>
-						<div class="pic"><a href="#"><img src="__IMG__/tmp_pro.jpg" /></a></div>
-						<div class="title"><a href="#">云南旅游 蓝色宣言*丽江、大理双廊双飞五日游</a></div>
-						<div class="price fl">￥<span>590</span>起</div>
+						<div class="pic"><a href="{:U('Line/info?id='.$vo['id'])}"><img src="{$vo['picurl']}" /></a></div>
+						<div class="title"><a href="{:U('Line/info?id='.$vo['id'])}" title="{$vo['title']}">{$vo['title']}</a></div>
+						<div class="price fl">￥<span>{:intval($vo['price'])}</span>起</div>
 						<div class="manyi fr">满意度 100%</div>
 					</li>
-					<li>
-						<div class="pic"><a href="#"><img src="__IMG__/tmp_pro.jpg" /></a></div>
-						<div class="title"><a href="#">云南旅游 蓝色宣言*丽江、大理双廊双飞五日游</a></div>
-						<div class="price fl">￥<span>590</span>起</div>
-						<div class="manyi fr">满意度 100%</div>
-					</li>
-					<li>
-						<div class="pic"><a href="#"><img src="__IMG__/tmp_pro.jpg" /></a></div>
-						<div class="title"><a href="#">云南旅游 蓝色宣言*丽江、大理双廊双飞五日游</a></div>
-						<div class="price fl">￥<span>590</span>起</div>
-						<div class="manyi fr">满意度 100%</div>
-					</li>
-					<li>
-						<div class="pic"><a href="#"><img src="__IMG__/tmp_pro.jpg" /></a></div>
-						<div class="title"><a href="#">云南旅游 蓝色宣言*丽江、大理双廊双飞五日游</a></div>
-						<div class="price fl">￥<span>590</span>起</div>
-						<div class="manyi fr">满意度 100%</div>
-					</li>
-					<li>
-						<div class="pic"><a href="#"><img src="__IMG__/tmp_pro.jpg" /></a></div>
-						<div class="title"><a href="#">云南旅游 蓝色宣言*丽江、大理双廊双飞五日游</a></div>
-						<div class="price fl">￥<span>590</span>起</div>
-						<div class="manyi fr">满意度 100%</div>
-					</li>
-					<li>
-						<div class="pic"><a href="#"><img src="__IMG__/tmp_pro.jpg" /></a></div>
-						<div class="title"><a href="#">云南旅游 蓝色宣言*丽江、大理双廊双飞五日游</a></div>
-						<div class="price fl">￥<span>590</span>起</div>
-						<div class="manyi fr">满意度 100%</div>
-					</li>
+				<!-- </foreach> -->
 				</ul>
 			</div>
 		</div>
@@ -388,18 +140,15 @@
 					<div class="more fr"><a href="#">更多>></a></div>
 				</div>
 				<div class="body">
+				<!-- <foreach name="ads[4]" item="vo" > -->
 					<div class="list">
-						<a href="#"><img alt="" src="__IMG__/tmp_tejia.jpg"></a>
+						<!-- <if condition="$vo['linkurl']"> -->
+						<a href="{$vo['linkurl']}"><img alt="" src="{$vo['picurl']}"></a>
+						<!-- <else /> -->
+						<img alt="" src="{$vo['picurl']}">
+						<!-- </if> -->
 					</div>
-					<div class="list">
-						<a href="#"><img alt="" src="__IMG__/tmp_tejia.jpg"></a>
-					</div>
-					<div class="list">
-						<a href="#"><img alt="" src="__IMG__/tmp_tejia.jpg"></a>
-					</div>
-					<div class="list">
-						<a href="#"><img alt="" src="__IMG__/tmp_tejia.jpg"></a>
-					</div>
+				<!-- </foreach> -->
 				</div>
 			</div>
 			<div class="tuandui">
@@ -524,63 +273,8 @@
 </div>
 <!-- 特价,推荐,风采end -->
 
-<!-- 底部start -->
-<div class="footer">
-	<div class="pinzhi">
-		<div class="sitewidth"></div>
-	</div>
-	<div class="article">
-		<div class="sitewidth">
-			<div class="logo fl"><img src="__IMG__/logo-footer.png" /></div>
-			<div class="artlist fl">
-				<ul class="list">
-					<li class="tit"><a href="#">预订常见问题</a></li>
-					<li><a href="#">纯玩是什么意思？</a></li>
-					<li><a href="#">单房差是什么？</a></li>
-					<li><a href="#">双飞、双卧都是什么意思？</a></li>
-					<li><a href="#">满意度是怎么计算的？</a></li>
-				</ul>
-				<ul class="list">
-					<li class="tit"><a href="#">付款和发票</a></li>
-					<li><a href="#">签约可以刷卡吗？</a></li>
-					<li><a href="#">付款方式有哪些？</a></li>
-					<li><a href="#">怎么网上支付？</a></li>
-					<li><a href="#">如何获取发票？</a></li>
-				</ul>
-				<ul class="list">
-					<li class="tit"><a href="#">签署旅游合同</a></li>
-					<li><a href="#">有旅游合同范本下载吗？</a></li>
-					<li><a href="#">门市地址在哪里？</a></li>
-					<li><a href="#">能传真签合同吗？</a></li>
-					<li><a href="#">可以不签合同吗？</a></li>
-				</ul>
-				<ul class="list">
-					<li class="tit"><a href="#">其他事项</a></li>
-					<li><a href="#">签证相关问题解答</a></li>
-					<li><a href="#">旅游保险问题解答</a></li>
-					<li><a href="#">退款问题解答</a></li>
-					<li><a href="#">旅途中的问题</a></li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<div class="banquan">
-		<div class="sitewidth">
-			地址：河南省洛阳市*****
-		</div>
-	</div>
-</div>
-<!-- 底部end -->
+{:W('Page/Foot')}
 
-<!-- JS script include start -->
-<!--[if !IE]> -->
-<script src="__JS__/jquery.2.1.1.min.js"></script>
-<!-- <![endif]-->
-
-<!--[if IE]>
-<script src="__JS__/jquery.1.11.1.min.js"></script>
-<![endif]-->
-<!-- JS script include start end -->
 <script type="text/javascript" src="__JS__/slideplay.js"></script>
 <script type="text/javascript" src="__JS__/index.js"></script>
 <script type="text/javascript" src="__JS__/jquery.SuperSlide.2.1.1.js"></script>
