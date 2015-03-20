@@ -45,13 +45,16 @@
 <div class="cl"></div>
 <!-- 列表页内容 end -->
 
-<!-- 热门旅游start -->
-{:W('Page/Remen')}
-<!-- 热门旅游end -->
+<!-- 团队风采start -->
+{:W('Page/Tuandui')}
+<!-- 团队风采end -->
 
 {:W('Page/Foot')}
 
+<script type="text/javascript" src="__JS__/jquery.SuperSlide.2.1.1.js"></script>
+
 <script type="text/javascript">
+jQuery(".inside-tuandui .body").slide({mainCell:"#tuandui_pics",autoPage:true,effect:"left",autoPlay:true,scroll:1,vis:4,easing:"swing",delayTime:500,pnLoop:true,trigger:"mouseover",mouseOverStop:true});
 $(function($) {
 	
 	$("#cate-menu").mouseenter(function(){

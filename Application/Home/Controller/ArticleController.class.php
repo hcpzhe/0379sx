@@ -86,7 +86,7 @@ class ArticleController extends HomeBaseController {
 	/**
 	 * 单页内容
 	 */
-	public function one($id) {
+	public function one($id,$tpl='info') {
 		$class_M = new Model('Infoclass');
 		$class = $class_M->find($id);
 		$model = new Model('Info');
@@ -99,6 +99,7 @@ class ArticleController extends HomeBaseController {
 		
 		$this->assign('info',$info);
 		
-		$this->display('info');
+		$this->display($tpl);
 	}
+	
 }

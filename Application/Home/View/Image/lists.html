@@ -16,7 +16,6 @@
 		<!-- <foreach name="bread" item="vo" key="k" > -->
 		&nbsp;〉<a href="{:U('lists?cid='.$k)}">{$vo}</a>
 		<!-- </foreach> -->
-		&nbsp;〉{$info['title']}
 	</div>
 </div>
 <!-- 面包屑 end -->
@@ -27,18 +26,46 @@
 		<!-- 左侧栏 start -->
 		<include file="Widget/sider" />
 		<!-- 左侧栏 end -->
-		<div class="main-art fl">
-			<div class="main-art-title">
-				<div class="title">{$info['title']}</div>
-				<div class="attr">发布时间:{:date('Y-m-d',$info['posttime'])} 点击:{$info['hits']}次</div>
+		<div class="main-content fl">
+			<div class="img-list">
+				<div class="li">
+					<div class="pic">1</div>
+					<div class="title">1</div>
+				</div>
+				<div class="li">
+					<div class="pic">2</div>
+					<div class="title">2</div>
+				</div>
+				<div class="li">
+					<div class="pic">1</div>
+					<div class="title">1</div>
+				</div>
+				<div class="li">
+					<div class="pic">2</div>
+					<div class="title">2</div>
+				</div>
+				<div class="li">
+					<div class="pic">1</div>
+					<div class="title">1</div>
+				</div>
+				<div class="li">
+					<div class="pic">2</div>
+					<div class="title">2</div>
+				</div>
+				<div class="cl"></div>
+			<!-- <foreach name="list" item="vo" > -->
+				<div class="li">
+					<a href="{:U('info?id='.$vo['id'])}">
+					<div class="title">
+						<div class="text fl">{$vo['title']}</div>
+						<div class="time fr">{:date('Y-m-d')}</div>
+					</div>
+					<div class="content">{:ReStrLen(strip_tags($vo['content']),180)}</div>
+					</a>
+				</div>
+			<!-- </foreach> -->
 			</div>
-			<div class="main-art-content">
-				<!-- <if condition="$info['content']"> -->
-				{$info['content']}
-				<!-- <else /> -->
-				网站资料更新中....
-				<!-- </if> -->
-			</div>
+			{$_page}
 		</div>
 	</div>
 </div>

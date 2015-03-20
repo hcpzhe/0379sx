@@ -28,7 +28,6 @@ class PageWidget extends HomeBaseController {
 	}
 	
 	public function foot() {
-		
 		$class_M = new Model('Infoclass'); $list_M = new Model('Infolist');
 		$classid = 10; //底部文章栏目
 		$basemap = array(
@@ -64,9 +63,27 @@ class PageWidget extends HomeBaseController {
 				'checkinfo' => 'true',
 				'delstate' => ''
 		);
-		$remen = $img_M->where($where)->order('orderid')->limit(5)->select();
+		$remen = $img_M->where($where)->order('orderid DESC')->limit(5)->select();
 		$this->assign('remen', $remen); //热门旅游
 		
 		$this->display('Widget:Remen');
+	}
+	
+	/**
+	 * 团队风采   非首页使用, 全宽的栏目,滚动
+	 */
+	public function tuandui() {
+		$img_M = new Model('Infoimg');
+		$flag = array('like','%r%');
+		$where = array(
+				'siteid' => C('SITEID'),
+				'classid' => 29,
+				'checkinfo' => 'true',
+				'delstate' => ''
+		);
+		$remen = $img_M->where($where)->order('orderid DESC')->limit(10)->select();
+		$this->assign('remen', $remen); //热门旅游
+		
+		$this->display('Widget:Tuandui');
 	}
 }
