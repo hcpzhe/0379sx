@@ -59,7 +59,7 @@ a:hover {color:#ff8800; text-decoration:underline;}
 	.navicat ul.nav {font-size:16px;width:1010px;height:38px;overflow: hidden;}
 		.navicat ul.nav li {float:left;text-align: center;}
 		.navicat ul.nav li:HOVER {background: url("../images/arrow-top.png") no-repeat 50% 100% #f8f8f8;}
-			.navicat ul.nav a {font-weight:bold; color: #fff;text-decoration:none;display: block;padding:0 29px;overflow: hidden;text-align: center;}
+			.navicat ul.nav a {font-weight:bold; color: #fff;text-decoration:none;display: block;padding:0 20px;overflow: hidden;text-align: center;}
 			.navicat ul.nav a:HOVER {color: #e64905;text-decoration:none;}
 .banner {min-width: 1200px;}
 	.banner .sitewidth {padding-left:238px;height:415px;}
@@ -206,13 +206,13 @@ a:hover {color:#ff8800; text-decoration:underline;}
 		.paixu p .search_btn {background: #ffaf1e;border: none; color:#fff; width: 60px; cursor:pointer;letter-spacing:5px;padding-left:6px;margin-left:15px;}
 		/***旅游路线列表***********************/
 		.main-content .volist {margin-top:15px;}
-			.main-content .volist .li {padding:15px; height:230px; border: 1px solid #e9e9e9;margin-bottom: 20px;}
+			.main-content .volist .li {padding:12px; height:192px; border: 1px solid #e9e9e9;margin-bottom: 20px;}
 			.main-content .volist .li:HOVER {background: #f2f2f2;}
-				.main-content .volist .li .pic {height:200px; width:286px;}
+				.main-content .volist .li .pic {height:168px; width:240px;}
 					.main-content .volist .li .pic img {width:100%;height: 100%;}
-				.main-content .volist .li .text {height: 200px; width:636px; padding-left:28px;}
-					.main-content .volist .li .tit {font-weight: bold; font-size: 16px;padding-top:20px;height:46px;overflow: hidden;}
-						.main-content .volist .li .tit i {font-size:20px;color:#568d00;}
+				.main-content .volist .li .text {height: 168px; width:688px; padding-left:18px;}
+					.main-content .volist .li .tit {font-weight: bold; font-size: 14px;line-height:26px;height:26px;overflow: hidden;}
+						.main-content .volist .li .tit i {color:#568d00;}
 						.main-content .volist .li .tit a {color:#ff6700;text-decoration: none;}
 					.main-content .volist .li .tags {padding-top:15px;font-size:14px;line-height:22px;height:37px;color:#fff;overflow: hidden;}
 						.main-content .volist .li .tags i {display:inline-block; letter-spacing:7px;padding-left:8px;background: red;margin-right: 6px;}
@@ -222,19 +222,24 @@ a:hover {color:#ff8800; text-decoration:underline;}
 							.main-content .volist .li .tags i.d {background: #4d58af;}
 							.main-content .volist .li .tags i.e {background: #9d5f7c;}
 					.main-content .volist .li .dis {padding:8px 0;font-size:14px;color:#666;line-height:30px;height:76px;overflow: hidden;}
-					.main-content .volist .li .price {height:41px;font-size:38px;color:#568d00;line-height:41px;}
-						.main-content .volist .li .price i {font-size:16px;}
+					.main-content .volist .li .price {height:29px;line-height:29px;font-size:20px;color:#568d00;}
+						.main-content .volist .li .price i {font-size:12px;}
 		/***旅游路线内容***********************/
 		.main-info-title {border:#ddd 1px solid;border-top: #e75210 2px solid;padding:12px;}
 			.main-info .title {color:#1CBC14;font-size:20px;line-height:34px;font-weight: bold;}
 			.main-info .dis {line-height: 24px; padding-bottom: 8px; border-bottom: 1px dotted #D1D1D1;font-size: 14px;}
-			.main-info .attr {margin-top: 16px;height:342px;overflow: hidden;}
-				.main-info .attr .pic {width:500px;height:342px;overflow: hidden;border:#ddd 1px solid;padding: 5px;}
+			.main-info .attr {margin-top: 16px;height:276px;}
+				.main-info .attr .pic {width:390px;height:276px;overflow: hidden;border:#ddd 1px solid;padding: 5px;}
 					.main-info .attr .pic img {width:100%;height:100%;}
-				.main-info .attr .text {width:428px;height:342px;overflow: hidden;padding-left:20px;}
-					.main-info .attr .text div {height: 35px;line-height: 35px;font-size:14px;overflow: hidden;}
+				.main-info .attr .text {width:538px;height:276px;padding-left:20px;}
+					.main-info .attr .text .attribute {height: 35px;line-height: 35px;font-size:14px;overflow: hidden;}
+						.main-info .attr .text .price {overflow: visible;}
 						.main-info .attr .text .price em {color: #FF6300;}
 							.main-info .attr .text .price em b {font-size: 30px;}
+						.main-info .attr .text .price .price_produce {color:#FF6300;margin-left:24px;border-bottom: 1px dotted #ccc;position: relative;}
+							.main-info .attr .text .price .price_produce .detail_frame {position:absolute; left: -99px; top: 20px; width:370px; _margin-top:15px; border:1px solid #666; z-index:10000;height:auto;line-height:normal;font-size:12px;display: none;}
+								.main-info .attr .text .price .price_produce .detail_frame s{ position:absolute; top:-6px; left:126px; width:13px; height:6px; background:url(../images/ico_detail_frame.png) no-repeat -13px 0; overflow:hidden;}
+								.main-info .attr .text .price .price_produce .detail_frame .con{ padding:10px; border:3px solid #e8e8e8; color:#333; text-align:left; background:#fff;height:auto;line-height:normal;font-size:12px;}
 					.main-info .attr .text .yuding {margin-top:15px;}
 			.main-info .content {margin-top:10px;}
 				.main-info .content .head {height:35px;border-bottom: #e75210 2px solid;}

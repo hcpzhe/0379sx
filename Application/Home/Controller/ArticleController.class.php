@@ -24,7 +24,7 @@ class ArticleController extends HomeBaseController {
 		$map['checkinfo'] = 'true';
 		/******************/
 		
-		$list = $this->_lists($model,$map,'orderid');
+		$list = $this->_lists($model,$map,'orderid DESC');
 		$this->assign('list', $list); //列表
 		if (!empty($list)) {
 			$class_ids = field_unique($list, 'classid'); //列表中用到的栏目ID

@@ -45,7 +45,7 @@ class IndexController extends HomeBaseController {
 		$map_class['parentstr'] = array('like','%,'.$classid.',%');
 		$map_class['_logic'] = 'or';
 		$where['_complex'] = $map_class;
-		$dangji = $img_M->where($where)->order('orderid')->limit(6)->select();
+		$dangji = $img_M->where($where)->order('orderid DESC')->limit(6)->select();
 		$this->assign('dangji', $dangji); //当季热门
 		
 
@@ -57,7 +57,7 @@ class IndexController extends HomeBaseController {
 				'checkinfo' => 'true',
 				'delstate' => ''
 		);
-		$zhoumo = $img_M->where($where)->order('orderid')->limit(6)->select();
+		$zhoumo = $img_M->where($where)->order('orderid DESC')->limit(6)->select();
 		$this->assign('zhoumo', $zhoumo); //周末去哪
 		
 		

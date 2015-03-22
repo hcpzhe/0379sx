@@ -26,7 +26,7 @@ class LineController extends HomeBaseController {
 		$map['checkinfo'] = 'true';
 		/******************/
 		
-		$list = $this->_lists($model,$map,'orderid');
+		$list = $this->_lists($model,$map,'orderid DESC');
 		$this->assign('list', $list); //列表
 		$this->assign('keywords',$keywords);
 		if (!empty($list)) {

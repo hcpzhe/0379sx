@@ -35,13 +35,24 @@
 						<img src="{$info['picurl']}">
 					</div>
 					<div class="text fl">
-						<div class="price">预订价格：<em>￥<b>{$info['price']}</b></em>起</div>
-						<div class="">出发城市：洛阳</div>
-						<div class="">发团日期：天天发团</div>
-						<div class="">交通方式：专车</div>
-						<div class="">免费咨询/预订电话：0379-65296860&nbsp;&nbsp;18736322037</div>
-						<div class="">报名地点：洛阳市西工区七一路九州大厦1019</div>
-						<div class="yuding">
+						<div class="attribute price">
+							预订价格：<em>￥<b>{$info['price']}</b></em>起
+							<!-- <if condition="$info['qijiashuoming']"> -->
+							<span class="price_produce">
+								<span>起价说明</span>
+								<div class="detail_frame">
+									<s></s>
+									<div class="con">{$info['qijiashuoming']}</div>
+								</div>
+							</span>
+							<!-- </if> -->
+						</div>
+						<div class="attribute">出发城市：{$info['fromcity']|default="洛阳"}</div>
+						<div class="attribute">发团日期：{$info['godate']}</div>
+						<div class="attribute">交通方式：{$info['jiaotong']}</div>
+						<div class="attribute">免费咨询/预订电话：{$info['yuding']|default="18613798120"}</div>
+						<div class="attribute">报名地点：{$info['baoming']|default="洛阳市西工区七一路九州大厦1019"}</div>
+						<div class="attribute yuding">
 							<a href="#" target="_blank"><img src="__IMG__/yuding.jpg"></a>
 						</div>
 					</div>
@@ -67,14 +78,18 @@
 
 <script type="text/javascript">
 $(function($) {
-	
 	$("#cate-menu").mouseenter(function(){
-			$("#category").show();
+		$("#category").show();
 	});
 	$("#cate-menu").mouseleave(function(){
 		$("#category").hide();
 	});
-	
+	$(".price_produce").mouseenter(function(){
+		$(this).children(".detail_frame").show();
+	});
+	$(".price_produce").mouseleave(function(){
+		$(this).children(".detail_frame").hide();
+	});
 });
 </script>
 
