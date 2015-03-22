@@ -41,7 +41,9 @@ abstract class HomeBaseController extends Controller {
 	 */
 	protected function _lists ($model,$where=array(),$order='',$base = array('status'=>array('egt',0)),$field=true){
 		$options    =   array();
-		$REQUEST    =   (array)I('request.');
+		$GET = (array)I('get.');
+		$POST = (array)I('post.');
+		$REQUEST = array_merge($POST,$GET);
 		if(is_string($model)){
 			$model  =   M($model);
 		}
