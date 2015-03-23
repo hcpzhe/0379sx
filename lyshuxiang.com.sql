@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50542
 File Encoding         : 65001
 
-Date: 2015-03-19 08:49:22
+Date: 2015-03-23 18:49:39
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -34,7 +34,7 @@ CREATE TABLE `dx_admanage` (
   `posttime` int(10) unsigned NOT NULL COMMENT '提交时间',
   `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of dx_admanage
@@ -45,6 +45,7 @@ INSERT INTO `dx_admanage` VALUES ('3', '1', '4', '0', '0,', '首页特价旅游 
 INSERT INTO `dx_admanage` VALUES ('4', '1', '4', '0', '0,', '首页特价旅游 test2', 'image', 'uploads/image/20150318/1426696300.jpg', '', '', '4', '1426692680', 'true');
 INSERT INTO `dx_admanage` VALUES ('5', '1', '4', '0', '0,', '首页特价旅游 test3', 'image', 'uploads/image/20150318/1426696402.jpg', '', '', '5', '1426692706', 'true');
 INSERT INTO `dx_admanage` VALUES ('6', '1', '1', '0', '0,', '1', 'image', 'uploads/image/20150319/1426729254.jpg', '', '', '6', '1426719513', 'true');
+INSERT INTO `dx_admanage` VALUES ('7', '1', '5', '0', '0,', '1', 'image', 'uploads/image/20150323/1427114525.jpg', '', 'http://127.0.0.1/business/lyshuxiang.com/Home-Line-info-id-6.html', '7', '1427107570', 'true');
 
 -- ----------------------------
 -- Table structure for `dx_admin`
@@ -67,7 +68,7 @@ CREATE TABLE `dx_admin` (
 -- ----------------------------
 -- Records of dx_admin
 -- ----------------------------
-INSERT INTO `dx_admin` VALUES ('1', 'admin', '0c909a141f1f2c0a1cb602b0b2d7d050', '', '0', '', '1', 'true', '127.0.0.1', '1426685452');
+INSERT INTO `dx_admin` VALUES ('1', 'admin', '0c909a141f1f2c0a1cb602b0b2d7d050', '', '0', '', '1', 'true', '127.0.0.1', '1427082229');
 
 -- ----------------------------
 -- Table structure for `dx_admingroup`
@@ -158,7 +159,7 @@ CREATE TABLE `dx_adtype` (
   `orderid` smallint(5) unsigned NOT NULL COMMENT '排列顺序',
   `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of dx_adtype
@@ -167,6 +168,7 @@ INSERT INTO `dx_adtype` VALUES ('1', '1', '0', '0,', '首页轮播图', '724', '
 INSERT INTO `dx_adtype` VALUES ('2', '1', '0', '0,', '首页当季热门 侧栏', '245', '506', '2', 'true');
 INSERT INTO `dx_adtype` VALUES ('3', '1', '0', '0,', '首页周末去哪儿 侧栏', '245', '506', '3', 'true');
 INSERT INTO `dx_adtype` VALUES ('4', '1', '0', '0,', '首页特价旅游 三个', '240', '380', '4', 'true');
+INSERT INTO `dx_adtype` VALUES ('5', '1', '0', '0,', '旅游线路 内页 侧栏 广告位', '236', '361', '5', 'true');
 
 -- ----------------------------
 -- Table structure for `dx_cascade`
@@ -178,7 +180,7 @@ CREATE TABLE `dx_cascade` (
   `groupsign` varchar(30) NOT NULL COMMENT '级联组标识',
   `orderid` smallint(5) unsigned NOT NULL COMMENT '排列排序',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of dx_cascade
@@ -189,7 +191,11 @@ INSERT INTO `dx_cascade` VALUES ('3', '血型', 'bloodtype', '3');
 INSERT INTO `dx_cascade` VALUES ('4', '证件类型', 'cardtype', '4');
 INSERT INTO `dx_cascade` VALUES ('5', '安全问题', 'question', '5');
 INSERT INTO `dx_cascade` VALUES ('6', '行业分布', 'trade', '6');
-INSERT INTO `dx_cascade` VALUES ('7', '当季热门', 'remen', '7');
+INSERT INTO `dx_cascade` VALUES ('8', '当季热门', 'remen', '7');
+INSERT INTO `dx_cascade` VALUES ('9', '洛阳周边', 'zhoubian', '8');
+INSERT INTO `dx_cascade` VALUES ('10', '国内旅游', 'guonei', '9');
+INSERT INTO `dx_cascade` VALUES ('11', '出境旅游', 'chujing', '10');
+INSERT INTO `dx_cascade` VALUES ('12', '特价旅游', 'tejia', '11');
 
 -- ----------------------------
 -- Table structure for `dx_cascadedata`
@@ -203,7 +209,7 @@ CREATE TABLE `dx_cascadedata` (
   `orderid` smallint(5) unsigned NOT NULL COMMENT '排列排序',
   `level` tinyint(1) unsigned NOT NULL COMMENT '级联数据层次',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=20021 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=20031 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of dx_cascadedata
@@ -3476,7 +3482,16 @@ INSERT INTO `dx_cascadedata` VALUES ('39', '农林牧渔', '11', 'trade', '11', 
 INSERT INTO `dx_cascadedata` VALUES ('40', '社会服务', '12', 'trade', '12', '0');
 INSERT INTO `dx_cascadedata` VALUES ('41', '医药生物', '13', 'trade', '13', '0');
 INSERT INTO `dx_cascadedata` VALUES ('42', '教育培训科研', '14', 'trade', '14', '0');
-INSERT INTO `dx_cascadedata` VALUES ('20020', '滑雪场', '1', 'remen', '1', '0');
+INSERT INTO `dx_cascadedata` VALUES ('20021', '西安', '1', 'remen', '1', '0');
+INSERT INTO `dx_cascadedata` VALUES ('20022', '韩国', '2', 'remen', '2', '0');
+INSERT INTO `dx_cascadedata` VALUES ('20023', '泰国', '3', 'remen', '3', '0');
+INSERT INTO `dx_cascadedata` VALUES ('20024', '凤凰', '4', 'remen', '4', '0');
+INSERT INTO `dx_cascadedata` VALUES ('20025', '九寨', '5', 'remen', '5', '0');
+INSERT INTO `dx_cascadedata` VALUES ('20026', '苏沪杭', '6', 'remen', '6', '0');
+INSERT INTO `dx_cascadedata` VALUES ('20027', '云台山', '7', 'remen', '7', '0');
+INSERT INTO `dx_cascadedata` VALUES ('20028', '马尔代夫', '8', 'remen', '8', '0');
+INSERT INTO `dx_cascadedata` VALUES ('20029', '世纪欢乐园', '9', 'remen', '9', '0');
+INSERT INTO `dx_cascadedata` VALUES ('20030', '港澳', '10', 'remen', '10', '0');
 
 -- ----------------------------
 -- Table structure for `dx_diyfield`
@@ -3779,12 +3794,13 @@ CREATE TABLE `dx_info` (
   `posttime` int(10) unsigned NOT NULL COMMENT '更新时间',
   `hits` int(8) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of dx_info
 -- ----------------------------
 INSERT INTO `dx_info` VALUES ('1', '6', '-1', '', '<strong style=\"color:#333333;font-family:微软雅黑, Arial, 宋体;line-height:normal;white-space:normal;\">护照签证</strong><strong style=\"color:#333333;font-family:微软雅黑, Arial, 宋体;line-height:normal;white-space:normal;\">护照签证</strong><strong style=\"color:#333333;font-family:微软雅黑, Arial, 宋体;line-height:normal;white-space:normal;\">护照签证</strong><strong style=\"color:#333333;font-family:微软雅黑, Arial, 宋体;line-height:normal;white-space:normal;\">护照签证</strong>', '1426672650', '16');
+INSERT INTO `dx_info` VALUES ('2', '28', '-1', 'uploads/image/20150320/1426830570.jpg', '<p style=\"margin-top:0px;margin-bottom:0px;padding:0px;font-size:14px;line-height:24px;color:#333333;font-family:宋体, arial;white-space:normal;background-color:#FFFFFF;\">\r\n	<br />\r\n洛阳舒翔假期旅行社有限公司成立于2012年，目前是中国旅游协会（CTA）、中国旅行社协会（CATS）。国际航空运输协会（IATA）的正式会员。公司成立以来，坚持以优质的服务、卓越的信誉和赖以强大的综合实力，赢得了越来越多客户的信任，成功地在业界中脱颖而出，成为洛阳地区旅游行业的一支新秀。\r\n</p>\r\n<br />\r\n<p style=\"margin-top:0px;margin-bottom:0px;padding:0px;font-size:14px;line-height:24px;color:#333333;font-family:宋体, arial;white-space:normal;background-color:#FFFFFF;\">\r\n	<br />\r\n公司主要经营项目包括：招揽、接待外国旅行者、海外华侨、港澳台同胞到中国旅游观光、考察；组织和接待中国公民出境及国内观光旅游业务；接受订机、车票、订房等各类单项委托业务；同事可为大型国际、国内会议提供接待及租车服务。公司与国内外数百家实力雄厚的旅游公司的密切关系是我社迅猛发展的有力保证。年轻、精干、诚实、团结的业务队伍，踏实、谦虚、勤奋、负责的敬业精神是我社发展壮大的基础条件和资本；训练有素、经验丰富的各种翻译导游队伍是我社提供一流服务，赢得良好信誉的前提和保障。在各位同行及广大游客的支持下，洛阳舒翔假期旅行社正在蓬勃发展中，我们期待能为您服务！\r\n</p>\r\n<br />\r\n<p style=\"margin-top:0px;margin-bottom:0px;padding:0px;font-size:14px;line-height:24px;color:#333333;font-family:宋体, arial;white-space:normal;background-color:#FFFFFF;\">\r\n	<br />\r\n</p>\r\n<br />\r\n<p style=\"margin-top:0px;margin-bottom:0px;padding:0px;font-size:14px;line-height:24px;color:#333333;font-family:宋体, arial;white-space:normal;background-color:#FFFFFF;\">\r\n	<br />\r\n企业宗旨：认真服务好每一位客人<br />\r\n<br />\r\n企业精神：认真做好每一件事<br />\r\n<br />\r\n座 右 铭：细节决定成败<br />\r\n<br />\r\n行为准则：团结友善、忠诚企业、勇于创新、诚实守信；\r\n</p>\r\n<br />\r\n<p style=\"margin-top:0px;margin-bottom:0px;padding:0px;font-size:14px;line-height:24px;color:#333333;font-family:宋体, arial;white-space:normal;background-color:#FFFFFF;\">\r\n	<br />\r\n工作作风：认真、主动、高效、负责；<br />\r\n<br />\r\n团队意识：团结、宽容、拼搏、奉献；\r\n</p>\r\n<br />\r\n<p style=\"margin-top:0px;margin-bottom:0px;padding:0px;font-size:14px;line-height:24px;color:#333333;font-family:宋体, arial;white-space:normal;background-color:#FFFFFF;\">\r\n	<br />\r\n核心价值观：为游客提供优质、完美的旅游服务\r\n</p>\r\n<br />\r\n<p style=\"margin-top:0px;margin-bottom:0px;padding:0px;font-size:14px;line-height:24px;color:#333333;font-family:宋体, arial;white-space:normal;background-color:#FFFFFF;\">\r\n	<br />\r\n<span style=\"color:#800080;\"><span style=\"font-size:18px;\"><strong>我不能给您最低的价格</strong></span></span> \r\n</p>\r\n<br />\r\n<p style=\"margin-top:0px;margin-bottom:0px;padding:0px;font-size:14px;line-height:24px;color:#333333;font-family:宋体, arial;white-space:normal;background-color:#FFFFFF;\">\r\n	<br />\r\n<span style=\"color:#800080;\"><span style=\"font-size:18px;\"><strong>只能给您最高的品质</strong></span></span> \r\n</p>\r\n<br />\r\n<p style=\"margin-top:0px;margin-bottom:0px;padding:0px;font-size:14px;line-height:24px;color:#333333;font-family:宋体, arial;white-space:normal;background-color:#FFFFFF;\">\r\n	<br />\r\n<span style=\"color:#800080;\"><span style=\"font-size:18px;\"><strong>我宁可为价格解释一阵子</strong></span></span> \r\n</p>\r\n<br />\r\n<p style=\"margin-top:0px;margin-bottom:0px;padding:0px;font-size:14px;line-height:24px;color:#333333;font-family:宋体, arial;white-space:normal;background-color:#FFFFFF;\">\r\n	<br />\r\n<span style=\"color:#800080;\"><span style=\"font-size:18px;\"><strong>也不愿为质量道歉一辈子</strong></span></span> \r\n</p>\r\n<br />\r\n<p style=\"margin-top:0px;margin-bottom:0px;padding:0px;font-size:14px;line-height:24px;color:#333333;font-family:宋体, arial;white-space:normal;background-color:#FFFFFF;\">\r\n	<br />\r\n</p>\r\n<br />\r\n<p style=\"margin-top:0px;margin-bottom:0px;padding:0px;font-size:14px;line-height:24px;color:#333333;font-family:宋体, arial;white-space:normal;background-color:#FFFFFF;\">\r\n	<br />\r\n<strong>联系方式：</strong> \r\n</p>\r\n<br />\r\n<p style=\"margin-top:0px;margin-bottom:0px;padding:0px;font-size:14px;line-height:24px;color:#333333;font-family:宋体, arial;white-space:normal;background-color:#FFFFFF;\">\r\n	<br />\r\n电话：0379-65296860 65297860\r\n</p>\r\n<br />\r\n<p style=\"margin-top:0px;margin-bottom:0px;padding:0px;font-size:14px;line-height:24px;color:#333333;font-family:宋体, arial;white-space:normal;background-color:#FFFFFF;\">\r\n	<br />\r\n传真：0379-65596008\r\n</p>\r\n<br />\r\n<p style=\"margin-top:0px;margin-bottom:0px;padding:0px;font-size:14px;line-height:24px;color:#333333;font-family:宋体, arial;white-space:normal;background-color:#FFFFFF;\">\r\n	<br />\r\nQQ：团队83895613 &nbsp; &nbsp;545167822\r\n</p>\r\n<br />\r\n<p style=\"margin-top:0px;margin-bottom:0px;padding:0px;font-size:14px;line-height:24px;color:#333333;font-family:宋体, arial;white-space:normal;background-color:#FFFFFF;\">\r\n	<br />\r\n散客1019127158\r\n</p>\r\n<br />\r\n<p style=\"margin-top:0px;margin-bottom:0px;padding:0px;font-size:14px;line-height:24px;color:#333333;font-family:宋体, arial;white-space:normal;background-color:#FFFFFF;\">\r\n	<br />\r\n24小时监督热线：18736322037 &nbsp;18613798628 &nbsp;秦振伟\r\n</p>\r\n<br />\r\n<p style=\"margin-top:0px;margin-bottom:0px;padding:0px;font-size:14px;line-height:24px;color:#333333;font-family:宋体, arial;white-space:normal;background-color:#FFFFFF;\">\r\n	<br />\r\n地址：洛阳市西工区七一路九州大厦1019室\r\n</p>\r\n<br />\r\n<p style=\"margin-top:0px;margin-bottom:0px;padding:0px;font-size:14px;line-height:24px;color:#333333;font-family:宋体, arial;white-space:normal;background-color:#FFFFFF;\">\r\n	<br />\r\n<span style=\"font-size:18px;\"><strong>公司部分直营店地址：</strong></span> \r\n</p>\r\n<br />\r\n<p style=\"margin-top:0px;margin-bottom:0px;padding:0px;font-size:14px;line-height:24px;color:#333333;font-family:宋体, arial;white-space:normal;background-color:#FFFFFF;\">\r\n	<br />\r\n<span style=\"font-size:20px;\"><strong><span style=\"color:#FF0000;\">孟津部</span></strong></span> \r\n</p>\r\n<br />\r\n<p style=\"margin-top:0px;margin-bottom:0px;padding:0px;font-size:14px;line-height:24px;color:#333333;font-family:宋体, arial;white-space:normal;background-color:#FFFFFF;\">\r\n	<br />\r\n<span style=\"color:#000000;\"><span style=\"font-size:18px;\"><span style=\"font-size:14px;\"><span style=\"font-size:16px;\">孟津桂花大道中段黄河宾馆2楼</span></span></span></span> \r\n</p>\r\n<br />\r\n<p style=\"margin-top:0px;margin-bottom:0px;padding:0px;font-size:14px;line-height:24px;color:#333333;font-family:宋体, arial;white-space:normal;background-color:#FFFFFF;\">\r\n	<br />\r\n<span style=\"color:#000000;\">传真：0379-67913793</span> \r\n</p>\r\n<br />\r\n<p style=\"margin-top:0px;margin-bottom:0px;padding:0px;font-size:14px;line-height:24px;color:#333333;font-family:宋体, arial;white-space:normal;background-color:#FFFFFF;\">\r\n	<br />\r\n<span style=\"color:#000000;\">负责人：姚经理 15137996860</span> \r\n</p>\r\n<br />\r\n<p style=\"margin-top:0px;margin-bottom:0px;padding:0px;font-size:14px;line-height:24px;color:#333333;font-family:宋体, arial;white-space:normal;background-color:#FFFFFF;\">\r\n	<br />\r\n<span style=\"color:#FF0000;\"><strong><span style=\"font-size:20px;\">吉利部</span></strong></span> \r\n</p>\r\n<br />\r\n<p style=\"margin-top:0px;margin-bottom:0px;padding:0px;font-size:14px;line-height:24px;color:#333333;font-family:宋体, arial;white-space:normal;background-color:#FFFFFF;\">\r\n	<br />\r\n<span style=\"color:#000000;\"><span style=\"font-size:18px;\">吉利区河阳路中段供销社一楼舒翔假期</span></span> \r\n</p>\r\n<br />\r\n<p style=\"margin-top:0px;margin-bottom:0px;padding:0px;font-size:14px;line-height:24px;color:#333333;font-family:宋体, arial;white-space:normal;background-color:#FFFFFF;\">\r\n	<br />\r\n<span style=\"color:#000000;\">负责人：13803796078</span> \r\n</p>\r\n<br />\r\n<p style=\"margin-top:0px;margin-bottom:0px;padding:0px;font-size:14px;line-height:24px;color:#333333;font-family:宋体, arial;white-space:normal;background-color:#FFFFFF;\">\r\n	<br />\r\n<span style=\"color:#000000;\"> <br />\r\n	<iframe src=\"http://0379sx.demo.dx623.com/mgr/editor/plugins/baidumap/index.html?center=112.456727%2C34.673808&zoom=19&width=558&height=360&markers=112.456727%2C34.673808&markerStyles=l%2CA\" frameborder=\"0\" style=\"width:560px;height:362px;\">\r\n		&lt;br /&gt;\r\n	</iframe>\r\n<br />\r\n<br />\r\n<br />\r\n</span> \r\n</p>\r\n<br />', '1426840207', '6');
 
 -- ----------------------------
 -- Table structure for `dx_infoclass`
@@ -3807,7 +3823,7 @@ CREATE TABLE `dx_infoclass` (
   `orderid` smallint(5) unsigned NOT NULL COMMENT '排列排序',
   `checkinfo` enum('true','false') NOT NULL COMMENT '审核状态',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of dx_infoclass
@@ -3838,6 +3854,8 @@ INSERT INTO `dx_infoclass` VALUES ('24', '1', '16', '0,2,16,', '2', '新马泰',
 INSERT INTO `dx_infoclass` VALUES ('25', '1', '16', '0,2,16,', '2', '欧洲', '', '', '', '', '', '', '', '24', 'true');
 INSERT INTO `dx_infoclass` VALUES ('26', '1', '16', '0,2,16,', '2', '香港', '', '', '', '', '', '', '', '25', 'true');
 INSERT INTO `dx_infoclass` VALUES ('27', '1', '16', '0,2,16,', '2', '丽江', '', '', '', '', '', '', '', '26', 'true');
+INSERT INTO `dx_infoclass` VALUES ('28', '1', '0', '0,', '0', '关于我们', '', '', '', '', '', '', '', '27', 'true');
+INSERT INTO `dx_infoclass` VALUES ('29', '1', '0', '0,', '2', '团队风采', '', '', '', '', '', '', '', '28', 'true');
 
 -- ----------------------------
 -- Table structure for `dx_infoflag`
@@ -4157,7 +4175,7 @@ INSERT INTO `dx_nav` VALUES ('7', '1', '1', '0,1,', '护照签证', 'Article/one
 INSERT INTO `dx_nav` VALUES ('8', '1', '1', '0,1,', '旅游租车', 'Article/one?id=7', '', '', '', '8', 'true');
 INSERT INTO `dx_nav` VALUES ('9', '1', '1', '0,1,', '旅游攻略', 'Article/lists?cid=8', '', '', '', '9', 'true');
 INSERT INTO `dx_nav` VALUES ('10', '1', '1', '0,1,', '客户留言', 'Index/index', '', '', '', '10', 'true');
-INSERT INTO `dx_nav` VALUES ('11', '1', '1', '0,1,', '关于我们', 'Article/lists?cid=9', '', '', '', '11', 'true');
+INSERT INTO `dx_nav` VALUES ('11', '1', '1', '0,1,', '关于我们', 'Article/one?id=28&tpl=about', '', '', '', '11', 'true');
 
 -- ----------------------------
 -- Table structure for `dx_paymode`
@@ -4278,7 +4296,7 @@ CREATE TABLE `dx_sysevent` (
   `posttime` int(10) NOT NULL COMMENT '操作时间',
   `ip` varchar(20) NOT NULL COMMENT '操作ip',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=265 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=291 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of dx_sysevent
@@ -4547,6 +4565,32 @@ INSERT INTO `dx_sysevent` VALUES ('261', 'admin', '1', 'infolist', '0', 'all', '
 INSERT INTO `dx_sysevent` VALUES ('262', 'admin', '1', 'infolist', '14', 'add', '1426725807', '127.0.0.1');
 INSERT INTO `dx_sysevent` VALUES ('263', 'admin', '1', 'infolist', '0', 'all', '1426725859', '127.0.0.1');
 INSERT INTO `dx_sysevent` VALUES ('264', 'admin', '1', 'infolist', '15', 'add', '1426725871', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('265', 'admin', '1', 'infoclass', '0', 'all', '1426726336', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('266', 'admin', '1', 'login', '0', '', '1426832738', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('267', 'admin', '1', 'nav', '0', 'all', '1426832746', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('268', 'admin', '1', 'infoclass', '0', 'all', '1426832751', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('269', 'admin', '1', 'nav', '0', 'all', '1426832890', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('270', 'admin', '1', 'infoimg', '0', 'all', '1426833268', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('271', 'admin', '1', 'login', '0', '', '1426840101', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('272', 'admin', '1', 'info', '0', 'all', '1426840204', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('273', 'admin', '1', 'info', '28', 'update', '1426840219', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('274', 'admin', '1', 'info', '0', 'all', '1426840265', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('275', 'admin', '1', 'infoclass', '0', 'all', '1426840481', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('276', 'admin', '1', 'cascade', '0', 'all', '1426843216', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('277', 'admin', '1', 'cascade', '0', 'all', '1426843298', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('278', 'admin', '1', 'admanage', '0', 'all', '1426843913', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('279', 'admin', '1', 'adtype', '0', 'all', '1426843960', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('280', 'admin', '1', 'login', '0', '', '1427082229', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('281', 'admin', '1', 'info', '0', 'all', '1427082419', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('282', 'admin', '1', 'web_config', '0', 'all', '1427084368', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('283', 'admin', '1', 'web_config', '0', 'all', '1427084433', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('284', 'admin', '1', 'cascade', '0', 'all', '1427091051', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('285', 'admin', '1', 'cascade', '0', 'all', '1427101304', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('286', 'admin', '1', 'cascade', '0', 'all', '1427101377', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('287', 'admin', '1', 'cascade', '0', 'all', '1427102691', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('288', 'admin', '1', 'adtype', '0', 'all', '1427107546', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('289', 'admin', '1', 'admanage', '0', 'all', '1427107568', '127.0.0.1');
+INSERT INTO `dx_sysevent` VALUES ('290', 'admin', '1', 'admanage', '0', 'all', '1427107647', '127.0.0.1');
 
 -- ----------------------------
 -- Table structure for `dx_uploads`
@@ -4560,7 +4604,7 @@ CREATE TABLE `dx_uploads` (
   `type` enum('image','soft','media') NOT NULL COMMENT '文件类型',
   `posttime` int(10) NOT NULL COMMENT '上传日期',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of dx_uploads
@@ -4581,6 +4625,7 @@ INSERT INTO `dx_uploads` VALUES ('13', '1426697774.jpg', 'uploads/image/20150318
 INSERT INTO `dx_uploads` VALUES ('14', '1426696300.jpg', 'uploads/image/20150318/1426696300.jpg', '41374', 'image', '1426692698');
 INSERT INTO `dx_uploads` VALUES ('15', '1426696402.jpg', 'uploads/image/20150318/1426696402.jpg', '32573', 'image', '1426692716');
 INSERT INTO `dx_uploads` VALUES ('16', '1426729254.jpg', 'uploads/image/20150319/1426729254.jpg', '50038', 'image', '1426719537');
+INSERT INTO `dx_uploads` VALUES ('17', '1427114525.jpg', 'uploads/image/20150323/1427114525.jpg', '16006', 'image', '1427107582');
 
 -- ----------------------------
 -- Table structure for `dx_usercomment`
@@ -4785,6 +4830,7 @@ INSERT INTO `dx_webconfig` VALUES ('1', 'cfg_qq_appkey', 'QQ登录组件AppKey',
 INSERT INTO `dx_webconfig` VALUES ('1', 'cfg_weibo_appid', '微博登录组件AppID', '4', 'string', '', '96');
 INSERT INTO `dx_webconfig` VALUES ('1', 'cfg_weibo_appkey', '微博登录组件AppKey', '4', 'string', '', '97');
 INSERT INTO `dx_webconfig` VALUES ('1', 'cfg_welcome', '欢迎语', '0', 'string', '您好，欢迎来到舒翔假期！轻松旅行，完美生活。', '98');
+INSERT INTO `dx_webconfig` VALUES ('1', 'cfg_linerows', '线路列表每页数量', '2', 'number', '10', '99');
 
 -- ----------------------------
 -- Table structure for `dx_weblink`

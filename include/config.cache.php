@@ -59,4 +59,5 @@ $cfg_qq_appkey = '';
 $cfg_weibo_appid = '';
 $cfg_weibo_appkey = '';
 $cfg_welcome = '您好，欢迎来到舒翔假期！轻松旅行，完美生活。';
+$cfg_linerows = 10;
 ?>

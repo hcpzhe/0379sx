@@ -9,31 +9,20 @@
 					</form>
 				</div>
 				<div class="hot">
-					<a href="{:U('Line/lists?keywords=老君山')}" target="_blank">老君山</a>
-					<a href="{:U('Line/lists?keywords=龙门石窟')}" target="_blank">龙门石窟</a>
-					<a href="{:U('Line/lists?keywords=鸡冠洞')}" target="_blank">鸡冠洞</a>
-					<a href="{:U('Line/lists?keywords=白马寺')}" target="_blank">白马寺</a>
-					<a href="{:U('Line/lists?keywords=少林寺')}" target="_blank">少林寺</a>
-					<a href="{:U('Line/lists?keywords=王城公园')}" target="_blank">王城公园</a>
-					<a href="{:U('Line/lists?keywords=老君山')}" target="_blank">老君山</a>
-					<a href="{:U('Line/lists?keywords=龙门石窟')}" target="_blank">龙门石窟</a>
-					<a href="{:U('Line/lists?keywords=鸡冠洞')}" target="_blank">鸡冠洞</a>
-					<a href="{:U('Line/lists?keywords=白马寺')}" target="_blank">白马寺</a>
-					<a href="{:U('Line/lists?keywords=少林寺')}" target="_blank">少林寺</a>
-					<a href="{:U('Line/lists?keywords=王城公园')}" target="_blank">王城公园</a>
-					<a href="{:U('Line/lists?keywords=老君山')}" target="_blank">老君山</a>
-					<a href="{:U('Line/lists?keywords=龙门石窟')}" target="_blank">龙门石窟</a>
-					<a href="{:U('Line/lists?keywords=鸡冠洞')}" target="_blank">鸡冠洞</a>
-					<a href="{:U('Line/lists?keywords=白马寺')}" target="_blank">白马寺</a>
-					<a href="{:U('Line/lists?keywords=少林寺')}" target="_blank">少林寺</a>
-					<a href="{:U('Line/lists?keywords=王城公园')}" target="_blank">王城公园</a>
-					<a href="{:U('Line/lists?keywords=老君山')}" target="_blank">老君山</a>
-					<a href="{:U('Line/lists?keywords=龙门石窟')}" target="_blank">龙门石窟</a>
-					<a href="{:U('Line/lists?keywords=鸡冠洞')}" target="_blank">鸡冠洞</a>
-					<a href="{:U('Line/lists?keywords=白马寺')}" target="_blank">白马寺</a>
-					<a href="{:U('Line/lists?keywords=少林寺')}" target="_blank">少林寺</a>
-					<a href="{:U('Line/lists?keywords=王城公园')}" target="_blank">王城公园</a>
+				<!-- <foreach name="list" item="vo" > -->
+					<a href="{:U('Line/lists?keywords='.$vo['dataname'])}" target="_blank">{$vo['dataname']}</a>
+				<!-- </foreach> -->
 				</div>
 			</div>
-			<div><img alt="" src="__IMG__/main-silder-img.jpg" width="100%"></div>
+			<div>
+			<!-- <foreach name="ads[5]" item="vo" > -->
+				<!-- <if condition="$vo['linkurl']"> -->
+				<a href="{$vo['linkurl']}">
+					<img alt="" src="{$vo['picurl']}" width="100%">
+				</a>
+				<!-- <else /> -->
+				<img alt="" src="{$vo['picurl']}" width="100%">
+				<!-- </if> -->
+			<!-- </foreach> -->
+			</div>
 		</div>

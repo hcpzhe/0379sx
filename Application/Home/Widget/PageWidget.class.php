@@ -86,4 +86,42 @@ class PageWidget extends HomeBaseController {
 		
 		$this->display('Widget:Tuandui');
 	}
+	
+	public function sider($thisclass) {
+		
+		$cascade = array(
+				'当季热门' => 'remen',
+				'洛阳周边' => 'zhoubian',
+				'国内旅游' => 'guonei',
+				'出境旅游' => 'chujing',
+				'特价旅游' => 'tejia'
+		);
+		$cascadedata_M = new Model('Cascadedata');
+		$where = array();
+		
+		$class_M = new Model('Infoclass');
+		$parent_arr = explode(',', trim($thisclass['parentstr'],','));
+		if (in_array(2, $parent_arr)) {
+			$classid = ($parent_arr[2] > 0) ? $parent_arr[2] : $thisclass['id'];
+			$use_class = $class_M->find($classid);
+			$where['datagroup'] = $cascade[$use_class['classname']];
+		}else {
+			$where['datagroup'] = array('in',array_values($cascade));
+		}
+		$list = $cascadedata_M->where($where)->order('orderid')->select();
+		$this->assign('list', $list); //热门旅游
+		
+		//广告
+		$adtype_M = new Model('Adtype');
+		$admanage_M = new Model('admanage');
+		$adtype = $adtype_M->where("checkinfo='true' AND siteid=".C('SITEID'))->order('orderid')->select();
+		$ads = array();
+		foreach ($adtype as $val) {
+			$tmp = $admanage_M->where("checkinfo='true' AND classid=".$val['id']." AND siteid=".C('SITEID'))->order('orderid')->select();
+			$ads[$val['id']] = $tmp;
+		}
+		$this->assign('ads', $ads); //广告
+		
+		$this->display('Widget:Sider');
+	}
 }
