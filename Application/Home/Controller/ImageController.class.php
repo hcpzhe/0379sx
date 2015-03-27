@@ -5,10 +5,13 @@ use Think\Model;
 
 class ImageController extends HomeBaseController {
 	
+	//属性选取		zc租车  qz签证
+	protected $attr = array('zc','qz');
+	
 	/**
 	 * 图片列表
 	 */
-	public function lists($cid) {
+	public function lists($cid,$attr=null) {
 		$cid = (int)$cid;
 		if ($cid <= 0) $this->redirect('Index/index');
 		
@@ -26,12 +29,6 @@ class ImageController extends HomeBaseController {
 		
 		$list = $this->_lists($model,$map,'orderid DESC');
 		$this->assign('list', $list); //列表
-		if (!empty($list)) {
-			$class_ids = field_unique($list, 'classid'); //列表中用到的栏目ID
-			$map = array('id'=>array('in',$class_ids));
-			$classlist = $class_M->where($map)->getField('id,classname');
-			$this->assign('classlist',$classlist); //列表用到的栏目, ID为key索引
-		}
 		
 		//**面包屑
 		$thisclass = $class_M->find($cid);
@@ -49,6 +46,10 @@ class ImageController extends HomeBaseController {
 		}
 		$this->assign('bread', $bread); //面包屑
 		
+		//属性选取		zc租车  qz签证
+		$attr = (in_array($attr, $this->attr)) ? $attr : '';
+		$this->assign('attr', $attr);
+		
 		// 记录当前列表页的cookie
 		cookie(C('CURRENT_URL_NAME'),$_SERVER['REQUEST_URI']);
 		
@@ -58,15 +59,20 @@ class ImageController extends HomeBaseController {
 	/**
 	 * 图片内容
 	 */
-	public function info($id) {
+	public function info($id,$attr=null) {
 		$model = new Model('Infoimg');
 		$info = $model->find($id);
 		$this->assign('info',$info);
 		if ($info) $model->where('id='.$info['id'])->setInc('hits');
 		$info['hits']++;
 		
-		//面包屑
 		$class_M = new Model('Infoclass');
+		
+		//侧栏
+		$thisclass = $class_M->find($info['classid']);
+		$this->assign('thisclass', $thisclass); //当前栏目
+		
+		//面包屑
 		$where = array();
 		$where['id'] = array('in',$info['parentstr'].$info['classid']);
 		$class_arr = $class_M->where($where)->getField('id,classname');
@@ -79,6 +85,10 @@ class ImageController extends HomeBaseController {
 			}
 		}
 		$this->assign('bread', $bread); //面包屑
+
+		//属性选取		zc租车  qz签证
+		$attr = (in_array($attr, $this->attr)) ? $attr : '';
+		$this->assign('attr', $attr);
 		
 		$this->display();
 	}

@@ -14,9 +14,8 @@
 	<div class="sitewidth">
 		<a class="toindex" href="{:U('Index/index')}">返回首页</a>
 		<!-- <foreach name="bread" item="vo" key="k" > -->
-		&nbsp;〉<a href="{:U('lists?cid='.$k)}">{$vo}</a>
+		&nbsp;〉<a href="{:U('lists?cid='.$k.'&attr='.$attr)}">{$vo}</a>
 		<!-- </foreach> -->
-		&nbsp;〉{$info['title']}
 	</div>
 </div>
 <!-- 面包屑 end -->
@@ -25,19 +24,54 @@
 <div class="main">
 	<div class="sitewidth">
 		<!-- 左侧栏 start -->
-		<include file="Widget/sider" />
+		{:W('Page/Sider',array($thisclass))}
 		<!-- 左侧栏 end -->
-		<div class="main-art fl">
-			<div class="main-art-title">
+		<div class="main-info fl">
+			<div class="main-info-title">
 				<div class="title">{$info['title']}</div>
-				<div class="attr">发布时间:{:date('Y-m-d',$info['posttime'])} 点击:{$info['hits']}次</div>
+				<div class="dis">{$info['description']}</div>
+				<div class="attr">
+					<div class="pic fl">
+						<img src="{$info['picurl']}">
+					</div>
+					<div class="text fl">
+						<div class="attribute price">
+							预订价格：<em>￥<b>{$info['price']}</b></em>起
+							<!-- <if condition="$info['qijiashuoming']"> -->
+							<span class="price_produce">
+								<span>起价说明</span>
+								<div class="detail_frame">
+									<s></s>
+									<div class="con">{$info['qijiashuoming']}</div>
+								</div>
+							</span>
+							<!-- </if> -->
+						</div>
+						<!-- <if condition="$attr eq 'zc'"> -->
+							<!-- 租车 -->
+							<div class="attribute">座位数量：{$info['zuowei']}</div>
+							<div class="attribute">目的地：{$info['mudidi']}</div>
+							<div class="attribute">免费咨询/预订电话：{$info['yuding']|default="18613798120"}</div>
+						<!-- <elseif condition="$attr eq 'qz'"/> -->
+							<!-- 签证 -->
+							<div class="attribute">签证国家：{$info['qzguojia']}</div>
+							<div class="attribute">签证类别：{$info['qzleibie']|default="旅游签证"}</div>
+							<div class="attribute">办理时间：{$info['qzblsj']|default="以使馆签发为准"}</div>
+							<div class="attribute">是否面试：{$info['qzmianshi']|default="不需要"}</div>
+							<div class="attribute">邀请函：{$info['qzyqh']|default="不需要"}</div>
+							<div class="attribute">受理范围：{$info['qzslfw']}</div>
+							<div class="attribute">免费咨询/预订电话：{$info['yuding']|default="18613798120"}</div>
+						<!-- <else /> -->
+							<!-- 普通 -->
+						<!-- </if> -->
+					</div>
+				</div>
 			</div>
-			<div class="main-art-content">
-				<!-- <if condition="$info['content']"> -->
-				{$info['content']}
-				<!-- <else /> -->
-				网站资料更新中....
-				<!-- </if> -->
+			<div class="content">
+				<div class="head"><span>详情介绍</span></div>
+				<div class="body">
+					{$info['content']}
+				</div>
 			</div>
 		</div>
 	</div>
@@ -53,14 +87,18 @@
 
 <script type="text/javascript">
 $(function($) {
-	
 	$("#cate-menu").mouseenter(function(){
-			$("#category").show();
+		$("#category").show();
 	});
 	$("#cate-menu").mouseleave(function(){
 		$("#category").hide();
 	});
-	
+	$(".price_produce").mouseenter(function(){
+		$(this).children(".detail_frame").show();
+	});
+	$(".price_produce").mouseleave(function(){
+		$(this).children(".detail_frame").hide();
+	});
 });
 </script>
 

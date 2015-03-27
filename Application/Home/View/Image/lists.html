@@ -14,7 +14,7 @@
 	<div class="sitewidth">
 		<a class="toindex" href="{:U('Index/index')}">返回首页</a>
 		<!-- <foreach name="bread" item="vo" key="k" > -->
-		&nbsp;〉<a href="{:U('lists?cid='.$k)}">{$vo}</a>
+		&nbsp;〉<a href="{:U('lists?cid='.$k.'&attr='.$attr)}">{$vo}</a>
 		<!-- </foreach> -->
 	</div>
 </div>
@@ -24,46 +24,18 @@
 <div class="main">
 	<div class="sitewidth">
 		<!-- 左侧栏 start -->
-		<include file="Widget/sider" />
+		{:W('Page/Sider',array($thisclass,0))}
 		<!-- 左侧栏 end -->
 		<div class="main-content fl">
 			<div class="img-list">
-				<div class="li">
-					<div class="pic">1</div>
-					<div class="title">1</div>
-				</div>
-				<div class="li">
-					<div class="pic">2</div>
-					<div class="title">2</div>
-				</div>
-				<div class="li">
-					<div class="pic">1</div>
-					<div class="title">1</div>
-				</div>
-				<div class="li">
-					<div class="pic">2</div>
-					<div class="title">2</div>
-				</div>
-				<div class="li">
-					<div class="pic">1</div>
-					<div class="title">1</div>
-				</div>
-				<div class="li">
-					<div class="pic">2</div>
-					<div class="title">2</div>
-				</div>
-				<div class="cl"></div>
 			<!-- <foreach name="list" item="vo" > -->
 				<div class="li">
-					<a href="{:U('info?id='.$vo['id'])}">
-					<div class="title">
-						<div class="text fl">{$vo['title']}</div>
-						<div class="time fr">{:date('Y-m-d')}</div>
-					</div>
-					<div class="content">{:ReStrLen(strip_tags($vo['content']),180)}</div>
-					</a>
+					<div class="pic"><a href="{:U('info?id='.$vo['id'].'&attr='.$attr)}" title="{$vo['title']}"><img src="{$vo['picurl']}" /></a></div>
+					<div class="title"><a href="{:U('info?id='.$vo['id'].'&attr='.$attr)}" title="{$vo['title']}">{$vo['title']}</a></div>
+					<div class="price">￥<span>{:intval($vo['price'])}</span>起</div>
 				</div>
 			<!-- </foreach> -->
+				<div class="cl"></div>
 			</div>
 			{$_page}
 		</div>

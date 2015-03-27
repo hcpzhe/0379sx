@@ -87,7 +87,7 @@ class PageWidget extends HomeBaseController {
 		$this->display('Widget:Tuandui');
 	}
 	
-	public function sider($thisclass) {
+	public function sider($thisclass,$ads=1) {
 		
 		$cascade = array(
 				'当季热门' => 'remen',
@@ -111,16 +111,18 @@ class PageWidget extends HomeBaseController {
 		$list = $cascadedata_M->where($where)->order('orderid')->select();
 		$this->assign('list', $list); //热门旅游
 		
-		//广告
-		$adtype_M = new Model('Adtype');
-		$admanage_M = new Model('admanage');
-		$adtype = $adtype_M->where("checkinfo='true' AND siteid=".C('SITEID'))->order('orderid')->select();
-		$ads = array();
-		foreach ($adtype as $val) {
-			$tmp = $admanage_M->where("checkinfo='true' AND classid=".$val['id']." AND siteid=".C('SITEID'))->order('orderid')->select();
-			$ads[$val['id']] = $tmp;
+		if ($ads) {
+			//广告
+			$adtype_M = new Model('Adtype');
+			$admanage_M = new Model('admanage');
+			$adtype = $adtype_M->where("checkinfo='true' AND siteid=".C('SITEID'))->order('orderid')->select();
+			$ads = array();
+			foreach ($adtype as $val) {
+				$tmp = $admanage_M->where("checkinfo='true' AND classid=".$val['id']." AND siteid=".C('SITEID'))->order('orderid')->select();
+				$ads[$val['id']] = $tmp;
+			}
+			$this->assign('ads', $ads); //广告
 		}
-		$this->assign('ads', $ads); //广告
 		
 		$this->display('Widget:Sider');
 	}

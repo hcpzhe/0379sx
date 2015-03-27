@@ -77,7 +77,7 @@
 						<div class="pic"><a href="{:U('Line/info?id='.$vo['id'])}"><img src="{$vo['picurl']}" /></a></div>
 						<div class="title"><a href="{:U('Line/info?id='.$vo['id'])}" title="{$vo['title']}">{$vo['title']}</a></div>
 						<div class="price fl">￥<span>{:intval($vo['price'])}</span>起</div>
-						<div class="manyi fr">满意度 100%</div>
+						<div class="manyi fr"><a href="{:U('Line/info?id='.$vo['id'])}" title="{$vo['title']}">查看详情</a></div>
 					</li>
 				<!-- </foreach> -->
 				</ul>
@@ -109,8 +109,8 @@
 		</div>
 		<div class="body">
 			<div class="bigimg fl">
-				<!-- <if condition="$ads[2][0]['picurl']"> -->
-				<img src="{$ads[2][0]['picurl']}">
+				<!-- <if condition="$ads[3][0]['picurl']"> -->
+				<img src="{$ads[3][0]['picurl']}">
 				<!-- </if> -->
 			</div>
 			<div class="piclist fl">
@@ -120,7 +120,7 @@
 						<div class="pic"><a href="{:U('Line/info?id='.$vo['id'])}"><img src="{$vo['picurl']}" /></a></div>
 						<div class="title"><a href="{:U('Line/info?id='.$vo['id'])}" title="{$vo['title']}">{$vo['title']}</a></div>
 						<div class="price fl">￥<span>{:intval($vo['price'])}</span>起</div>
-						<div class="manyi fr">满意度 100%</div>
+						<div class="manyi fr"><a href="{:U('Line/info?id='.$vo['id'])}" title="{$vo['title']}">查看详情</a></div>
 					</li>
 				<!-- </foreach> -->
 				</ul>

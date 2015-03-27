@@ -66,9 +66,16 @@ class LineController extends HomeBaseController {
 		$model = New Model('Infoimg');
 		$info = $model->find($id);
 		$this->assign('info', $info); //列表
+		if ($info) $model->where('id='.$info['id'])->setInc('hits');
+		$info['hits']++;
+		
+		$class_M = new Model('Infoclass');
+		
+		//侧栏
+		$thisclass = $class_M->find($info['classid']);
+		$this->assign('thisclass', $thisclass); //当前栏目
 		
 		//面包屑
-		$class_M = new Model('Infoclass');
 		$where = array();
 		$where['id'] = array('in',$info['parentstr'].$info['classid']);
 		$class_arr = $class_M->where($where)->getField('id,classname');
