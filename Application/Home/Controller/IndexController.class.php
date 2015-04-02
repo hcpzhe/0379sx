@@ -59,7 +59,39 @@ class IndexController extends HomeBaseController {
 		);
 		$zhoumo = $img_M->where($where)->order('orderid DESC')->limit(6)->select();
 		$this->assign('zhoumo', $zhoumo); //周末去哪
+
+		//亲子游 3个
+		$flag = array('like','%q%');
+		$where = array(
+				'siteid' => C('SITEID'),
+				'flag' => $flag,
+				'checkinfo' => 'true',
+				'delstate' => ''
+		);
+		$qinzi = $img_M->where($where)->order('orderid DESC')->limit(3)->select();
+		$this->assign('qinzi', $qinzi); //亲子游
 		
+		//情侣游 3个
+		$flag = array('like','%l%');
+		$where = array(
+				'siteid' => C('SITEID'),
+				'flag' => $flag,
+				'checkinfo' => 'true',
+				'delstate' => ''
+		);
+		$qinglv = $img_M->where($where)->order('orderid DESC')->limit(3)->select();
+		$this->assign('qinglv', $qinglv); //情侣游
+		
+		//假日游 3个
+		$flag = array('like','%j%');
+		$where = array(
+				'siteid' => C('SITEID'),
+				'flag' => $flag,
+				'checkinfo' => 'true',
+				'delstate' => ''
+		);
+		$jiari = $img_M->where($where)->order('orderid DESC')->limit(3)->select();
+		$this->assign('jiari', $jiari); //假日游
 		
 		$this->display();
 	}

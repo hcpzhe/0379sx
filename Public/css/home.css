@@ -177,6 +177,7 @@ a:hover {color:#ff8800; text-decoration:underline;}
 				.t-t-f .right .list .tit .dis {color:#999999;font-size:14px;line-height:20px;margin-left:10px;}
 			.t-t-f .right .list ul {width:322px;height:210px;background: url("../images/tuijian_ul_bg.png") no-repeat; overflow: hidden;}
 				.t-t-f .right .list ul li {height: 64px;padding:14px 40px 0 44px;}
+					.t-t-f .right .list ul li .name {height:24px;line-height:24px;overflow: hidden;}
 					.t-t-f .right .list ul li .name a {color:#e75210;font-size:16px;line-height:24px;}
 					.t-t-f .right .list ul li .dis {color:#b6b6b6; line-height: 30px;}
 						.t-t-f .right .list ul li .price {color: #88b820;}
