@@ -30,24 +30,24 @@
 		{:W('Page/Sider',array($thisclass))}
 		<!-- 左侧栏 end -->
 		<div class="main-content fl">
-			<div id="slideplay">
-				<ul>
-				<?php
-					$rootline = array_keys($bread);
-					$rootline = $rootline['1'];
-					foreach ($ads[6] as $vo) {
-						if ($vo['title'] == $rootline) {
-							if ($vo['linkurl']) {
-								echo '<li><a href="'.$vo['linkurl'].'"><img alt="" src="'.$vo['picurl'].'" width="100%"></a></li>';
-							}else {
-								echo '<li><img alt="" src="'.$vo['picurl'].'" width="100%"></li>';
-							}
+			<?php
+				$slideplay = '';
+				$rootline = array_keys($bread);
+				$rootline = $rootline['1'];
+				foreach ($ads[6] as $vo) {
+					if ($vo['title'] == $rootline) {
+						if ($vo['linkurl']) {
+							$slideplay .= '<li><a href="'.$vo['linkurl'].'"><img alt="" src="'.$vo['picurl'].'" width="100%"></a></li>';
+						}else {
+							$slideplay .= '<li><img alt="" src="'.$vo['picurl'].'" width="100%"></li>';
 						}
 					}
-				?>
-				</ul>
-			</div>
+				}
+			?>
+			<!-- <if condition="$slideplay"> -->
+			<div id="slideplay"><ul>{$slideplay}</ul></div>
 			<div class="cl"></div>
+			<!-- </if> -->
 			<div class="paixu">
 				<div class="none">排序方式：</div>
 				<span id="recommands" class="onon"><a href="#">推荐</a></span>
