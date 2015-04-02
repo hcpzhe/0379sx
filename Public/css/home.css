@@ -193,7 +193,7 @@ a:hover {color:#ff8800; text-decoration:underline;}
 				.footer .article .artlist ul.list li {padding:0 20px 0 35px;line-height:30px;}
 				.footer .article .artlist ul.list li.tit a {color:#1d6827;font-size:16px;font-weight: 600;}
 				.footer .article .artlist ul.list li a {color:#fff;font-size:14px;}
-	.banquan {border-top: 1px solid #258231;background:#2da03c; line-height:59px;color:#fff;}
+	.banquan {border-top: 1px solid #258231;background:#2da03c; height:59px;color:#fff;padding-top:15px;}
 		.banquan a {color:#fff;}
 
 /***面包屑**********************************************************/
