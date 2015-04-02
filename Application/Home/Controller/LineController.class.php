@@ -53,6 +53,17 @@ class LineController extends HomeBaseController {
 		}
 		$this->assign('bread', $bread); //面包屑
 		
+		//广告
+		$adtype_M = new Model('Adtype');
+		$admanage_M = new Model('admanage');
+		$adtype = $adtype_M->where("checkinfo='true' AND siteid=".C('SITEID'))->order('orderid')->select();
+		$ads = array();
+		foreach ($adtype as $val) {
+			$tmp = $admanage_M->where("checkinfo='true' AND classid=".$val['id']." AND siteid=".C('SITEID'))->order('orderid')->select();
+			$ads[$val['id']] = $tmp;
+		}
+		$this->assign('ads', $ads); //广告
+		
 		// 记录当前列表页的cookie
 		cookie(C('CURRENT_URL_NAME'),$_SERVER['REQUEST_URI']);
 		

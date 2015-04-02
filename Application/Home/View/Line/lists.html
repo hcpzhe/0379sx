@@ -30,7 +30,22 @@
 		{:W('Page/Sider',array($thisclass))}
 		<!-- 左侧栏 end -->
 		<div class="main-content fl">
-			<div><img alt="" src="__IMG__/main-content-head.jpg" width="100%"></div>
+			<div>
+			<?php
+				$rootline = array_keys($bread);
+				$rootline = $rootline['1'];
+				foreach ($ads[6] as $vo) {
+					if ($vo['title'] == $rootline) {
+						if ($vo['linkurl']) {
+							echo '<a href="'.$vo['linkurl'].'"><img alt="" src="'.$vo['picurl'].'" width="100%"></a>';
+						}else {
+							echo '<img alt="" src="'.$vo['picurl'].'" width="100%">';
+						}
+						break;
+					}
+				}
+			?>
+			</div>
 			<div class="paixu">
 				<div class="none">排序方式：</div>
 				<span id="recommands" class="onon"><a href="#">推荐</a></span>

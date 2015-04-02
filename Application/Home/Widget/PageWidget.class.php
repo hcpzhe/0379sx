@@ -88,7 +88,6 @@ class PageWidget extends HomeBaseController {
 	}
 	
 	public function sider($thisclass,$ads=1) {
-		
 		$cascade = array(
 				'当季热门' => 'remen',
 				'洛阳周边' => 'zhoubian',
@@ -112,16 +111,20 @@ class PageWidget extends HomeBaseController {
 		$this->assign('list', $list); //热门旅游
 		
 		if ($ads) {
-			//广告
-			$adtype_M = new Model('Adtype');
+			//广告, 使用广告位ID为5的广告 , 只有出境5,国内4 有广告, 其它都随机显示, 最多显示3个
 			$admanage_M = new Model('admanage');
-			$adtype = $adtype_M->where("checkinfo='true' AND siteid=".C('SITEID'))->order('orderid')->select();
-			$ads = array();
-			foreach ($adtype as $val) {
-				$tmp = $admanage_M->where("checkinfo='true' AND classid=".$val['id']." AND siteid=".C('SITEID'))->order('orderid')->select();
-				$ads[$val['id']] = $tmp;
+			$where = array(
+					'checkinfo' => 'true',
+					'classid' => 5,
+					'siteid' => C('SITEID')
+			);
+			$order = 'rand()';
+			if ($classid=='4' || $classid=='5') {
+				$where['title']=$classid;
+				$order = "orderid";
 			}
-			$this->assign('ads', $ads); //广告
+			$sider_ad = $admanage_M->where($where)->order($order)->limit(3)->select();
+			$this->assign('sider_ad', $sider_ad); //广告
 		}
 		
 		$this->display('Widget:Sider');
