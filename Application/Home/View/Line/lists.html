@@ -30,22 +30,24 @@
 		{:W('Page/Sider',array($thisclass))}
 		<!-- 左侧栏 end -->
 		<div class="main-content fl">
-			<div>
-			<?php
-				$rootline = array_keys($bread);
-				$rootline = $rootline['1'];
-				foreach ($ads[6] as $vo) {
-					if ($vo['title'] == $rootline) {
-						if ($vo['linkurl']) {
-							echo '<a href="'.$vo['linkurl'].'"><img alt="" src="'.$vo['picurl'].'" width="100%"></a>';
-						}else {
-							echo '<img alt="" src="'.$vo['picurl'].'" width="100%">';
+			<div id="slideplay">
+				<ul>
+				<?php
+					$rootline = array_keys($bread);
+					$rootline = $rootline['1'];
+					foreach ($ads[6] as $vo) {
+						if ($vo['title'] == $rootline) {
+							if ($vo['linkurl']) {
+								echo '<li><a href="'.$vo['linkurl'].'"><img alt="" src="'.$vo['picurl'].'" width="100%"></a></li>';
+							}else {
+								echo '<li><img alt="" src="'.$vo['picurl'].'" width="100%"></li>';
+							}
 						}
-						break;
 					}
-				}
-			?>
+				?>
+				</ul>
 			</div>
+			<div class="cl"></div>
 			<div class="paixu">
 				<div class="none">排序方式：</div>
 				<span id="recommands" class="onon"><a href="#">推荐</a></span>
@@ -89,7 +91,7 @@
 <!-- 热门旅游end -->
 
 {:W('Page/Foot')}
-
+<script type="text/javascript" src="__JS__/slideplay.js"></script>
 <script type="text/javascript">
 $(function($) {
 	
