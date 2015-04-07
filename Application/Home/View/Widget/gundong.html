@@ -1,0 +1,18 @@
+		<!-- <if condition="$gundong"> -->
+			<div class="inside-tuandui">
+				<div class="head">
+					{$thisclass['classname']}
+					<div class="more fr"><a href="{:U('Image/lists?cid='.$thisclass['id'])}">更多>></a></div>
+				</div>
+				<div class="body">
+					<ul id="tuandui_pics">
+					<!-- <foreach name="gundong" item="vo" > -->
+						<li>
+							<div class="pic"><a href="{:U('Image/info?id='.$vo['id'])}" target="_blank" title="{$vo['title']}"><img src="{$vo['picurl']}" /></a></div>
+							<div class="title"><a href="{:U('Image/info?id='.$vo['id'])}" target="_blank" title="{$vo['title']}">{$vo['title']}</a></div>
+						</li>
+					<!-- </foreach> -->
+					</ul>
+				</div>
+			</div>
+		<!-- </if> -->

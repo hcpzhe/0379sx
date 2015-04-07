@@ -90,7 +90,8 @@ class ImageController extends HomeBaseController {
 		$attr = (in_array($attr, $this->attr)) ? $attr : '';
 		$this->assign('attr', $attr);
 		
-		$this->display();
+		if ($attr) $this->display();
+		else $this->display('image');
 	}
 	
 }

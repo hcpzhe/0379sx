@@ -70,21 +70,24 @@ class PageWidget extends HomeBaseController {
 	}
 	
 	/**
-	 * 团队风采   非首页使用, 全宽的栏目,滚动
+	 * 非首页使用, 全宽的栏目,默认20条
 	 */
-	public function tuandui() {
+	public function gundong($cid,$rows=20) {
+		$class_M = new Model('Infoclass');
+		$thisclass = $class_M->find($cid);
+		$this->assign('thisclass',$thisclass); //滚动展示的栏目名称
+		
 		$img_M = new Model('Infoimg');
-		$flag = array('like','%r%');
 		$where = array(
 				'siteid' => C('SITEID'),
-				'classid' => 29,
+				'classid' => $cid,
 				'checkinfo' => 'true',
 				'delstate' => ''
 		);
-		$remen = $img_M->where($where)->order('orderid DESC')->limit(10)->select();
-		$this->assign('remen', $remen); //热门旅游
+		$gundong = $img_M->where($where)->order('orderid DESC')->limit($rows)->select();
+		$this->assign('gundong', $gundong); //滚动展示的列表
 		
-		$this->display('Widget:Tuandui');
+		$this->display('Widget:Gundong');
 	}
 	
 	public function sider($thisclass,$ads=1) {

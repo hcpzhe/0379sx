@@ -154,42 +154,16 @@
 			<div class="tuandui">
 				<div class="head">
 					团队风采
-					<div class="more fr"><a href="#">更多>></a></div>
+					<div class="more fr"><a href="{:U('Image/lists?cid=29')}">更多>></a></div>
 				</div>
 				<div class="body">
 					<ul id="tuandui_pics">
+					<!-- <foreach name="tuandui" item="vo" > -->
 						<li>
-							<div class="pic"><a href="#" target="_blank"><img src="__IMG__/tmp_tuandui.jpg" /></a></div>
-							<div class="title"><a href="#" target="_blank">到某地旅游合影</a></div>
+							<div class="pic"><a href="{:U('Image/info?id='.$vo['id'])}" target="_blank" title="{$vo['title']}"><img src="{$vo['picurl']}" /></a></div>
+							<div class="title"><a href="{:U('Image/info?id='.$vo['id'])}" target="_blank" title="{$vo['title']}">{$vo['title']}</a></div>
 						</li>
-						<li>
-							<div class="pic"><a href="#" target="_blank"><img src="__IMG__/tmp_tuandui.jpg" /></a></div>
-							<div class="title"><a href="#" target="_blank">到某地旅游合影</a></div>
-						</li>
-						<li>
-							<div class="pic"><a href="#" target="_blank"><img src="__IMG__/tmp_tuandui.jpg" /></a></div>
-							<div class="title"><a href="#" target="_blank">到某地旅游合影</a></div>
-						</li>
-						<li>
-							<div class="pic"><a href="#" target="_blank"><img src="__IMG__/tmp_tuandui.jpg" /></a></div>
-							<div class="title"><a href="#" target="_blank">到某地旅游合影</a></div>
-						</li>
-						<li>
-							<div class="pic"><a href="#" target="_blank"><img src="__IMG__/tmp_tuandui.jpg" /></a></div>
-							<div class="title"><a href="#" target="_blank">到某地旅游合影</a></div>
-						</li>
-						<li>
-							<div class="pic"><a href="#" target="_blank"><img src="__IMG__/tmp_tuandui.jpg" /></a></div>
-							<div class="title"><a href="#" target="_blank">到某地旅游合影</a></div>
-						</li>
-						<li>
-							<div class="pic"><a href="#" target="_blank"><img src="__IMG__/tmp_tuandui.jpg" /></a></div>
-							<div class="title"><a href="#" target="_blank">到某地旅游合影</a></div>
-						</li>
-						<li>
-							<div class="pic"><a href="#" target="_blank"><img src="__IMG__/tmp_tuandui.jpg" /></a></div>
-							<div class="title"><a href="#" target="_blank">到某地旅游合影</a></div>
-						</li>
+					<!-- </foreach> -->
 					</ul>
 				</div>
 			</div>

@@ -278,6 +278,7 @@ a:hover {color:#ff8800; text-decoration:underline;}
 				.main-info .content .head {height:35px;border-bottom: #e75210 2px solid;}
 					.main-info .content .head span {display: inline-block;height:33px;line-height:33px;font-size: 15px;color:#fff;background: #e75210;padding: 0 20px;}
 				.main-info .content .body {border: #ddd 1px solid; padding: 12px; overflow-x: hidden;}
+					.main-info .content .body img {max-width: 928px; height: auto;}
 		/***文章列表***********************/
 		.main-content .art-list {width:954px;border:#ddd 1px solid;border-top: #e75210 2px solid;}
 			.main-content .art-list .li {padding:15px; height:117px; border-bottom: 1px dotted #e9e9e9;margin-bottom: 20px;}
@@ -292,6 +293,7 @@ a:hover {color:#ff8800; text-decoration:underline;}
 			.main-art-title {text-align: center; }
 				.main-art-title .title {line-height: 35px; font-size: 16px; color: #009900; font-weight: bold; border-bottom: 1px dotted #CCCCCC;}
 				.main-art-title .attr {line-height: 22px;color: #999999; margin-bottom: 15px; margin-top: 5px;}
+			.main-art-content img {max-width: 928px; height: auto;}
 		/***图片列表***********************/
 		.main-content .img-list {width:954px;border:#ddd 1px solid;border-top: #e75210 2px solid;}
 			.main-content .img-list .li {float:left;padding:15px; width:238px; border-bottom: 1px dotted #e9e9e9;}

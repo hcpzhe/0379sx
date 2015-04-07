@@ -93,6 +93,21 @@ class IndexController extends HomeBaseController {
 		$jiari = $img_M->where($where)->order('orderid DESC')->limit(3)->select();
 		$this->assign('jiari', $jiari); //假日游
 		
+		//团队风采 20个
+		$classid = 29;
+		$where = array(
+				'siteid' => C('SITEID'),
+				'checkinfo' => 'true',
+				'delstate' => ''
+		);
+		$map_class = array();
+		$map_class['classid'] = $classid;
+		$map_class['parentstr'] = array('like','%,'.$classid.',%');
+		$map_class['_logic'] = 'or';
+		$where['_complex'] = $map_class;
+		$tuandui = $img_M->where($where)->order('orderid DESC')->limit(20)->select();
+		$this->assign('tuandui', $tuandui); //团队风采
+		
 		$this->display();
 	}
 	

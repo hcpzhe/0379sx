@@ -28,6 +28,7 @@
 		<!-- 左侧栏 end -->
 		<div class="main-content fl">
 			<div class="img-list">
+			<!-- <if condition="$attr"> -->
 			<!-- <foreach name="list" item="vo" > -->
 				<div class="li">
 					<div class="pic"><a href="{:U('info?id='.$vo['id'].'&attr='.$attr)}" title="{$vo['title']}"><img src="{$vo['picurl']}" /></a></div>
@@ -35,6 +36,14 @@
 					<div class="price">￥<span>{:intval($vo['price'])}</span>起</div>
 				</div>
 			<!-- </foreach> -->
+			<!-- <else /> -->
+			<!-- <foreach name="list" item="vo" > -->
+				<div class="li">
+					<div class="pic"><a href="{:U('info?id='.$vo['id'].'&attr='.$attr)}" title="{$vo['title']}"><img src="{$vo['picurl']}" /></a></div>
+					<div class="title" style="text-align: center;"><a href="{:U('info?id='.$vo['id'].'&attr='.$attr)}" title="{$vo['title']}">{$vo['title']}</a></div>
+				</div>
+			<!-- </foreach> -->
+			<!-- </if> -->
 				<div class="cl"></div>
 			</div>
 			{$_page}
