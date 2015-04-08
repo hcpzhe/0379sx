@@ -2,6 +2,7 @@
 return array(
 // 	'AUTOLOAD_NAMESPACE' => array('Addons' => ADDON_PATH), //扩展模块列表
 	'SITEID'					=>	'1', //phpMywind 站点ID
+//	'MODULE_ALLOW_LIST'			=>	array('Home','Mobile'),
 	'DEFAULT_MODULE'			=>	'Home', //默认模块
 	'DEFAULT_TIMEZONE'			=>	'PRC', //时区
 	'TMPL_STRIP_SPACE'			=>	true, //是否去除模板文件里面的html空格与换行
@@ -33,5 +34,10 @@ return array(
 		'__IMG__'    => __ROOT__ . '/Public/images',
 		'__CSS__'    => __ROOT__ . '/Public/css',
 		'__JS__'     => __ROOT__ . '/Public/js',
+	),
+	
+	'APP_SUB_DOMAIN_DEPLOY'   =>    1, // 开启子域名配置
+	'APP_SUB_DOMAIN_RULES'    =>    array(
+		'm'    =>    'Mobile',  // m二级域名指向Mobile模块
 	),
 );

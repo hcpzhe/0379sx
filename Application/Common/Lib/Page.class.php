@@ -1,5 +1,5 @@
 <?php
-namespace Home\Lib;
+namespace Common\Lib;
 
 class Page{
     public $firstRow; // 起始行数

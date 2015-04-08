@@ -111,7 +111,7 @@ else
 //判断访问设备
 //如果手动更改后台目录，请将/admin目录更改成新后台目录
 if(IsMobile() && !strstr(GetCurUrl(),'4g.php') &&
-   $cfg_mobile=='Y' && !strstr(GetCurUrl(),'/admin'))
+   $cfg_mobile=='Y' && !strstr(GetCurUrl(),'/mgr'))
 {
 	header('location:4g.php');
 }

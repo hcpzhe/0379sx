@@ -9,6 +9,7 @@ use Common\Model\WebconfigModel;
 abstract class HomeBaseController extends Controller {
 	
 	protected function _initialize() {
+		if(IsMobile()) $this->redirect('Mobile/Index/index');
 		$model = new WebconfigModel();
 		$model->loadConfig();
 		
@@ -81,7 +82,7 @@ abstract class HomeBaseController extends Controller {
 		}else{
 			$listRows = C('LIST_ROWS') > 0 ? C('LIST_ROWS') : 10;
 		}
-		$page = new \Home\Lib\Page($total, $listRows, $REQUEST);
+		$page = new \Common\Lib\Page($total, $listRows, $REQUEST);
 				if($total>$listRows){
 					$page->setConfig('theme','%FIRST% %UP_PAGE% %LINK_PAGE% %DOWN_PAGE% %END% %HEADER%');
 				}

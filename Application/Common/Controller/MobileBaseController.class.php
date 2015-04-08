@@ -1,101 +1,24 @@
 <?php
 namespace Common\Controller;
 use Think\Controller;
-use Common\Model\ConfigModel;
+use Common\Model\WebconfigModel;
 
 /**
- * Manage 控制器基类
+ * Home 控制器访问基类
  */
-abstract class ManageBaseController extends Controller {
+abstract class MobileBaseController extends Controller {
 	
 	protected function _initialize() {
-		defined('UID') or define('UID',is_login());
-		//defined('UID') or define('UID',1); //调试使用
-        if( !UID ){// 还没登录 跳转到登录页面
-            $this->redirect(C('LOGIN_URL'));
-        }
-        
-		$model = new ConfigModel();
+		$model = new WebconfigModel();
 		$model->loadConfig();
 		
-		defined('IS_ROOT') or define('IS_ROOT',   is_administrator());
-		
-		// 检测访问权限
-		$access =   $this->accessControl();
-		if ( $access === false ) {
-			$this->error('403:禁止访问');
-		}elseif( $access === null ) {
-			//检测非动态权限
-			$rule  = strtolower(MODULE_NAME.'/'.CONTROLLER_NAME.'/'.ACTION_NAME);
-			if ( !$this->checkRule($rule,array('in','1,2')) ) {
-				$this->error('未授权访问!');
-			}
-		}
-	}
-
-	/**
-	 * action访问控制,在 **登陆成功** 后执行的第一项权限检测任务
-	 *
-	 * @return boolean|null  返回值必须使用 `===` 进行判断
-	 *
-	 *   返回 **false**, 不允许任何人访问(超管除外)
-	 *   返回 **true**, 允许任何管理员访问,无需执行节点权限检测
-	 *   返回 **null**, 需要继续执行节点权限检测决定是否允许访问
-	 */
-	final protected function accessControl(){
-		if(IS_ROOT){
-			return true;//管理员允许访问任何页面
-		}
-		$allow = C('ALLOW_VISIT');
-		$deny  = C('DENY_VISIT');
-		$check = strtolower(CONTROLLER_NAME.'/'.ACTION_NAME);
-		if ( !empty($deny)  && in_array_case($check,$deny) ) {
-			return false;//非超管禁止访问deny中的方法
-		}
-		if ( !empty($allow) && in_array_case($check,$allow) ) {
-			return true;
-		}
-		return null;//需要检测节点权限
-	}
-
-	/**
-	 * 权限检测
-	 * @param string  $rule	检测的规则
-	 * @param string  $mode	check模式
-	 * @return boolean
-	 */
-	final protected function checkRule($rule, $type, $mode='url'){
-		if(IS_ROOT){
-			return true;//管理员允许访问任何页面
-		}
-		static $Auth = null;
-		if (!$Auth) {
-			$Auth = new \Think\Auth();
-		}
-		if(!$Auth->check($rule,UID,$type,$mode)){
-			return false;
-		}
-		return true;
 	}
 	
-	protected function _state($id,$act,$modelname) {
-		$id = (int)$id;
-		if ($id <= 0) {
-			$this->error('主要参数非法');
-		}
-		$class = '\\Manage\\Model\\'.$modelname.'Model';
-		$acts = $class::$mystat;
-		if (!key_exists($act, $acts)) {
-			$this->error('参数非法');
-		}
-		$model = M($modelname);
-		if (false === $model->where('`id`='.$id)->setField('status',$acts[$act])) {
-			$this->error('更新失败,未知错误!');
-		}
-		$this->success('更新成功');
+	public function _empty() {
+		//TODO 判断是否存在当前controller的模板文件, 若存在,则display 不存在,再跳转
+		$this->redirect('Index/index');
 	}
 	
-
 	/**
 	 * 通用分页列表数据集获取方法
 	 *
@@ -118,7 +41,9 @@ abstract class ManageBaseController extends Controller {
 	 */
 	protected function _lists ($model,$where=array(),$order='',$base = array('status'=>array('egt',0)),$field=true){
 		$options    =   array();
-		$REQUEST    =   (array)I('request.');
+		$GET = (array)I('get.');
+		$POST = (array)I('post.');
+		$REQUEST = array_merge($POST,$GET);
 		if(is_string($model)){
 			$model  =   M($model);
 		}
@@ -156,10 +81,10 @@ abstract class ManageBaseController extends Controller {
 		}else{
 			$listRows = C('LIST_ROWS') > 0 ? C('LIST_ROWS') : 10;
 		}
-		$page = new \Manage\Lib\Page($total, $listRows, $REQUEST);
-// 		if($total>$listRows){
-// 			$page->setConfig('theme','%FIRST% %UP_PAGE% %LINK_PAGE% %DOWN_PAGE% %END% %HEADER%');
-// 		}
+		$page = new \Common\Lib\Page($total, $listRows, $REQUEST);
+				if($total>$listRows){
+					$page->setConfig('theme','%FIRST% %UP_PAGE% %LINK_PAGE% %DOWN_PAGE% %END% %HEADER%');
+				}
 		$p =$page->show();
 		$this->assign('_page', $p? $p: '');
 		$this->assign('_total',$total);
@@ -169,5 +94,4 @@ abstract class ManageBaseController extends Controller {
 	
 		return $model->field($field)->select();
 	}
-	
 }
