@@ -6,6 +6,7 @@ use Think\Model;
 class IndexController extends MobileBaseController {
 	
 	public function index() {
+		
 		$this->display();
 	}
 }
