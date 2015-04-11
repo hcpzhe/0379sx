@@ -33,18 +33,6 @@
 
 			$content .= '</span>';
 
-
-			switch($row['checkinfo'])
-			{
-				case 'true':
-					$checkinfo = '已审';
-					break;  
-				case 'false':
-					$checkinfo = '未审';
-					break;
-				default:
-					$checkinfo = '没有获取到参数';
-			}
 		?>
 		<tr align="left" class="dataTr">
 			<td height="44" class="firstCol"><input type="checkbox" name="checkid[]" id="checkid[]" value="<?php echo $row['id']; ?>" /></td>
