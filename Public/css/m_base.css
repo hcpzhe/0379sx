@@ -78,10 +78,10 @@ a {
 	border-bottom:1px solid #e5e5e5}	
 
 .home_top .logo{
-	float:left;}
+	text-align: center;
+}
 
 .home_top .logo img{
-	float:left;
 	height:30px;
 	vertical-align:middle}
 	
@@ -222,7 +222,7 @@ a {
 	padding:10px}
 	
 .load_more img {
-	vertical-align:-14px}
+	vertical-align:-1px}
 	
 .load-more {
 	display: block;

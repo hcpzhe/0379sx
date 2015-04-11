@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<include file="Widget/head" />
+	<link href="__CSS__/m_inside.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="city_top clearfix">
+	<a class="back" href="{:U('Index/index')}">返回</a>
+	<a class="city_tit">{$thisclass['classname']}</a>
+</div>
+
+<div class="m-main">
+	<section class="main-xl">
+		<div class="change-type">
+			<!--下拉列表-->
+			<div class="fex">
+				<!-- <foreach name="list" item="vo" > -->
+				<div class="pdt_list">
+					<a href="{:U('Line/info?id='.$vo['id'])}">
+						<div class="pdt_img">
+							<img src="{$vo['picurl']}" width="90" height="64">
+						</div>
+						<div class="pdt_txt">
+							<div class="pdt_box">
+								<p class="p_tit">{$vo['title']}</p>
+								<p class="p_pir">
+									<strong>¥{:intval($vo['price'])}</strong> <span>查看详情</span>
+								</p>
+							</div>
+						</div>
+					</a>
+				</div>
+				<!-- </foreach> -->
+			</div>
+			<div class="load_more"><img src="__IMG__/loading.gif">正在载入中...</div>
+			<input type="hidden" name="key" id="key" value="0">
+			<a href="javascript:;" class="load-more" page="1">点击载入更多</a>
+		</div>
+	</section>
+</div>
+
+<include file="Widget/Foot" />
+
+<script type="text/javascript" src="__JS__/idangerous.swiper.js"></script>
+<script type="text/javascript">
+$('.load-more').click(function(){
+	var docRec = $(this);
+	docRec.hide();
+	$('.load_more').show();
+
+	var page = parseInt(docRec.attr('page')) + 1;
+	var kindid = $('#kindid').val();
+	var days = $('#days').val();
+	var key = $('#key').val();
+	var attrid = $('#attrid').val();
+	var pricetyle = $('#pricetyle').val();
+	var order = $('#order').val();
+	var url = "{:U('Line/lists')}" + '?kindid=' + kindid
+			+ '&days=' + days + '&attrid=' + attrid
+			+ '&pricetyle=' + pricetyle + '&key=' + key
+			+ '&action=ajaxline&page=' + page + '&order='
+			+ order;
+	$.get(url,function(results) {
+		eval('results=' + results);
+		var str = '';
+		var listnum = 0;
+		for (a in results) {
+			var temprice = '电询';
+			if (results[a]['lineprice'] > 0) {
+				temprice = '&yen;'
+						+ results[a]['lineprice'];
+			}
+			str += '<div class="pdt_list"><a href="/shouji/lines/show/id/'+results[a]['id']+'"><div class="pdt_img"><img src="'+results[a]['linepic']+'" width="90" height="64"></div><div class="pdt_txt"><div class="pdt_box"><p class="p_tit">'
+					+ results[a]['linename']
+					+ '...</p><p class="p_pir"><strong>'
+					+ temprice
+					+ '</strong><span>满意度'
+					+ results[a]['satisfyscore']
+					+ '</span></p></div></div></a></div>';
+			listnum++;
+		}
+		docRec.attr('page', page);
+		if (listnum == 0) {
+			docRec.html('已无更多线路');
+		}
+		$('.fex').append(str);
+	});
+	$('.load_more').hide();
+	docRec.show();
+});
+</script>
+
+</body></html>

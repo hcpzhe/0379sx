@@ -60,4 +60,5 @@ $cfg_weibo_appid = '';
 $cfg_weibo_appkey = '';
 $cfg_welcome = '您好，欢迎来到舒翔假期！轻松旅行，完美生活。';
 $cfg_linerows = 10;
+$cfg_company_address = '洛阳市西工区七一路九州大厦1019';
 ?>
