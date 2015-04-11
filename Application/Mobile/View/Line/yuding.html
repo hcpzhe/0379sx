@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<include file="Widget/head" />
+	<link href="__CSS__/m_inside.css" rel="stylesheet">
+</head>
+<body>
+<div class="city_top clearfix">
+	<a class="back" href="javascript:history.go(-1);">返回</a>
+	<a class="city_tit">行程预订</a>
+</div>
+
+<div class="m-main">
+	<div class="xz-top-box">
+		<div class="pic">
+			<img class="fl" src="{$info['picurl']}" alt="" width="90"
+				height="64">
+		</div>
+		<div class="txt">
+			<p>{$info['title']}</p>
+			<span>¥{$info['price']}起</span>
+		</div>
+	</div>
+	<div class="big_box">
+		<div class="order-m">
+			<form action="{:U('yudingSave')}" method="post" name="form1"
+				id="form1">
+				<input type="hidden" name="linename" id="linename"
+					value="{$info['title']}">
+				<h3>预订行程</h3>
+				<ul>
+					<li><label>联系人：</label><input type="text" name="customer"
+						id="customer" class="order-lx" placeholder="请填写联系人姓名" value="">
+						<font color="red">*</font></li>
+					<li><label>联系电话：</label><input type="text" name="contact"
+						id="contact" class="order-lx" placeholder="手机号码或固定电话" value="">
+						<font color="red">*</font></li>
+					<li><label>预订留言：</label>
+					<textarea name="content" id="content" rows="3" cols="22"
+							placeholder="预订留言"></textarea></li>
+				</ul>
+			</form>
+		</div>
+	</div>
+</div>
+
+<include file="Widget/Foot" />
+
+<div class="opy"></div>
+<div class="bom_fix_box">
+	<a class="booking" href="javascript:void(0);" onclick="checkform();">提交预订</a>
+</div>
+
+<script type="text/javascript" src="__JS__/RSsubmit.js"></script>
+<script type="text/javascript">
+//提交预订
+function checkform() {
+	if ($('#linename').val() == '') {
+		alert('非法提交!!!');
+		return false;
+	}
+	if ($('#customer').val() == '') {
+		alert('联系人不能为空!!!');
+		$("#customer").focus();
+		return false;
+	}
+	if ($('#contact').val() == '') {
+		alert('联系电话不能为空!!!');
+		$("#contact").focus();
+		return false;
+	}
+	$('#form1').RSsubmit({
+		success_alert : true
+	});
+	return false;
+}
+</script>
+
+</body>
+</html>

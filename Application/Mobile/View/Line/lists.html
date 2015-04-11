@@ -18,7 +18,7 @@
 			<div class="fex">
 				<!-- <foreach name="list" item="vo" > -->
 				<div class="pdt_list">
-					<a href="{:U('Line/info?id='.$vo['id'])}">
+					<a href="{:U('info?id='.$vo['id'])}">
 						<div class="pdt_img">
 							<img src="{$vo['picurl']}" width="90" height="64">
 						</div>
@@ -35,7 +35,6 @@
 				<!-- </foreach> -->
 			</div>
 			<div class="load_more"><img src="__IMG__/loading.gif">正在载入中...</div>
-			<input type="hidden" name="key" id="key" value="0">
 			<a href="javascript:;" class="load-more" page="1">点击载入更多</a>
 		</div>
 	</section>
@@ -51,34 +50,24 @@ $('.load-more').click(function(){
 	$('.load_more').show();
 
 	var page = parseInt(docRec.attr('page')) + 1;
-	var kindid = $('#kindid').val();
-	var days = $('#days').val();
-	var key = $('#key').val();
-	var attrid = $('#attrid').val();
-	var pricetyle = $('#pricetyle').val();
-	var order = $('#order').val();
-	var url = "{:U('Line/lists')}" + '?kindid=' + kindid
-			+ '&days=' + days + '&attrid=' + attrid
-			+ '&pricetyle=' + pricetyle + '&key=' + key
-			+ '&action=ajaxline&page=' + page + '&order='
-			+ order;
+	var keywords = '{$keywords}';
+	var cid = '{$cid}';
+	var url = "{:U('lists')}" + '?keywords=' + keywords
+			+ '&cid=' + cid + '&p=' + page;
 	$.get(url,function(results) {
-		eval('results=' + results);
 		var str = '';
 		var listnum = 0;
 		for (a in results) {
 			var temprice = '电询';
-			if (results[a]['lineprice'] > 0) {
+			if (results[a]['price'] > 0) {
 				temprice = '&yen;'
-						+ results[a]['lineprice'];
+						+ results[a]['price'];
 			}
-			str += '<div class="pdt_list"><a href="/shouji/lines/show/id/'+results[a]['id']+'"><div class="pdt_img"><img src="'+results[a]['linepic']+'" width="90" height="64"></div><div class="pdt_txt"><div class="pdt_box"><p class="p_tit">'
-					+ results[a]['linename']
-					+ '...</p><p class="p_pir"><strong>'
+			str += '<div class="pdt_list"><a href="'+results[a]['url']+'"><div class="pdt_img"><img src="'+results[a]['picurl']+'" width="90" height="64"></div><div class="pdt_txt"><div class="pdt_box"><p class="p_tit">'
+					+ results[a]['title']
+					+ '</p><p class="p_pir"><strong>'
 					+ temprice
-					+ '</strong><span>满意度'
-					+ results[a]['satisfyscore']
-					+ '</span></p></div></div></a></div>';
+					+ '</strong><span>查看详情</span></p></div></div></a></div>';
 			listnum++;
 		}
 		docRec.attr('page', page);
@@ -86,7 +75,7 @@ $('.load-more').click(function(){
 			docRec.html('已无更多线路');
 		}
 		$('.fex').append(str);
-	});
+	},'json');
 	$('.load_more').hide();
 	docRec.show();
 });

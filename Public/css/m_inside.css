@@ -836,7 +836,7 @@ background: url(../images/s-down.png) left no-repeat;
 .case-list li{
 	float:left;
 	width:145px;
-	margin-bottom:10px;}
+	margin: 0 7px 10px 7px;}
 
 .case-list li a{
 	display:block;
@@ -851,7 +851,7 @@ background: url(../images/s-down.png) left no-repeat;
 .case-list img {
 	display:block;
 	width:100%;
-	height:90px;
+	height:93px;
 	border-radius:5px}
 	
 .case-list p{
@@ -863,6 +863,8 @@ background: url(../images/s-down.png) left no-repeat;
 	text-overflow:ellipsis;
 	margin-top:8px;
 	font-size:14px;}
+.case-list .price {	color: #ff8800;}
+.case-list .price span{font-size: 18px;}
 
 .main-gl{
 	width:100%;
@@ -920,7 +922,7 @@ background: url(../images/s-down.png) left no-repeat;
 	background-position:0 -43px}
 
 .order-m h3{
-	background-position:0 -90px}
+	/*background-position:0 -90px*/}
 
 .order-m ul li{
 	margin-top:10px}
@@ -1031,6 +1033,11 @@ background: url(../images/s-down.png) left no-repeat;
 	height:32px;
 	line-height:32px;
 	padding:0 5px}
+.order-m ul li textarea {
+	border:1px solid #ddd;
+	line-height:20px;
+	padding:0 5px
+}
 
 /*用户中心*/
 .user_head{

@@ -108,14 +108,14 @@ class LineController extends HomeBaseController {
 	/**
 	 * 预定页面
 	 */
-	public function ready($id) {
+	public function yuding($id) {
 		$this->display();
 	}
 	
 	/**
 	 * 预定提交
 	 */
-	public function order() {
+	public function yudingSave() {
 		//提交到留言板块
 	}
 	
