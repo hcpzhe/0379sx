@@ -53,7 +53,7 @@ class LineController extends MobileBaseController {
 	/**
 	 * 旅游路线详情
 	 */
-	public function info($id) {
+	public function info($id,$jup=null) {
 		$model = New Model('Infoimg');
 		$info = $model->find($id);
 		$this->assign('info', $info);
@@ -71,7 +71,6 @@ class LineController extends MobileBaseController {
 		$class_M = new Model('Infoclass');
 		$thisclass = $class_M->find($info['classid']);
 		$this->assign('thisclass', $thisclass); //当前栏目
-		
 		
 		// 记录当前列表页的cookie
 		cookie(C('CURRENT_URL_NAME'),$_SERVER['REQUEST_URI']);
@@ -101,7 +100,7 @@ class LineController extends MobileBaseController {
 		$data['posttime'] = time();
 		$model = new Model('Yuding');
 		if (!$model->add($data)) $this->error('预订提交失败, 请拨打电话进行预订!!');
-		$this->success('预订提交成功, 稍后我们的客服会通过电话与您联系!!',cookie(C('CURRENT_URL_NAME')));
+		$this->success('预订提交成功, 稍后我们的客服会通过电话与您联系!!',U('lists'));
 	}
 	
 }
