@@ -40,10 +40,12 @@
 			<div class="hr_5"></div>
 			<div class="menubox">
 				<div class="title" onclick="DisplayMenu('leftmenu03');" title="点击切换显示或隐藏"> 模块扩展管理 </div>
-				<div id="leftmenu03" style="display:none"><a href="member.php" target="main">用户管理</a> <a href="userfavorite.php" target="main">用户收藏管理</a> <a href="usercomment.php" target="main">用户评论管理</a>
+				<div id="leftmenu03" style="display:none">
+					<a href="member.php" target="main">用户管理</a> <a href="userfavorite.php" target="main">用户收藏管理</a> <a href="usercomment.php" target="main">用户评论管理</a>
 					<div class="hr_1"> </div>
 					<a href="message.php" target="main">留言模块管理</a> <a href="admanage.php" target="main">广告模块管理</a> <a href="weblink.php" target="main">友情链接管理</a> <a href="job.php" target="main">招聘模块管理</a> <a href="vote.php" target="main">投票模块管理</a>
 					<div class="hr_1"> </div>
+					<a href="yuding.php" target="main">预订管理</a>
 					<a href="cascade.php" target="main">级联数据管理</a> <a href="usergroup.php" target="main" title="用户组管理" class="usertype"></a> <a href="adtype.php" target="main" title="广告位管理" class="adtype"></a> <a href="weblinktype.php" target="main" title="友情链接类别" class="weblinktype"></a> </div>
 			</div>
 			<div class="hr_5"></div>

@@ -91,6 +91,8 @@ $row = $dosql->GetOne("SELECT * FROM `#@__admingroup` WHERE `id`=$id");
 					信息来源管理</span></div>
 				<div class="purviewTitle"><strong>模块扩展管理</strong></div>
 				<div class="purviewList"> <span>
+					<input type="checkbox" name="model[]" value="message" <?php echo GetModelPriv('yuding'); ?> />
+					预订管理</span> <span>
 					<input type="checkbox" name="model[]" value="member" <?php echo GetModelPriv('member'); ?> />
 					用户管理</span> <span>
 					<input type="checkbox" name="model[]" value="usergroup" <?php echo GetModelPriv('usergroup'); ?> />
