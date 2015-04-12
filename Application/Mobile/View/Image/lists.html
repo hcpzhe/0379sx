@@ -63,9 +63,9 @@ $('.load-more').click(function(){
 		}else {
 			docRec.html('已无更多信息');
 		}
+		$('.load_more').hide();
+		docRec.show();
 	}, 'json');
-	$('.load_more').hide();
-	docRec.show();
 });
 </script>
 
