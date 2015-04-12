@@ -39,7 +39,7 @@ $('.load-more').click(function(){
 	docRec.hide();
 	$('.load_more').show();
 
-	var page = parseInt(docRec.attr('page')) + 1;
+	var page = parseInt(docRec.attr('data-page')) + 1;
 	var attr = '{$attr}';
 	var cid = '{$cid}';
 	var url = "{:U('lists')}" + '?attr=' + attr
@@ -48,7 +48,7 @@ $('.load-more').click(function(){
 		var html = '';
 		var listnum = 0;
 		$.each(results,function(index, row) {
-			html += '<li class="case-list">';
+			html += '<li>';
 			html += '	<a href="'+row.url+'">';
 			html += '		<img src="'+row.picurl+'" alt="" />';
 			html += '		<p>'+ row.title + '</p>';

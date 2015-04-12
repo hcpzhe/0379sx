@@ -783,7 +783,7 @@ background: url(../images/s-down.png) left no-repeat;
 
 .photo-box,
 .mdd-box{
-	float:left;
+	float:left;	box-sizing: border-box;
 	width:100%;
 	padding:10px;
 	background:#eff3f6}
@@ -1015,9 +1015,9 @@ background: url(../images/s-down.png) left no-repeat;
 	box-shadow:none}
 
 .order-m ul li label{
-	font-size:16px;
+	font-size:14px;
 	display:inline-block;
-	width:88px;
+	width:85px;
 	text-align:right}
 
 .order-m ul li .order-jg{

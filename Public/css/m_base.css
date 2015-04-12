@@ -231,6 +231,7 @@ a {
 	vertical-align:-1px}
 	
 .load-more {
+	box-sizing: border-box;
 	display: block;
 	background:none;
 	border:0;

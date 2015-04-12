@@ -31,7 +31,7 @@
 				<!-- </foreach> -->
 			</div>
 			<div class="load_more"><img src="__IMG__/loading.gif">正在载入中...</div>
-			<a href="javascript:;" class="load-more" page="1">点击载入更多</a>
+			<a href="javascript:;" class="load-more" data-page="1">点击载入更多</a>
 		</div>
 	</section>
 </div>
@@ -45,7 +45,7 @@ $('.load-more').click(function(){
 	docRec.hide();
 	$('.load_more').show();
 
-	var page = parseInt(docRec.attr('page')) + 1;
+	var page = parseInt(docRec.attr('data-page')) + 1;
 	var keywords = '{$keywords}';
 	var cid = '{$cid}';
 	var url = "{:U('lists')}" + '?cid=' + cid + '&p=' + page;
