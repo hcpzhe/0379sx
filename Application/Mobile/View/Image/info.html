@@ -31,10 +31,19 @@
 				</p>
 			</li>
 			<li class="li_2">
-				<p>出发城市：{$info['fromcity']|default="洛阳"}</p>
-				<p>发团日期：{$info['godate']}</p>
-				<p>交通方式：{$info['jiaotong']}</p>
-				<p>报名地点：{$info['baoming']|default="洛阳市西工区七一路九州大厦1019"}</p>
+			<!-- <if condition="$attr eq 'zc'"> -->
+				<!-- 租车 -->
+				<p>座位数量：{$info['zuowei']}</p>
+				<p>目的地：{$info['mudidi']}</p>
+			<!-- <elseif condition="$attr eq 'qz'"/> -->
+				<!-- 签证 -->
+				<p>签证国家：{$info['qzguojia']}</p>
+				<p>签证类别：{$info['qzleibie']|default="旅游签证"}</p>
+				<p>办理时间：{$info['qzblsj']|default="以使馆签发为准"}</p>
+				<p>是否面试：{$info['qzmianshi']|default="不需要"}</p>
+				<p>邀请函：{$info['qzyqh']|default="不需要"}</p>
+				<p>受理范围：{$info['qzslfw']}</p>
+			<!-- </if> -->
 			</li>
 		</ul>
 
@@ -48,7 +57,7 @@
 		<!-- </if> -->
 
 		<div class="list-con mt10">
-			<h3 class="tit">行程介绍</h3>
+			<h3 class="tit">详情介绍</h3>
 			<div class="txt">{$info['content']}</div>
 		</div>
 
@@ -60,7 +69,6 @@
 <div class="opy"></div>
 <div class="bom_fix_box">
 	<a class="cell_phone" href="tel:{$info['yuding']|default='18613798120'}">{$info['yuding']|default="18613798120"}</a>
-	<a class="booking" href="#">立即预定</a>
 </div>
 <!-- 
 <script type="text/javascript" src="__JS__/idangerous.swiper.js"></script>

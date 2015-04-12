@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<include file="Widget/head" />
+	<link href="__CSS__/m_inside.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="city_top clearfix">
+	<a class="back" href="javascript:history.go(-1);">返回</a>
+	<a class="city_tit">文章详情</a>
+</div>
+<div class="m-main">
+	<div class="main-gl">
+		<div class="gl-head-tit">
+			<h1>{$info['title']}</h1>
+			<ul>
+				<li>点击:{$info['hits']}次</li>
+				<li>时间：{:date('Y-m-d',$info['posttime'])}</li>
+			</ul>
+		</div>
+		<div class="gl-con-txt">{$info['content']}</div>
+	</div>
+</div>
+
+<include file="Widget/Foot" />
+
+
+<script type="text/javascript">
+$(function() {
+	if ($('.gl-con-txt img').length > 0) {
+		var wp = $(window).width() - 100;
+		$('.gl-con-txt img').css('width', wp + 'px');
+	}
+});
+</script>
+
+</body>
+</html>

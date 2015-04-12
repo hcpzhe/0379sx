@@ -335,9 +335,10 @@
 .pdt_box .p_tit{
 	-webkit-box-flex:1;
 	width:0%}
-.pdt_box .p_tit em{
-	display:block;
-<<<<<<< .mine
+.pdt_box .p_tit em {
+	display:block; color:#ff5a00;
+	font-size:16px;
+	text-indent: 8px;
 	white-space:nowrap;
 	overflow:hidden;
 	text-overflow:ellipsis}
@@ -871,11 +872,11 @@ background: url(../images/s-down.png) left no-repeat;
 	background:#eff3f6}
 
 .gl-head-tit{
-	padding:10px;
-	border-bottom:1px solid #c1d0d5}
+	padding:10px;text-align:center;
+	border-bottom:1px solid #c1d0d5;}
 
 .gl-head-tit h1{
-	color:#333;
+	color: #ff5a00;
 	font-size:18px;
 	font-weight:500}
 
@@ -1016,7 +1017,7 @@ background: url(../images/s-down.png) left no-repeat;
 .order-m ul li label{
 	font-size:16px;
 	display:inline-block;
-	width:85px;
+	width:88px;
 	text-align:right}
 
 .order-m ul li .order-jg{

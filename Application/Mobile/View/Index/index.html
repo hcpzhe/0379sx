@@ -20,16 +20,18 @@
 		<div class="swiper-main">
 			<div class="swiper-container swiper1">
 				<div class="swiper-wrapper">
+					<!-- <foreach name="ads[1]" item="vo" > -->
 					<div class="swiper-slide">
-						<a href="http://ys.stourweb.com/shouji/mdd/city/id/4213">
-						<img alt="" src="uploads/image/20150319/1426729254.jpg">
+						<!-- <if condition="$vo['linkurl']"> -->
+						<a href="{$vo['linkurl']}">
+							<img src="{$vo['picurl']}" alt="" width="320" height="183" />
+						</a>
+						<!-- <else /> -->
+							<img alt="" src="{$vo['picurl']}"  width="320" height="183" />
+						<!-- </if> -->
 						</a>
 					</div>
-					<div class="swiper-slide">
-						<a href="http://ys.stourweb.com/shouji/mdd/city/id/4213">
-						<img alt="" src="uploads/image/20150319/1426729254.jpg">
-						</a>
-					</div>
+					<!-- </foreach> -->
 				</div>
 			</div>
 		</div>
