@@ -9,7 +9,9 @@ use Common\Model\WebconfigModel;
 abstract class HomeBaseController extends Controller {
 	
 	protected function _initialize() {
-		if(IsMobile()) $this->redirect('Mobile/Index/index');
+		if(IsMobile()) {
+			$this->redirect('Mobile/'.CONTROLLER_NAME.'/'.ACTION_NAME,$_GET);
+		}
 		$model = new WebconfigModel();
 		$model->loadConfig();
 		
