@@ -111,4 +111,26 @@ class IndexController extends HomeBaseController {
 		$this->display();
 	}
 	
+	public function message() {
+		
+		$this->display();
+	}
+	
+	public function msgSave() {
+		$data = I('post.');
+		if (empty($data['nickname']) || empty($data['contact']) || empty($data['content'])) {
+			$this->error('内容,姓名,手机号码不能为空!!');
+		}
+		$data['posttime'] = time();
+		$data['htop'] = '';
+		$data['rtop'] = '';
+		$data['ip'] = get_client_ip(1);
+		$data['recont'] = '';
+		$data['retime'] = 0;
+		$data['orderid'] = 1;
+		$data['checkinfo'] = 'true';
+		$model = new Model('message');
+		if (!$model->add($data)) $this->error('预订提交失败, 请拨打电话进行预订!!');
+		$this->success('留言提交成功');
+	}
 }

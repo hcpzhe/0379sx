@@ -104,11 +104,16 @@ class LineController extends HomeBaseController {
 		cookie(C('CURRENT_URL_NAME'),$_SERVER['REQUEST_URI']);
 		$this->display();
 	}
-	
+
 	/**
 	 * 预定页面
 	 */
 	public function yuding($id) {
+		$model = New Model('Infoimg');
+		$info = $model->where("id=$id AND parentstr like '%,2,%'")->find($id);
+		if (empty($info)) redirect(cookie(C('CURRENT_URL_NAME')));
+		$this->assign('info', $info);
+		
 		$this->display();
 	}
 	
@@ -116,7 +121,14 @@ class LineController extends HomeBaseController {
 	 * 预定提交
 	 */
 	public function yudingSave() {
-		//提交到留言板块
+		$data = I('post.');
+		if (empty($data['linename']) || empty($data['customer']) || empty($data['contact'])) {
+			$this->error('线路名称,联系人,联系电话 不能为空!!');
+		}
+		$data['posttime'] = time();
+		$model = new Model('Yuding');
+		if (!$model->add($data)) $this->error('预订提交失败, 请拨打电话进行预订!!');
+		$this->success('预订提交成功, 稍后我们的客服会通过电话与您联系!!',cookie(C('CURRENT_URL_NAME')));
 	}
 	
 }
