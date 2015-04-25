@@ -4,14 +4,12 @@
 	<div class="sitewidth">
 		<div class="fl">{$Think.config.cfg_welcome}</div>
 		<div class="fr guanzhu">
-			<a href="#"><i class="fa fa-weibo"></i></a>
-			<a href="#"><i class="fa fa-mobile" style="font-size:22px;"></i></a>
-			<a href="#"><i class="fa fa-weixin"></i></a>
+			<a href="#"><i class="fa fa-weibo"></i></a> <a href="#"><i
+				class="fa fa-mobile" style="font-size: 22px;"></i></a> <a href="#"><i
+				class="fa fa-weixin"></i></a>
 		</div>
 		<div class="fr links">
-			<a class="orange" href="#">一键收藏</a>
-			<a href="#">关于我们</a>
-			<a href="#">联系我们</a>
+			<a class="orange" href="#">一键收藏</a> <a href="#">关于我们</a> <a href="#">联系我们</a>
 		</div>
 	</div>
 </div>
@@ -19,7 +17,9 @@
 
 <!-- 头部start -->
 <div class="header sitewidth">
-	<div class="logo"><img src="__IMG__/logo_full.png" /></div>
+	<div class="logo">
+		<img src="__IMG__/logo_full.png" />
+	</div>
 	<div class="search_hotline">
 		<div class="fl hotline">
 			<div class="hotline_tit fl">24小时咨询电话</div>
@@ -28,8 +28,9 @@
 		</div>
 		<div class="fl search">
 			<form name="topsearch" method="get" action="{:U('Line/lists')}">
-				<input class="search_text fl" type="search" name="keywords" placeholder="请输入目的地名称或线路关键词" />
-				<input class="search_btn fl" type="submit" value="" />
+				<input class="search_text fl" type="search" name="keywords"
+					placeholder="请输入目的地名称或线路关键词" /> <input class="search_btn fl"
+					type="submit" value="" />
 			</form>
 		</div>
 	</div>
@@ -43,80 +44,386 @@
 			热门产品分类
 			<div class="category" id="category">
 				<ul>
-					<li>
-						<strong><a href="{:U('Line/lists?cid=16')}">当季热门</a></strong>
+					<li><strong><a href="{:U('Line/lists?cid=16')}">当季热门</a></strong>
 						<p>
 							<a href="{:U('Line/lists?cid=16')}">滑雪场</a>
 							<a href="{:U('Line/lists?cid=16')}">蜜月</a>
 							<a href="{:U('Line/lists?cid=16')}">周末</a>
 							<a href="{:U('Line/lists?cid=16')}">跟团</a>
-						</p>
-					</li>
-					<li>
-						<strong><a href="{:U('Line/lists?cid=3')}">洛阳周边</a></strong>
+						</p></li>
+					<li><strong><a href="{:U('Line/lists?cid=3')}">洛阳周边</a></strong>
 						<p>
-							<a href="{:U('Line/lists?cid=3')}">王城公园</a>
-							<a href="{:U('Line/lists?cid=3')}">滑雪场</a>
-							<a href="{:U('Line/lists?cid=3')}">重渡沟</a>
-							<a href="{:U('Line/lists?cid=3')}">重渡沟</a>
-						</p>
-					</li>
-					<li>
-						<strong><a href="{:U('Line/lists?cid=4')}">国内旅游</a></strong>
+							<a href="{:U('Line/lists?cid=3')}">王城公园</a> <a
+								href="{:U('Line/lists?cid=3')}">滑雪场</a> <a
+								href="{:U('Line/lists?cid=3')}">重渡沟</a> <a
+								href="{:U('Line/lists?cid=3')}">重渡沟</a>
+						</p></li>
+					<li><strong><a href="{:U('Line/lists?cid=4')}">国内旅游</a></strong>
 						<p>
-							<a href="{:U('Line/lists?cid=4')}">桂林</a>
-							<a href="{:U('Line/lists?cid=4')}">云南</a>
-							<a href="{:U('Line/lists?cid=4')}">四川</a>
-							<a href="{:U('Line/lists?cid=4')}">哈尔滨</a>
-							<a href="{:U('Line/lists?cid=4')}">哈尔滨</a>
-						</p>
-					</li>
-					<li>
-						<strong><a href="{:U('Line/lists?cid=5')}">出境旅游</a></strong>
+							<a href="{:U('Line/lists?cid=4')}">桂林</a> <a
+								href="{:U('Line/lists?cid=4')}">云南</a> <a
+								href="{:U('Line/lists?cid=4')}">四川</a> <a
+								href="{:U('Line/lists?cid=4')}">哈尔滨</a> <a
+								href="{:U('Line/lists?cid=4')}">哈尔滨</a>
+						</p></li>
+					<li><strong><a href="{:U('Line/lists?cid=5')}">出境旅游</a></strong>
 						<p>
-							<a href="{:U('Line/lists?cid=5')}">马尔代夫</a>
-							<a href="{:U('Line/lists?cid=5')}">韩国</a>
-							<a href="{:U('Line/lists?cid=5')}">日本</a>
-							<a href="{:U('Line/lists?cid=5')}">新西兰</a>
-							<a href="{:U('Line/lists?cid=5')}">法国</a>
-						</p>
-					</li>
-					<li>
-						<strong><a href="{:U('Line/lists?cid=17')}">特价旅游</a></strong>
+							<a href="{:U('Line/lists?cid=5')}">马尔代夫</a> <a
+								href="{:U('Line/lists?cid=5')}">韩国</a> <a
+								href="{:U('Line/lists?cid=5')}">日本</a> <a
+								href="{:U('Line/lists?cid=5')}">新西兰</a> <a
+								href="{:U('Line/lists?cid=5')}">法国</a>
+						</p></li>
+					<li><strong><a href="{:U('Line/lists?cid=17')}">特价旅游</a></strong>
 						<p>
-							<a href="{:U('Line/lists?cid=17')}">团购</a>
-							<a href="{:U('Line/lists?cid=17')}">亲子</a>
-							<a href="{:U('Line/lists?cid=17')}">组团</a>
-						</p>
-					</li>
-					<li>
-						<strong><a href="{:U('Article/lists?cid=8')}">旅游咨询</a></strong>
+							<a href="{:U('Line/lists?cid=17')}">团购</a> <a
+								href="{:U('Line/lists?cid=17')}">亲子</a> <a
+								href="{:U('Line/lists?cid=17')}">组团</a>
+						</p></li>
+					<li><strong><a href="{:U('Article/lists?cid=8')}">旅游咨询</a></strong>
 						<p>
-							<a href="{:U('Article/lists?cid=8')}">旅游向导</a>
-							<a href="{:U('Article/lists?cid=8')}">攻略</a>
-						</p>
-					</li>
+							<a href="{:U('Article/lists?cid=8')}">旅游向导</a> <a
+								href="{:U('Article/lists?cid=8')}">攻略</a>
+						</p></li>
 				</ul>
 			</div>
-			<!-- 
 			<div class="nav_tag_con" id="nav_tag_con">
-				<div class="hide_box">
-					<span class="line line1"></span>
-					<span class="line"></span>
-					<div>123123</div>
+				<div class="hide_box" style="display: none;">
+					<span class="line line1"></span> <span class="line"></span>
+					<div class="txt1">
+						<a href="{:U('Line/lists?keywords=云南')}">云南</a>
+						<a href="{:U('Line/lists?keywords=西安')}">西安</a>
+						<a href="{:U('Line/lists?keywords=港澳')}">港澳</a>
+						<a href="{:U('Line/lists?keywords=凤凰古城')}">凤凰古城</a>
+						<a href="{:U('Line/lists?keywords=北京')}">北京</a>
+						<a href="{:U('Line/lists?keywords=新马泰')}">新马泰</a>
+						<a href="{:U('Line/lists?keywords=泰国')}">泰国</a>
+						<a href="{:U('Line/lists?keywords=韩国')}">韩国</a>
+						<a href="{:U('Line/lists?keywords=日本')}">日本</a>
+						<a href="{:U('Line/lists?keywords=海南')}">海南</a>
+						<a href="{:U('Line/lists?keywords=毛里求斯')}">毛里求斯</a>
+					</div>
 				</div>
-				<div class="hide_box">
-					<span class="line line1"></span>
-					<span class="line"></span>
-					<div>123123</div>
+				<div class="hide_box" style="display: none;">
+					<span class="line line1 line2"></span> <span class="line line2"></span>
+					<div class="txt1">
+						<a href="{:U('Line/lists?keywords=少林寺')}">少林寺</a>
+						<a href="{:U('Line/lists?keywords=龙门石窟')}">龙门石窟</a>
+						<a href="{:U('Line/lists?keywords=白马寺')}">白马寺</a>
+						<a href="{:U('Line/lists?keywords=牡丹园')}">牡丹园</a>
+						<a href="{:U('Line/lists?keywords=龙潭峡')}">龙潭峡</a>
+						<a href="{:U('Line/lists?keywords=木札岭')}">木札岭</a>
+						<a href="{:U('Line/lists?keywords=神灵寨')}">神灵寨</a>
+						<a href="{:U('Line/lists?keywords=西泰山')}">西泰山</a>
+						<a href="{:U('Line/lists?keywords=神农山')}">神农山</a>
+						<a href="{:U('Line/lists?keywords=方特')}">方特</a>
+						<a href="{:U('Line/lists?keywords=老君山')}">老君山</a>
+						<a href="{:U('Line/lists?keywords=重渡沟')}">重渡沟</a>
+						<a href="{:U('Line/lists?keywords=白云山')}">白云山</a>
+						<a href="{:U('Line/lists?keywords=世纪欢乐园')}">世纪欢乐园</a>
+						<a href="{:U('Line/lists?keywords=双龙湾')}">双龙湾</a>
+						<a href="{:U('Line/lists?keywords=养子沟')}">养子沟</a>
+						<a href="{:U('Line/lists?keywords=天池山')}">天池山</a>
+						<a href="{:U('Line/lists?keywords=伏牛山')}">伏牛山</a>
+						<a href="{:U('Line/lists?keywords=鸡冠洞')}">鸡冠洞</a>
+						<a href="{:U('Line/lists?keywords=龙峪湾')}">龙峪湾</a>
+						<a href="{:U('Line/lists?keywords=皇城相府')}">皇城相府</a>
+					</div>
 				</div>
-				<div class="hide_box">
-					<span class="line line1"></span>
-					<span class="line"></span>
-					<div>123123</div>
+				<div class="hide_box" style="display: none;">
+					<span class="line line1 line3"></span> <span class="line line3"></span>
+					<div class="txt2">
+						<dl class="">
+							<dt><a href="{:U('Line/lists?keywords=四川')}">四川</a></dt>
+							<dd>
+								<a href="{:U('Line/lists?keywords=九寨沟')}">九寨沟</a>
+								<a href="{:U('Line/lists?keywords=峨眉山')}">峨眉山</a>
+								<a href="{:U('Line/lists?keywords=康定')}">康定</a>
+								<a href="{:U('Line/lists?keywords=海螺沟')}">海螺沟</a>
+								<a href="{:U('Line/lists?keywords=西昌')}">西昌</a>
+								<a href="{:U('Line/lists?keywords=蜀南竹海')}">蜀南竹海</a>
+								<a href="{:U('Line/lists?keywords=燕子沟')}">燕子沟</a>
+								<a href="{:U('Line/lists?keywords=都江堰')}">都江堰</a>
+								<a href="{:U('Line/lists?keywords=西岭雪山')}">西岭雪山</a>
+							</dd>
+						</dl>
+						<dl class="">
+							<dt>
+								<a href="{:U('Line/lists?keywords=云南')}">云南</a>
+							</dt>
+							<dd>
+								<a href="{:U('Line/lists?keywords=丽江')}">丽江</a>
+								<a href="{:U('Line/lists?keywords=香格里拉')}">香格里拉</a>
+								<a href="{:U('Line/lists?keywords=泸沽湖')}">泸沽湖</a>
+								<a href="{:U('Line/lists?keywords=大理')}">大理</a>
+								<a href="{:U('Line/lists?keywords=昆明')}">昆明</a>
+								<a href="{:U('Line/lists?keywords=西双版纳')}">西双版纳</a>
+								<a href="{:U('Line/lists?keywords=腾冲')}">腾冲</a>
+								<a href="{:U('Line/lists?keywords=普者黑')}">普者黑</a>
+								<a href="{:U('Line/lists?keywords=玉龙雪山')}">玉龙雪山</a>
+								<a href="{:U('Line/lists?keywords=瑞丽')}">瑞丽</a>
+								<a href="{:U('Line/lists?keywords=双廊')}">双廊</a>
+								<a href="{:U('Line/lists?keywords=洱海')}">洱海</a>
+								<a href="{:U('Line/lists?keywords=虎跳峡')}">虎跳峡</a>
+								<a href="{:U('Line/lists?keywords=普达措')}">普达措</a>
+							</dd>
+						</dl>
+						<dl class="">
+							<dt>
+								<a href="{:U('Line/lists?keywords=海南')}">海南</a>
+							</dt>
+							<dd>
+								<a href="{:U('Line/lists?keywords=三亚')}">三亚</a>
+								<a href="{:U('Line/lists?keywords=海口')}">海口</a>
+								<a href="{:U('Line/lists?keywords=蜈支洲岛')}">蜈支洲岛</a>
+								<a href="{:U('Line/lists?keywords=天涯海角')}">天涯海角</a>
+								<a href="{:U('Line/lists?keywords=分界洲岛')}">分界洲岛</a>
+								<a href="{:U('Line/lists?keywords=亚龙湾沙滩')}">亚龙湾沙滩</a>
+							</dd>
+						</dl>
+						<dl class="">
+							<dt>
+								<a href="{:U('Line/lists?keywords=华东')}">华东</a>
+							</dt>
+							<dd>
+								<a href="{:U('Line/lists?keywords=上海')}">上海</a>
+								<a href="{:U('Line/lists?keywords=杭州')}">杭州</a>
+								<a href="{:U('Line/lists?keywords=苏州')}">苏州</a>
+								<a href="{:U('Line/lists?keywords=厦门')}">厦门</a>
+								<a href="{:U('Line/lists?keywords=鼓浪屿')}">鼓浪屿</a>
+								<a href="{:U('Line/lists?keywords=黄山')}">黄山</a>
+								<a href="{:U('Line/lists?keywords=千岛湖')}">千岛湖</a>
+								<a href="{:U('Line/lists?keywords=武夷山')}">武夷山</a>
+								<a href="{:U('Line/lists?keywords=普陀山')}">普陀山</a>
+								<a href="{:U('Line/lists?keywords=乌镇')}">乌镇</a>
+							</dd>
+						</dl>
+						<dl class="">
+							<dt>
+								<a href="{:U('Line/lists?keywords=广西')}">广西</a>
+							</dt>
+							<dd>
+								<a href="{:U('Line/lists?keywords=桂林')}">桂林</a>
+								<a href="{:U('Line/lists?keywords=北海')}">北海</a>
+								<a href="{:U('Line/lists?keywords=涠洲岛')}">涠洲岛</a>
+								<a href="{:U('Line/lists?keywords=龙脊梯田')}">龙脊梯田</a>
+								<a href="{:U('Line/lists?keywords=南宁')}">南宁</a>
+								<a href="{:U('Line/lists?keywords=巴马')}">巴马</a>
+							</dd>
+						</dl>
+						<dl class="">
+							<dt>
+								<a href="{:U('Line/lists?keywords=北京')}">北京</a>
+							</dt>
+							<dd>
+								<a href="{:U('Line/lists?keywords=北京')}">北京</a>
+								<a href="{:U('Line/lists?keywords=天津')}">天津</a>
+								<a href="{:U('Line/lists?keywords=北戴河')}">北戴河</a>
+								<a href="{:U('Line/lists?keywords=石家庄')}">石家庄</a>
+								<a href="{:U('Line/lists?keywords=承德')}">承德</a>
+							</dd>
+						</dl>
+						<dl class="">
+							<dt>
+								<a href="{:U('Line/lists?keywords=西藏')}">西藏</a>
+							</dt>
+							<dd>
+								<a href="{:U('Line/lists?keywords=拉萨')}">拉萨</a>
+								<a href="{:U('Line/lists?keywords=林芝')}">林芝</a>
+								<a href="{:U('Line/lists?keywords=纳木错')}">纳木错</a>
+								<a href="{:U('Line/lists?keywords=日喀则')}">日喀则</a>
+							</dd>
+						</dl>
+						<dl class="">
+							<dt>
+								<a href="{:U('Line/lists?keywords=贵州')}">贵州</a>
+							</dt>
+							<dd>
+								<a href="{:U('Line/lists?keywords=赤水')}">赤水</a>
+								<a href="{:U('Line/lists?keywords=荔波')}">荔波</a>
+								<a href="{:U('Line/lists?keywords=西江苗寨')}">西江苗寨</a>
+								<a href="{:U('Line/lists?keywords=黄果树')}">黄果树</a>
+								<a href="{:U('Line/lists?keywords=镇远')}">镇远</a>
+								<a href="{:U('Line/lists?keywords=遵义')}">遵义</a>
+								<a href="{:U('Line/lists?keywords=梵净山')}">梵净山</a>
+							</dd>
+						</dl>
+						<dl class="">
+							<dt>
+								<a href="{:U('Line/lists?keywords=西北')}">西北</a>
+							</dt>
+							<dd>
+								<a href="{:U('Line/lists?keywords=西安')}">西安</a>
+								<a href="{:U('Line/lists?keywords=内蒙希拉穆仁')}">内蒙希拉穆仁</a>
+								<a href="{:U('Line/lists?keywords=中卫沙坡头')}">中卫沙坡头</a>
+								<a href="{:U('Line/lists?keywords=西宁青海湖')}">西宁青海湖</a>
+								<a href="{:U('Line/lists?keywords=敦煌莫高窟')}">敦煌莫高窟</a>
+								<a href="{:U('Line/lists?keywords=额济纳旗')}">额济纳旗</a>
+								<a href="{:U('Line/lists?keywords=延安')}">延安</a>
+							</dd>
+						</dl>
+						<dl class="">
+							<dt>
+								<a href="{:U('Line/lists?keywords=湖南')}">湖南</a>
+							</dt>
+							<dd>
+								<a href="{:U('Line/lists?keywords=张家界')}">张家界</a>
+								<a href="{:U('Line/lists?keywords=凤凰古城')}">凤凰古城</a>
+								<a href="{:U('Line/lists?keywords=袁家界')}">袁家界</a>
+								<a href="{:U('Line/lists?keywords=韶山')}">韶山</a>
+								<a href="{:U('Line/lists?keywords=南昌庐山')}">南昌庐山</a>
+								<a href="{:U('Line/lists?keywords=景德镇')}">景德镇</a>
+							</dd>
+						</dl>
+						<dl class="">
+							<dt>
+								<a href="{:U('Line/lists?keywords=新疆')}">新疆</a>
+							</dt>
+							<dd>
+								<a href="{:U('Line/lists?keywords=天山天池')}">天山天池</a>
+								<a href="{:U('Line/lists?keywords=吐鲁番')}">吐鲁番</a>
+								<a href="{:U('Line/lists?keywords=喀纳斯')}">喀纳斯</a>
+								<a href="{:U('Line/lists?keywords=魔鬼城')}">魔鬼城</a>
+								<a href="{:U('Line/lists?keywords=赛里木湖')}">赛里木湖</a>
+							</dd>
+						</dl>
+						<dl class="">
+							<dt>
+								<a href="{:U('Line/lists?keywords=东北')}">东北</a>
+							</dt>
+							<dd>
+								<a href="{:U('Line/lists?keywords=哈尔滨')}">哈尔滨</a>
+								<a href="{:U('Line/lists?keywords=满洲里')}">满洲里</a>
+								<a href="{:U('Line/lists?keywords=海拉尔')}">海拉尔</a>
+								<a href="{:U('Line/lists?keywords=呼伦贝尔')}">呼伦贝尔</a>
+								<a href="{:U('Line/lists?keywords=雪乡')}">雪乡</a>
+								<a href="{:U('Line/lists?keywords=长白山')}">长白山</a>
+								<a href="{:U('Line/lists?keywords=沈阳')}">沈阳</a>
+								<a href="{:U('Line/lists?keywords=吉林')}">吉林</a>
+							</dd>
+						</dl>
+						<dl class="">
+							<dt>
+								<a href="{:U('Line/lists?keywords=湖北')}">湖北</a>
+							</dt>
+							<dd>
+								<a href="{:U('Line/lists?keywords=恩施')}">恩施</a>
+								<a href="{:U('Line/lists?keywords=大峡谷')}">大峡谷</a>
+								<a href="{:U('Line/lists?keywords=腾龙洞')}">腾龙洞</a>
+								<a href="{:U('Line/lists?keywords=武当山')}">武当山</a>
+								<a href="{:U('Line/lists?keywords=神农架')}">神农架</a>
+							</dd>
+						</dl>
+						<!-- 
+						<dl class="">
+							<dt>
+								<a href="{:U('Line/lists?keywords=广东')}">广东</a>
+							</dt>
+							<dd>
+								<a href="{:U('Line/lists?keywords=广州')}">广州</a>
+								<a href="{:U('Line/lists?keywords=深圳')}">深圳</a>
+								<a href="{:U('Line/lists?keywords=珠海')}">珠海</a>
+								<a href="{:U('Line/lists?keywords=长隆')}">长隆</a>
+							</dd>
+						</dl>
+						 -->
+					</div>
+				</div>
+				<div class="hide_box" style="display: none;">
+					<span class="line line1 line4"></span> <span class="line line4"></span>
+					<div class="txt4">
+						<dl class="">
+							<dt><a href="{:U('Line/lists?keywords=欧洲')}">欧洲</a></dt>
+							<dd>
+								<a href="{:U('Line/lists?keywords=法国')}">法国</a>
+								<a href="{:U('Line/lists?keywords=瑞士')}">瑞士</a>
+								<a href="{:U('Line/lists?keywords=意大利')}">意大利</a>
+								<a href="{:U('Line/lists?keywords=德国')}">德国</a>
+								<a href="{:U('Line/lists?keywords=希腊')}">希腊</a>
+								<a href="{:U('Line/lists?keywords=英国')}">英国</a>
+								<a href="{:U('Line/lists?keywords=爱尔兰')}">爱尔兰</a>
+								<a href="{:U('Line/lists?keywords=俄罗斯')}">俄罗斯</a>
+								<a href="{:U('Line/lists?keywords=北欧')}">北欧</a>
+								<a href="{:U('Line/lists?keywords=东欧')}">东欧</a>
+								<a href="{:U('Line/lists?keywords=西班牙')}">西班牙</a>
+								<a href="{:U('Line/lists?keywords=葡萄牙')}">葡萄牙</a>
+							</dd>
+						</dl>
+						<dl class="">
+							<dt>
+								<a href="{:U('Line/lists?keywords=亚洲')}">亚洲</a>
+							</dt>
+							<dd>
+								<a href="{:U('Line/lists?keywords=韩国')}">韩国</a>
+								<a href="{:U('Line/lists?keywords=日本')}">日本</a>
+								<a href="{:U('Line/lists?keywords=北海道')}">北海道</a>
+								<a href="{:U('Line/lists?keywords=泰国')}">泰国</a>
+								<a href="{:U('Line/lists?keywords=清迈')}">清迈</a>
+								<a href="{:U('Line/lists?keywords=清莱')}">清莱</a>
+								<a href="{:U('Line/lists?keywords=新加坡')}">新加坡</a>
+								<a href="{:U('Line/lists?keywords=马来西亚')}">马来西亚</a>
+								<a href="{:U('Line/lists?keywords=新马泰')}">新马泰</a>
+								<a href="{:U('Line/lists?keywords=柬埔寨')}">柬埔寨</a>
+								<a href="{:U('Line/lists?keywords=尼泊尔')}">尼泊尔</a>
+							</dd>
+						</dl>
+						<dl class="">
+							<dt>
+								<a href="{:U('Line/lists?keywords=海岛')}">海岛</a>
+							</dt>
+							<dd>
+								<a href="{:U('Line/lists?keywords=苏梅岛')}">苏梅岛</a>
+								<a href="{:U('Line/lists?keywords=长滩岛')}">长滩岛</a>
+								<a href="{:U('Line/lists?keywords=塞班岛')}">塞班岛</a>
+								<a href="{:U('Line/lists?keywords=巴厘岛')}">巴厘岛</a>
+								<a href="{:U('Line/lists?keywords=普吉岛')}">普吉岛</a>
+								<a href="{:U('Line/lists?keywords=沙巴')}">沙巴</a>
+								<a href="{:U('Line/lists?keywords=马尔代夫')}">马尔代夫</a>
+								<a href="{:U('Line/lists?keywords=毛里求斯')}">毛里求斯</a>
+								<a href="{:U('Line/lists?keywords=帕劳')}">帕劳</a>
+								<a href="{:U('Line/lists?keywords=斯里兰卡')}">斯里兰卡</a>
+							</dd>
+						</dl>
+						<dl class="">
+							<dt>
+								<a href="{:U('Line/lists?keywords=美洲')}">美洲</a>
+							</dt>
+							<dd>
+								<a href="{:U('Line/lists?keywords=美国')}">美国</a>
+								<a href="{:U('Line/lists?keywords=加拿大')}">加拿大</a>
+								<a href="{:U('Line/lists?keywords=夏威夷')}">夏威夷</a>
+								<a href="{:U('Line/lists?keywords=夏威夷')}">夏威夷</a>
+								<a href="{:U('Line/lists?keywords=巴西')}">巴西</a>
+							</dd>
+						</dl>
+						<dl class="">
+							<dt>
+								<a href="{:U('Line/lists?keywords=大洋洲')}">大洋洲</a>
+							</dt>
+							<dd>
+								<a href="{:U('Line/lists?keywords=澳大利亚')}">澳大利亚</a>
+								<a href="{:U('Line/lists?keywords=新西兰')}">新西兰</a>
+								<a href="{:U('Line/lists?keywords=斐济')}">斐济</a>
+								<a href="{:U('Line/lists?keywords=大溪地')}">大溪地</a>
+							</dd>
+						</dl>
+						<dl class="">
+							<dt>
+								<a href="{:U('Line/lists?keywords=中东非')}">中东非</a>
+							</dt>
+							<dd>
+								<a href="{:U('Line/lists?keywords=阿联酋')}">阿联酋</a>
+								<a href="{:U('Line/lists?keywords=迪拜')}">迪拜</a>
+								<a href="{:U('Line/lists?keywords=埃及')}">埃及</a>
+								<a href="{:U('Line/lists?keywords=土耳其')}">土耳其</a>
+								<a href="{:U('Line/lists?keywords=南非')}">南非</a>
+								<a href="{:U('Line/lists?keywords=肯尼亚')}">肯尼亚</a>
+								<a href="{:U('Line/lists?keywords=塞舌尔')}">塞舌尔</a>
+							</dd>
+						</dl>
+					</div>
 				</div>
 			</div>
-			 -->
 		</div>
 		<ul class="nav fl">
 			<!-- <foreach name="menu_list" item="vo" > -->
@@ -126,3 +433,4 @@
 	</div>
 </div>
 <!-- 导航 end -->
+

@@ -68,10 +68,28 @@ a:hover {color:#ff8800; text-decoration:underline;}
 			.navicat .category li p {height:20px;overflow: hidden;font-size:12px;}
 				.navicat .category li p a {color:#424242;display: inline-block;margin-right: 5px;}
 	/***分类拓展**/
-	.navicat .nav_tag_con {position: absolute; top: 40px; left: 237px; width: 660px; height: 415px; padding: 9px 19px; border: 2px solid #b2d891; font-family: "arial"; box-shadow: 2px 2px 3px rgba(0,0,0,0.2); background: #fff;z-index: 999;}
-		.navicat .nav_tag_con .hide_box {}
-			.navicat .nav_tag_con .hide_box span.line {position: absolute; top: -2px; left: -2px; width: 2px; height: 72px; background: #fff; overflow: hidden;}
-			.navicat .nav_tag_con .hide_box span.line1 {left: -240px; background: #fb0;}
+	.navicat .nav_tag_con {display:none; position: absolute; top: 40px; left: 237px; width: 660px; height: 415px; padding: 9px 19px; border: 2px solid #b2d891; font-family: "arial"; box-shadow: 2px 2px 3px rgba(0,0,0,0.2); background: #fff;z-index: 999;}
+		.navicat .nav_tag_con .hide_box {display:none; line-height: 24px; font-size: 12px;text-align: left;}
+			.nav_tag_con .hide_box span.line {position: absolute; top: -2px; left: -2px; width: 2px; height: 72px; background: #fff; overflow: hidden;}
+			.nav_tag_con .hide_box span.line1 {left: -240px; background: #fb0;}
+			.nav_tag_con .hide_box span.line2 {top: 70px;height: 66px;}
+			.nav_tag_con .hide_box span.line3 {top: 138px;height: 68px;}
+			.nav_tag_con .hide_box span.line4 {top: 208px;height: 66px;}
+				.nav_tag_con .hide_box .txt1 a {background: #fafafa;display: inline-block;border-radius: 10px;  border: 2px solid #e6e6e6;padding: 8px 15px;margin: 10px 20px 3px 0;min-width:100px;text-align: center;}
+				.nav_tag_con .hide_box .txt1 a:hover {border: 2px solid #5ABB1F; color: #489d00; text-decoration: none;}
+				
+				.nav_tag_con .hide_box .txt4 dl.hover {background: #fffbee;}
+				.nav_tag_con .hide_box .txt4 dl {padding: 8px 10px;border-bottom: 1px dotted #dff0d1;}
+				.nav_tag_con .hide_box .txt4 dt {font-weight: bold; color: #489d00;}
+					.nav_tag_con .hide_box .txt4 dt a {color: #489d00;}
+				.nav_tag_con .hide_box .txt4 dd a {display: inline-block;padding-right: 15px;}
+				
+				.nav_tag_con .hide_box .txt2 dl.hover {background: #fffbee;}
+				.nav_tag_con .hide_box .txt2 dl {padding: 3px 10px; border-bottom: 1px dotted #dff0d1; overflow: hidden;height:31px; zoom: 1;}
+				.nav_tag_con .hide_box .txt2 dt {width: 60px; float: left; font-weight: bold; color: #489d00;}
+					.nav_tag_con .hide_box .txt2 dt a {color: #489d00;}
+				.nav_tag_con .hide_box .txt2 dd {display: block; width: 530px; float: right;}
+					.nav_tag_con .hide_box .txt2 dd a {padding-right: 20px;}
 	/*******************/
 	.navicat ul.nav {font-size:16px;width:1010px;height:38px;overflow: hidden;}
 		.navicat ul.nav li {float:left;text-align: center;}

@@ -40,3 +40,38 @@
 <script src="__JS__/jquery.1.11.1.min.js"></script>
 <![endif]-->
 <!-- JS script include start end -->
+
+<script type="text/javascript">
+$(function($){
+	$("#category").on("mouseenter","li",function(){
+		var num = $("#category li").index($(this));
+		var hideboxs = $("#nav_tag_con .hide_box");
+		if (num < hideboxs.length) {
+			hideboxs.eq(num).show().siblings().hide();
+			$("#nav_tag_con").show();
+			$("#nav_tag_con").hover(
+				function() {
+					hideboxs.eq(num).show().siblings().hide();
+					$("#nav_tag_con").show();
+				},
+				function() {
+					var num = $("#category li").index($(this));
+					$("#nav_tag_con").hide();
+				}
+			);
+		}
+	});
+	$("#category").on("mouseleave","li",function(){
+		var num = $("#category li").index($(this));
+		$("#nav_tag_con").hide();
+	});
+	$(".hide_box dl").hover(
+		function() {
+			$(this).addClass("hover").siblings().removeClass("hover");
+		},
+		function() {
+			$(this).removeClass("hover");
+		}
+	)
+});
+</script>
