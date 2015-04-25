@@ -16,7 +16,7 @@
 		<ul class="case-list">
 		<!-- <foreach name="list" item="vo" > -->
 			<li>
-			<a href="{:U('info?id='.$vo['id'])}">
+			<a href="{:U('info?id='.$vo['id'].'&attr='.$attr)}">
 				<img src="{$vo['picurl']}">
 				<p>{$vo['title']}</p>
 				<div class="price">￥<span>{$vo['price']}</span>起</div>
