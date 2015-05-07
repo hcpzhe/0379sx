@@ -225,6 +225,17 @@
 
 {:W('Page/Foot')}
 
+<!-- <if condition="$weblinks"> -->
+<div class="weblink">
+	<div class="sitewidth">
+		友情连接：
+		<!-- <foreach name="weblinks" item="vo" > -->
+		<a href="{$vo['linkurl']}" target="_blank">{$vo['webname']}</a>
+		<!-- </foreach> -->
+	</div>
+</div>
+<!-- </if> -->
+
 <script type="text/javascript" src="__JS__/slideplay.js"></script>
 <script type="text/javascript" src="__JS__/index.js"></script>
 <script type="text/javascript" src="__JS__/jquery.SuperSlide.2.1.1.js"></script>

@@ -213,7 +213,9 @@ a:hover {color:#ff8800; text-decoration:underline;}
 				.footer .article .artlist ul.list li a {color:#fff;font-size:14px;}
 	.banquan {border-top: 1px solid #258231;background:#2da03c; height:59px;color:#fff;padding-top:15px;}
 		.banquan a {color:#fff;}
-
+/***友连**********************************************************/
+.weblink {min-width: 1200px;background:#2da03c;padding-bottom:10px;color:#fff;}
+	.weblink a {color:#fff;display: inline-block; padding: 0 3px;}
 /***面包屑**********************************************************/
 .bread {min-width: 1200px;margin-top:10px;height:26px;line-height:26px;font-size:16px;}
 	.bread .sitewidth {padding: 0 10px;}

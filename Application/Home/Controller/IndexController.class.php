@@ -108,6 +108,15 @@ class IndexController extends HomeBaseController {
 		$tuandui = $img_M->where($where)->order('orderid DESC')->limit(20)->select();
 		$this->assign('tuandui', $tuandui); //团队风采
 		
+		//友情连接
+		$weblink_M = new Model('Weblink');
+		$where = array(
+				'siteid' => C('SITEID'),
+				'checkinfo' => 'true'
+		);
+		$weblinks = $weblink_M->where($where)->order('orderid')->select();
+		$this->assign('weblinks', $weblinks); //友情连接
+		
 		$this->display();
 	}
 	
