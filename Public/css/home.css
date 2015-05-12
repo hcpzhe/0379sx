@@ -232,7 +232,7 @@ a:hover {color:#ff8800; text-decoration:underline;}
 				.main-sider .line-search .search .search_btn {letter-spacing:5px; padding:0 0 0 4px; color:#fff;width:44px;margin:0; cursor:pointer;background:#ffaf1e; }
 			.main-sider .line-search .hot {line-height: 40px; padding: 0px 5px 0 10px; max-height: 320px; overflow: hidden; margin-bottom: 15px;}
 				.main-sider .line-search .hot a {display: inline-block;padding-right:10px;}
-	.main .main-content,.main .main-info {width:954px;}
+	.main .main-content,.main .main-info {width:954px; min-height:460px;}
 		/***列表页幻灯***************/
 		.main .main-content #slideplay {margin-bottom:15px;width:954px;height:280px;position:relative;overflow:hidden; float:left;}
 		.main .main-content #slideplay ul {position:absolute;}
@@ -300,7 +300,7 @@ a:hover {color:#ff8800; text-decoration:underline;}
 				.main-info .content .body {border: #ddd 1px solid; padding: 12px; overflow-x: hidden;}
 					.main-info .content .body img {max-width: 928px; height: auto;}
 		/***线路预定***********************/
-		.main-yuding {border:#ddd 1px solid;border-top: #e75210 2px solid;padding:12px;}
+		.main-yuding {border:#ddd 1px solid;border-top: #e75210 2px solid;padding:12px; min-height:460px;}
 			
 		/***文章列表***********************/
 		.main-content .art-list {width:954px;border:#ddd 1px solid;border-top: #e75210 2px solid;}
@@ -312,7 +312,7 @@ a:hover {color:#ff8800; text-decoration:underline;}
 					.main-content .art-list .time {height: 26px;line-height: 26px;color:#333;}
 				.main-content .art-list .content {color:#919191; line-height: 20px;font-size:14px;}
 		/***文章内容***********************/
-		.main-art {width:954px;border:#ddd 1px solid;border-top: #e75210 2px solid;padding:12px;}
+		.main-art {width:954px;border:#ddd 1px solid;border-top: #e75210 2px solid;padding:12px; min-height:460px;}
 			.main-art-title {text-align: center; }
 				.main-art-title .title {line-height: 35px; font-size: 16px; color: #009900; font-weight: bold; border-bottom: 1px dotted #CCCCCC;}
 				.main-art-title .attr {line-height: 22px;color: #999999; margin-bottom: 15px; margin-top: 5px;}
