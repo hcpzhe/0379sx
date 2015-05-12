@@ -31,16 +31,6 @@
 </div>
 <!-- 底部end -->
 
-<!-- JS script include start -->
-<!--[if !IE]> -->
-<script src="__JS__/jquery.2.1.1.min.js"></script>
-<!-- <![endif]-->
-
-<!--[if IE]>
-<script src="__JS__/jquery.1.11.1.min.js"></script>
-<![endif]-->
-<!-- JS script include start end -->
-
 <script type="text/javascript">
 $(function($){
 	$("#category").on("mouseenter","li",function(){
@@ -72,6 +62,25 @@ $(function($){
 		function() {
 			$(this).removeClass("hover");
 		}
-	)
+	);
+	
+	//跟随滚动
+	var main_top = $('.main').offset().top; //main距离页面顶部的距离
+	var main_height = $(".main-sider").next().height(); //main的高度
+	var sider_height = $(".main-sider").height();//侧栏高度
+	var footer_top = main_top+main_height-sider_height; //footer距离页面顶部的距离 
+	$(window).scroll(function(){
+		if(($(window).scrollTop() >= main_top) && ($(window).scrollTop()<=footer_top)) {
+			$('.main-sider').css({position:'fixed',top:'10px'});
+			$(".main-sider").next().css({"margin-left":"246px"});
+		}else if($(window).scrollTop() >= footer_top && main_height-sider_height>0){
+			$('.main-sider').css({position:'absolute',top:main_height-sider_height+'px'});
+			$(".main-sider").next().css({"margin-left":"246px"});
+		}else{
+			$('.main-sider').css({position:'absolute',top:"0"});
+			$(".main-sider").next().css({"margin-left":"246px"});
+		}
+	});
 });
+
 </script>

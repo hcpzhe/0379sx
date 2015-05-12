@@ -221,7 +221,7 @@ a:hover {color:#ff8800; text-decoration:underline;}
 	.bread .sitewidth {padding: 0 10px;}
 		.bread a.toindex {color:#e75210;}
 /***列表页内容**********************************************************/
-.main {min-width: 1200px;margin-top:10px;}
+.main {min-width: 1200px;margin-top:10px;position:relative;}
 	.main .main-sider {width:236px;margin-right:10px;}
 		.main-sider .line-search {background: #fafafa;}
 			.main-sider .line-search .head {padding:0 20px;font-size:20px;color:#fff;height:50px;line-height:50px;background: #ffaf1e;}
