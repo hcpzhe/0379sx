@@ -4,12 +4,21 @@
 	<div class="sitewidth">
 		<div class="fl">{$Think.config.cfg_welcome}</div>
 		<div class="fr guanzhu">
-			<a href="#"><i class="fa fa-weibo"></i></a> <a href="#"><i
-				class="fa fa-mobile" style="font-size: 22px;"></i></a> <a href="#"><i
-				class="fa fa-weixin"></i></a>
+			<a href="#"><i class="fa fa-weibo"></i></a>
+			<a href="#"><i class="fa fa-mobile" style="font-size: 22px;"></i></a>
+			<a href="#"><i class="fa fa-weixin"></i></a>
+			<div class="weixin_tip" style="display: none;">
+				<s></s>
+				<div class="img"></div>
+				<b>关注欣欣旅游微信</b>
+				<span>找攻略、订线路、查门票、搜酒店...</span>
+				<p>扫描二维码或微信查找“cncncom”</p>
+			</div>
 		</div>
 		<div class="fr links">
-			<a class="orange" href="#">一键收藏</a> <a href="#">关于我们</a> <a href="#">联系我们</a>
+			<a class="orange" href="javascript:window.external.AddFavorite('http://www.0379sx.com','洛阳舒翔假期国际旅行社')">一键收藏</a>
+			<a href="{:U('Article/one?id=9&tpl=about')}">关于我们</a>
+			<a href="{:U('Article/one?id=9&tpl=about')}">联系我们</a>
 		</div>
 	</div>
 </div>
