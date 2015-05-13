@@ -33,6 +33,14 @@
 
 <script type="text/javascript">
 $(function($){
+	$("#a_weixin_tip").hover(
+		function() {
+			$(".weixin_tip").show();
+		},
+		function() {
+			$(".weixin_tip").hide();
+		}
+	);
 	$("#category").on("mouseenter","li",function(){
 		var num = $("#category li").index($(this));
 		var hideboxs = $("#nav_tag_con .hide_box");
@@ -65,22 +73,26 @@ $(function($){
 	);
 	
 	//跟随滚动
-	var main_top = $('.main').offset().top; //main距离页面顶部的距离
-	var main_height = $(".main-sider").next().height(); //main的高度
-	var sider_height = $(".main-sider").height();//侧栏高度
-	var footer_top = main_top+main_height-sider_height; //footer距离页面顶部的距离 
-	$(window).scroll(function(){
-		if(($(window).scrollTop() >= main_top) && ($(window).scrollTop()<=footer_top)) {
-			$('.main-sider').css({position:'fixed',top:'10px'});
-			$(".main-sider").next().css({"margin-left":"246px"});
-		}else if($(window).scrollTop() >= footer_top && main_height-sider_height>0){
-			$('.main-sider').css({position:'absolute',top:main_height-sider_height+'px'});
-			$(".main-sider").next().css({"margin-left":"246px"});
-		}else{
-			$('.main-sider').css({position:'absolute',top:"0"});
-			$(".main-sider").next().css({"margin-left":"246px"});
-		}
-	});
+	try {
+		var main_top = $('.main').offset().top; //main距离页面顶部的距离
+		var main_height = $(".main-sider").next().height(); //main的高度
+		var sider_height = $(".main-sider").height();//侧栏高度
+		var footer_top = main_top+main_height-sider_height; //footer距离页面顶部的距离 
+		$(window).scroll(function(){
+			if(($(window).scrollTop() >= main_top) && ($(window).scrollTop()<=footer_top)) {
+				$('.main-sider').css({position:'fixed',top:'10px'});
+				$(".main-sider").next().css({"margin-left":"246px"});
+			}else if($(window).scrollTop() >= footer_top && main_height-sider_height>0){
+				$('.main-sider').css({position:'absolute',top:main_height-sider_height+'px'});
+				$(".main-sider").next().css({"margin-left":"246px"});
+			}else{
+				$('.main-sider').css({position:'absolute',top:"0"});
+				$(".main-sider").next().css({"margin-left":"246px"});
+			}
+		});
+	} catch (e) {
+		
+	}
 });
 
 </script>

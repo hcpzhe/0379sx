@@ -27,6 +27,12 @@ a:hover {color:#ff8800; text-decoration:underline;}
 		.top_status .guanzhu {}
 			.top_status .guanzhu a {color: #999; font-size:18px; padding:0 10px;}
 			.top_status .guanzhu a:hover {color:#ff8800; text-decoration:none;}
+			.top_status .guanzhu .weixin_tip {display:none; position: absolute; top: 30px; right: 0; width: 315px; height: 92px; padding: 15px 15px 5px; line-height: 21px; border: 1px solid #e6e6e6; color: #666; background: #fff;}
+				.weixin_tip s {position: absolute; right: 110px; top: -5px; width: 9px; height: 5px; background: url(../images/ico.png) no-repeat -80px -155px; overflow: hidden;}
+				.weixin_tip .img {position: absolute; right: 10px; top: 7px; width: 78px; height: 79px;}
+				.weixin_tip b {clear: both; display: block; width: 100%;}
+				.weixin_tip span {clear: both; width: 100%;}
+				.weixin_tip p {clear: both; width: 100%; padding-top: 5px; color: #999;}
 		.top_status .links {border-right:1px solid #e1e1e1;}
 			.top_status .links a {padding: 0 10px;}
 			.top_status .links a.orange {color:#e75210;}
