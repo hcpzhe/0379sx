@@ -27,7 +27,7 @@ a:hover {color:#ff8800; text-decoration:underline;}
 		.top_status .guanzhu {}
 			.top_status .guanzhu a {color: #999; font-size:18px; padding:0 10px;}
 			.top_status .guanzhu a:hover {color:#ff8800; text-decoration:none;}
-			.top_status .guanzhu .weixin_tip {display:none; position: absolute; top: 30px; right: 0; width: 315px; height: 92px; padding: 15px 15px 5px; line-height: 21px; border: 1px solid #e6e6e6; color: #666; background: #fff;}
+			.top_status .guanzhu .weixin_tip {z-index:1;display:none; position: absolute; top: 30px; right: 0; width: 315px; height: 92px; padding: 15px 15px 5px; line-height: 21px; border: 1px solid #e6e6e6; color: #666; background: #fff;}
 				.weixin_tip s {position: absolute; right: 110px; top: -5px; width: 9px; height: 5px; background: url(../images/ico.png) no-repeat -80px -155px; overflow: hidden;}
 				.weixin_tip .img {position: absolute; right: 10px; top: 7px; width: 78px; height: 79px;}
 				.weixin_tip b {clear: both; display: block; width: 100%;}
@@ -66,7 +66,7 @@ a:hover {color:#ff8800; text-decoration:underline;}
 /***导航**********************************************************/
 .navicat {min-width: 1200px;height: 41px;line-height: 38px; border-top: 1px solid #37c249;border-bottom: 2px solid #37c249;position: relative;background: #37c249;}
 	.navicat .first {position: relative;height:40px;width: 190px;color:#fff;font-size:16px; text-align:center;background: #37c249 url("../images/nav_tit.jpg") no-repeat 12% 55%;background: #37c249;}
-	.navicat .category {padding:4px 0 3px 0;position: absolute;width: 238px;height: 415px;background: url("../images/category_bg.jpg"); top:40px; color: #333; text-align: left; font-weight: normal; font-size: 12px;}
+	.navicat .category {padding:4px 0 3px 0;position: absolute;z-index:2;width: 238px;height: 415px;background: url("../images/category_bg.jpg"); top:40px; color: #333; text-align: left; font-weight: normal; font-size: 12px;}
 		.navicat .category li {line-height:20px; padding:14px 20px 12px 47px;height:68px;overflow: hidden;}
 		.navicat .category li:AFTER {content: "〉";float: right;position: relative;bottom: 20px;left:10px;}
 			.navicat .category li strong {line-height:22px;font-size:16px;}
