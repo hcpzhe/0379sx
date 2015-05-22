@@ -28,7 +28,7 @@ class IndexController extends HomeBaseController {
 				'checkinfo' => 'true',
 				'delstate' => ''
 		);
-		$gonggao = $list_M->where($where)->find();
+		$gonggao = $list_M->where($where)->order('id DESC')->find();
 		$this->assign('gonggao', $gonggao); //公告
 		
 		//热门旅游 5个  使用widget
