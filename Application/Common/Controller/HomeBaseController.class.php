@@ -10,7 +10,8 @@ abstract class HomeBaseController extends Controller {
 	
 	protected function _initialize() {
 		if(IsMobile()) {
-			$this->redirect('Mobile/'.CONTROLLER_NAME.'/'.ACTION_NAME,$_GET);
+			//$this->redirect('Mobile/'.CONTROLLER_NAME.'/'.ACTION_NAME,$_GET);
+			redirect('http://m.0379sx.com'); //使用二级域名
 		}
 		$model = new WebconfigModel();
 		$model->loadConfig();
