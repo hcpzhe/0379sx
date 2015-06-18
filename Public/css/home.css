@@ -57,7 +57,7 @@ a:hover {color:#ff8800; text-decoration:underline;}
 	.header .search_hotline {height:38px;margin: 10px 181px 20px 181px;}
 		.header .hotline {width:428px;border: 1px solid #dfdfdf;overflow: hidden;}
 			.header .hotline .hotline_tit {width:126px;font-size:14px;line-height:36px;background: #37c249;color: #fff;font-weight: bold;text-align:center;}
-			.header .hotline .hotline_text {width:150px;line-height:36px;text-align:center; font-size:22px;font-weight: bold;color:#37c249;font-family: Times, serif;padding:0 5px;}
+			.header .hotline .hotline_text {line-height:36px;text-align:center; font-size:22px;font-weight: bold;color:#37c249;font-family: Times, serif;padding:0 5px;}
 		.header .search {width:390px; border: 2px solid #ff8800;margin-left: 20px;}
 			.header .search input {height:34px;border: none; background:none;}
 			.header .search input:focus {outline:none;}
@@ -100,7 +100,7 @@ a:hover {color:#ff8800; text-decoration:underline;}
 	.navicat ul.nav {font-size:16px;width:1010px;height:38px;overflow: hidden;}
 		.navicat ul.nav li {float:left;text-align: center;}
 		.navicat ul.nav li:HOVER {background: url("../images/arrow-top.png") no-repeat 50% 100% #f8f8f8;}
-			.navicat ul.nav a {font-weight:bold; color: #fff;text-decoration:none;display: block;padding:0 20px;overflow: hidden;text-align: center;}
+			.navicat ul.nav a {font-weight:bold; color: #fff;text-decoration:none;display: block;padding:0 14px;overflow: hidden;text-align: center;}
 			.navicat ul.nav a:HOVER {color: #e64905;text-decoration:none;}
 .banner {min-width: 1200px;}
 	.banner .sitewidth {padding-left:238px;height:415px;}

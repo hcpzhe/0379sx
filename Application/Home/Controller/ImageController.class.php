@@ -5,8 +5,8 @@ use Think\Model;
 
 class ImageController extends HomeBaseController {
 	
-	//属性选取		zc租车  qz签证
-	protected $attr = array('zc','qz');
+	//属性选取		zc租车  qz签证 mp门票 jd酒店
+	protected $attr = array('zc','qz','mp','jd');
 	
 	/**
 	 * 图片列表
@@ -46,7 +46,7 @@ class ImageController extends HomeBaseController {
 		}
 		$this->assign('bread', $bread); //面包屑
 		
-		//属性选取		zc租车  qz签证
+		//属性选取		zc租车  qz签证  mp门票
 		$attr = (in_array($attr, $this->attr)) ? $attr : '';
 		$this->assign('attr', $attr);
 		
@@ -86,7 +86,7 @@ class ImageController extends HomeBaseController {
 		}
 		$this->assign('bread', $bread); //面包屑
 
-		//属性选取		zc租车  qz签证
+		//属性选取		zc租车  qz签证  mp门票
 		$attr = (in_array($attr, $this->attr)) ? $attr : '';
 		$this->assign('attr', $attr);
 		

@@ -61,6 +61,19 @@
 							<div class="attribute">邀请函：{$info['qzyqh']|default="不需要"}</div>
 							<div class="attribute">受理范围：{$info['qzslfw']}</div>
 							<div class="attribute">免费咨询/预订电话：{$info['yuding']|default="18613798120"}</div>
+						<!-- <elseif condition="$attr eq 'mp'"/> -->
+							<!-- 门票 -->
+							<div class="attribute">门票类型：{$info['mpleixing']}</div>
+							<div class="attribute">票型：{$info['mppiaoxing']}</div>
+							<div class="attribute">取票方式：{$info['mpqupiao']|default="门市自取"}</div>
+							<div class="attribute">公司地址：{:C('cfg_company_address')}</div>
+							<div class="attribute">免费咨询/预订电话：{$info['yuding']|default="18613798120"}</div>
+						<!-- <elseif condition="$attr eq 'jd'"/> -->
+							<!-- 酒店 -->
+							<div class="attribute">酒店地址：{$info['jddizhi']}</div>
+							<div class="attribute">所属城市：{$info['jdchengshi']}</div>
+							<div class="attribute">酒店类别：{$info['jdleibie']}</div>
+							<div class="attribute">免费咨询/预订电话：{$info['yuding']|default="18613798120"}</div>
 						<!-- <else /> -->
 							<!-- 普通 -->
 						<!-- </if> -->

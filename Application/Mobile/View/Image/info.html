@@ -43,6 +43,19 @@
 				<p>是否面试：{$info['qzmianshi']|default="不需要"}</p>
 				<p>邀请函：{$info['qzyqh']|default="不需要"}</p>
 				<p>受理范围：{$info['qzslfw']}</p>
+			<!-- <elseif condition="$attr eq 'mp'"/> -->
+				<!-- 门票 -->
+				<p>门票类型：{$info['mpleixing']}</p>
+				<p>票型：{$info['mppiaoxing']}</p>
+				<p>取票方式：{$info['mpqupiao']|default="门市自取"}</p>
+				<p>公司地址：{:C('cfg_company_address')}</p>
+				<p>免费咨询/预订电话：{$info['yuding']|default="18613798120"}</p>
+			<!-- <elseif condition="$attr eq 'jd'"/> -->
+				<!-- 酒店 -->
+				<p>酒店地址：{$info['jddizhi']}</p>
+				<p>所属城市：{$info['jdchengshi']}</p>
+				<p>酒店类别：{$info['jdleibie']}</p>
+				<p>免费咨询/预订电话：{$info['yuding']|default="18613798120"}</p>
 			<!-- </if> -->
 			</li>
 		</ul>

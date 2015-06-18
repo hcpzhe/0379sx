@@ -4,9 +4,9 @@ use Common\Controller\MobileBaseController;
 use Think\Model;
 
 class ImageController extends MobileBaseController {
-	
-	//属性选取		zc租车  qz签证
-	protected $attr = array('zc','qz');
+
+	//属性选取		zc租车  qz签证 mp门票 jd酒店
+	protected $attr = array('zc','qz','mp','jd');
 	
 	/**
 	 * 图片列表
@@ -25,7 +25,7 @@ class ImageController extends MobileBaseController {
 		$map['siteid'] = C('SITEID');
 		$map['delstate'] = '';
 		$map['checkinfo'] = 'true';
-		//属性选取		zc租车  qz签证
+		//属性选取		zc租车  qz签证 mp门票
 		$attr = (in_array($attr, $this->attr)) ? $attr : '';
 		/******************/
 		$total = $model->where($map)->count();
@@ -69,7 +69,7 @@ class ImageController extends MobileBaseController {
 		$thisclass = $class_M->find($info['classid']);
 		$this->assign('thisclass', $thisclass); //当前栏目
 		
-		//属性选取		zc租车  qz签证
+		//属性选取		zc租车  qz签证 mp门票
 		$attr = (in_array($attr, $this->attr)) ? $attr : '';
 		$this->assign('attr', $attr);
 		
