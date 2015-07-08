@@ -35,17 +35,8 @@ class IndexController extends HomeBaseController {
 		
 		//当季热门 6个
 		$classid = 16;
-		$where = array(
-				'siteid' => C('SITEID'),
-				'checkinfo' => 'true',
-				'delstate' => ''
-		);
-		$map_class = array();
-		$map_class['classid'] = $classid;
-		$map_class['parentstr'] = array('like','%,'.$classid.',%');
-		$map_class['_logic'] = 'or';
-		$where['_complex'] = $map_class;
-		$dangji = $img_M->where($where)->order('orderid DESC')->limit(6)->select();
+		$where = " siteid=".C('SITEID')." AND checkinfo='true' and delstate='' AND (classid=".$classid." OR parentstr like '%,".$classid.",%') ";
+		$dangji = $img_M->where($where)->order('orderid DESC')->limit(10)->select();
 		$this->assign('dangji', $dangji); //当季热门
 		
 
@@ -57,7 +48,7 @@ class IndexController extends HomeBaseController {
 				'checkinfo' => 'true',
 				'delstate' => ''
 		);
-		$zhoumo = $img_M->where($where)->order('orderid DESC')->limit(6)->select();
+		$zhoumo = $img_M->where($where)->order('orderid DESC')->limit(10)->select();
 		$this->assign('zhoumo', $zhoumo); //周末去哪
 
 		//亲子游 3个
