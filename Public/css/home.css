@@ -145,8 +145,40 @@ a:hover {color:#ff8800; text-decoration:underline;}
 						.hotlvyou .piclist .text .body .miaoshu .red {color:#B3051C;}
 					.hotlvyou .piclist .text .body .chakan {margin: 10px 0 0 5px;line-height: 20px;}
 						.hotlvyou .piclist .text .body .chakan a {display: block;padding: 4px;background: #F0F0F0;}
-/***当季热门,周末去哪儿**********************************************************/
+						
+						
+/***测试当季热门,周末去哪儿**********************************************************/
 .idx_list {min-width: 1200px;margin-top:15px;}
+	.idx_list .head {height:62px;}
+	.idx_list .head .title {width:245px;height:62px;line-height:62px;color:#fff;font-size:24px;text-align: center;}
+	.idx_list .head .group {width:955px;height:62px;}
+		.idx_list .head .group .remen {width:745px;height:58px;overflow:hidden;text-align: right;line-height:20px;padding:38px 10px 0 40px;font-size:14px;}
+			.idx_list .head .group .remen a {padding: 0 7px;color:#8a8989;}
+		.idx_list .head .group .tab {width:210px;height:58px;padding-right: 35px;padding-top:24px;}
+			.idx_list .head .group .tab a {display: inline-block;font-size:16px;line-height:34px;height:34px;padding:0 10px;}
+			.idx_list .head .group .tab a.active, .idx_list .head .group .tab a:HOVER {color:#fff;text-decoration: none;}		
+		.idx_list .body {height: 506px;overflow: hidden;}
+			.idx_list .body .bigimg {width:245px; height:506px;}
+				.idx_list .body .bigimg img {width:100%;height:100%;}				
+		.idx_list .body.piclist {height:251px; border: 1px solid #d7d7d7;border-top:none;overflow: hidden;}
+		.idx_list .body  .piclist ul li{width:239px;height:250px;border-left:1px dashed #d7d7d7;float:left;text-align: center;}
+		
+		.idx_list .body  .piclist ul li:FIRST-CHILD {border-left:none;}
+			.idx_list .body .piclist .pic {padding:10px 19px 10px 20px;border-bottom: 1px solid #d7d7d7;width:238px;height:163px;}
+				.idx_list .body  .piclist .pic img {border-radius:5px; width:100%;height:100%;}
+			.idx_list .body  .piclist .text {text-align: left;padding: 0 20px;}
+				.idx_list .body  .piclist .text .head {height:30px;font-size:14px;line-height:30px;overflow: hidden;}
+					.idx_list .body  .piclist .text .head a {color: #109c05;}
+				.idx_list .body  .piclist .text .body {}
+					.idx_list .body  .piclist .text .body .miaoshu {color: #ff8800;line-height: 40px;width:137px;height:40px;overflow: hidden;/* margin-top: 10px; */}
+						.idx_list .body  .piclist .text .body .miaoshu span {font-size: 14px;}
+						.idx_list .body  .piclist .text .body .miaoshu .red {color:#B3051C;}
+					.idx_list .body  .piclist .text .body .chakan {margin: 10px 0 0 5px;line-height: 20px;}
+						.idx_list .body .piclist .text .body .chakan a {display: block;padding: 4px;background: #F0F0F0;}
+	/***当季热门****************/
+				
+/***当季热门,周末去哪儿**********************************************************/
+/***.idx_list {min-width: 1200px;margin-top:15px;}
 	.idx_list .head {height:62px;}
 	.idx_list .head .title {width:245px;height:62px;line-height:62px;color:#fff;font-size:24px;text-align: center;}
 	.idx_list .head .group {width:955px;height:62px;}
@@ -160,13 +192,14 @@ a:hover {color:#ff8800; text-decoration:underline;}
 		.idx_list .body .bigimg img {width:100%;height:100%;}
 	.idx_list .body .piclist {width:955px;height:506px; border:1px solid #dfdfdf;border-left: none;padding-left:45px;overflow: hidden;}
 		.idx_list .body .piclist li {float:left; width:303px;height:252px;padding:15px 45px 5px 0;overflow: hidden;}
+		
 			.idx_list .body .piclist .pic {width:258px;height:181px;}
 				.idx_list .body .piclist .pic img {width:100%;height:100%;}
 			.idx_list .body .piclist .title {width:100%;line-height:22px;height:22px;overflow: hidden;}
 			.idx_list .body .piclist .price {color:#ff8800;height:26px;line-height:26px;}
 				.idx_list .body .piclist .price span {font-size:20px;}
 			.idx_list .body .piclist .manyi {color:#bbbbbb;height:26px;line-height:26px;}
-				.idx_list .body .piclist .manyi a {color:#bbbbbb;}
+				.idx_list .body .piclist .manyi a {color:#bbbbbb;}**/
 	/***当季热门****************/
 	.dangji .head .title {background: url("../images/pink-tit.jpg") no-repeat;}
 	.dangji .head .group {border-bottom: 4px solid #ff3a88;}
