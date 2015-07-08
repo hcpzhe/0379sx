@@ -157,10 +157,8 @@ a:hover {color:#ff8800; text-decoration:underline;}
 		.idx_list .head .group .tab {width:210px;height:58px;padding-right: 35px;padding-top:24px;}
 			.idx_list .head .group .tab a {display: inline-block;font-size:16px;line-height:34px;height:34px;padding:0 10px;}
 			.idx_list .head .group .tab a.active, .idx_list .head .group .tab a:HOVER {color:#fff;text-decoration: none;}		
-		.idx_list .body {height: 506px;overflow: hidden;}
-			.idx_list .body .bigimg {width:245px; height:506px;}
-				.idx_list .body .bigimg img {width:100%;height:100%;}				
-		.idx_list .body.piclist {height:251px; border: 1px solid #d7d7d7;border-top:none;overflow: hidden;}
+		.idx_list .body {height: 506px;overflow: hidden;}			
+		.idx_list .body .piclist {height:506px; border: 1px solid #d7d7d7;border-top:none;overflow: hidden;}
 		.idx_list .body  .piclist ul li{width:239px;height:250px;border-left:1px dashed #d7d7d7;float:left;text-align: center;}
 		
 		.idx_list .body  .piclist ul li:FIRST-CHILD {border-left:none;}
@@ -169,12 +167,11 @@ a:hover {color:#ff8800; text-decoration:underline;}
 			.idx_list .body  .piclist .text {text-align: left;padding: 0 20px;}
 				.idx_list .body  .piclist .text .head {height:30px;font-size:14px;line-height:30px;overflow: hidden;}
 					.idx_list .body  .piclist .text .head a {color: #109c05;}
-				.idx_list .body  .piclist .text .body {}
-					.idx_list .body  .piclist .text .body .miaoshu {color: #ff8800;line-height: 40px;width:137px;height:40px;overflow: hidden;/* margin-top: 10px; */}
-						.idx_list .body  .piclist .text .body .miaoshu span {font-size: 14px;}
-						.idx_list .body  .piclist .text .body .miaoshu .red {color:#B3051C;}
-					.idx_list .body  .piclist .text .body .chakan {margin: 10px 0 0 5px;line-height: 20px;}
-						.idx_list .body .piclist .text .body .chakan a {display: block;padding: 4px;background: #F0F0F0;}
+					.idx_list .body  .piclist .text .libody .miaoshu {color: #ff8800;line-height: 40px;width:137px;height:40px;overflow: hidden;/* margin-top: 10px; */}
+						.idx_list .body  .piclist .text .libody .miaoshu span {font-size: 14px;}
+						.idx_list .body  .piclist .text .libody .miaoshu .red {color:#B3051C;}
+					.idx_list .body  .piclist .text .libody .chakan {margin: 10px 0 0 5px;line-height: 20px;}
+						.idx_list .body .piclist .text .libody .chakan a {display: block;padding: 4px;background: #F0F0F0;}
 	/***当季热门****************/
 				
 /***当季热门,周末去哪儿**********************************************************/

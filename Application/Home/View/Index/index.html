@@ -47,7 +47,7 @@
 <div class="dangji idx_list">
 	<div class="sitewidth">
 		<div class="head">
-			<div class="title fl">当季热门跟团</div>
+			<div class="title fl">国内游</div>
 			<div class="group fl">
 				<div class="remen fl">
 					热门：
@@ -67,19 +67,39 @@
 		<div class="body">
 			<div class="piclist">
 			<ul>
-				<!-- <foreach name="dangji" item="vo" > -->
+				<!-- <foreach name="dangji" item="vo" key="k" > -->
+				<!-- <if condition="$k lt 5"> -->
 				<li>
 					<div class="pic">
 						<a href="{:U('Line/info?id='.$vo['id'])}" title="{$vo['title']}"><img src="{$vo['picurl']}" alt="{$vo['title']}" /></a>
 					</div>
 					<div class="text">
 						<div class="head"><a href="{:U('Line/info?id='.$vo['id'])}" title="{$vo['title']}">{$vo['title']}</a></div>
-						<div class="body">
+						<div class="libody">
 							<div class="miaoshu fl">￥<span>{:intval($vo['price'])}</span>起</div>
 							<div class="chakan fl"><a href="{:U('Line/info?id='.$vo['id'])}" title="{$vo['title']}">查看详情</a></div>
 						</div>
 					</div>
 				</li>
+				<!-- </if> -->
+				<!-- </foreach> -->
+			</ul>
+			<ul>
+				<!-- <foreach name="dangji" item="vo" key="k" > -->
+				<!-- <if condition="($k gt 4) AND ($k lt 10)"> -->
+				<li>
+					<div class="pic">
+						<a href="{:U('Line/info?id='.$vo['id'])}" title="{$vo['title']}"><img src="{$vo['picurl']}" alt="{$vo['title']}" /></a>
+					</div>
+					<div class="text">
+						<div class="head"><a href="{:U('Line/info?id='.$vo['id'])}" title="{$vo['title']}">{$vo['title']}</a></div>
+						<div class="libody">
+							<div class="miaoshu fl">￥<span>{:intval($vo['price'])}</span>起</div>
+							<div class="chakan fl"><a href="{:U('Line/info?id='.$vo['id'])}" title="{$vo['title']}">查看详情</a></div>
+						</div>
+					</div>
+				</li>
+				<!-- </if> -->
 				<!-- </foreach> -->
 			</ul>
 		</div>
@@ -92,7 +112,7 @@
 <div class="zhoumo idx_list">
 	<div class="sitewidth">
 		<div class="head">
-			<div class="title fl">周末去哪儿</div>
+			<div class="title fl">周边游</div>
 			<div class="group fl">
 				<div class="remen fl">
 					热门：
@@ -111,19 +131,39 @@
 		<div class="body">
 			<div class="piclist">
 			<ul>
-				<!-- <foreach name="zhoumo" item="vo" > -->
+				<!-- <foreach name="zhoumo" item="vo" key="k" > -->
+				<!-- <if condition="$k lt 5"> -->
 				<li>
 					<div class="pic">
 						<a href="{:U('Line/info?id='.$vo['id'])}" title="{$vo['title']}"><img src="{$vo['picurl']}" alt="{$vo['title']}" /></a>
 					</div>
 					<div class="text">
 						<div class="head"><a href="{:U('Line/info?id='.$vo['id'])}" title="{$vo['title']}">{$vo['title']}</a></div>
-						<div class="body">
+						<div class="libody">
 							<div class="miaoshu fl">￥<span>{:intval($vo['price'])}</span>起</div>
 							<div class="chakan fl"><a href="{:U('Line/info?id='.$vo['id'])}" title="{$vo['title']}">查看详情</a></div>
 						</div>
 					</div>
 				</li>
+				<!-- </if> -->
+				<!-- </foreach> -->
+			</ul>
+			<ul>
+				<!-- <foreach name="zhoumo" item="vo" key="k" > -->
+				<!-- <if condition="($k gt 4) AND ($k lt 10)"> -->
+				<li>
+					<div class="pic">
+						<a href="{:U('Line/info?id='.$vo['id'])}" title="{$vo['title']}"><img src="{$vo['picurl']}" alt="{$vo['title']}" /></a>
+					</div>
+					<div class="text">
+						<div class="head"><a href="{:U('Line/info?id='.$vo['id'])}" title="{$vo['title']}">{$vo['title']}</a></div>
+						<div class="libody">
+							<div class="miaoshu fl">￥<span>{:intval($vo['price'])}</span>起</div>
+							<div class="chakan fl"><a href="{:U('Line/info?id='.$vo['id'])}" title="{$vo['title']}">查看详情</a></div>
+						</div>
+					</div>
+				</li>
+				<!-- </if> -->
 				<!-- </foreach> -->
 			</ul>
 		</div>
