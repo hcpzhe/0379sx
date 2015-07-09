@@ -210,12 +210,33 @@ a:hover {color:#ff8800; text-decoration:underline;}
 	.t-t-f .left {width:876px;height:835px;padding-right:10px;}
 		.t-t-f .tejia .head {font-size:22px;line-height:30px;padding:18px 0 0 15px;height:48px;background: url("../images/idx-pic2.jpg") no-repeat 126px 0px;}
 			.t-t-f .tejia .head .more a {display:block; font-size:14px; color:#b9b9b9;line-height:20px; padding:10px 3px 0 0;}
-		.t-t-f .tejia .body {border: 1px solid #dfdfdf;border-top: 4px solid #64a10a;height:421px; overflow: hidden;}
-			.t-t-f .tejia .body .list {float:left;width:288px;height:416px;padding:18px 24px;}
+		.t-t-f .tejia .body {border: 1px solid #dfdfdf;border-top: 4px solid #64a10a;height: 465px;overflow: hidden;}
+
+		
+		
+		.t-t-f .tejia .body .piclist {height:465px; border: 1px solid #d7d7d7;border-top:none;overflow: hidden;}
+		.t-t-f .tejia .body  .piclist ul li{width:285px;height:223px;border-left:1px dashed #d7d7d7;float:left;text-align: center;}
+		
+		.t-t-f .tejia .body .piclist ul li:FIRST-CHILD {border-left:none;}
+			.t-t-f .tejia .body .piclist .pic{padding:10px 19px 10px 20px;border-bottom: 1px solid #d7d7d7;width:284px;height:163px;}
+				.t-t-f .tejia .body  .piclist .pic img {border-radius:5px; width:100%;height:100%;}
+			.t-t-f .tejia .body  .piclist .text {text-align: left;padding: 0 20px;}
+				.t-t-f .tejia .body  .piclist .text .head1 {height:30px;font-size:14px;line-height:25px;overflow: hidden; }
+					.t-t-f .tejia .body  .piclist .text .head1 a {color: #109c05;}
+					.t-t-f .tejia .body  .piclist .text .libody .miaoshu {color: #ff8800;line-height: 30px;width:137px;height:30px;overflow: hidden; }
+						.t-t-f .tejia .body .piclist .text .libody .miaoshu span {font-size: 14px;}
+						.t-t-f .tejia .body  .piclist .text .libody .miaoshu .red {color:#B3051C;}
+					.t-t-f .tejia .body  .piclist .text .libody .chakan {margin: 10px 0 0 5px;line-height: 20px;margin-top:-1px;}
+						.t-t-f .tejia .body  .piclist .text .libody .chakan a {display: block;padding: 4px;background: #F0F0F0;}
+						.t-t-f .tejia .body  .piclist .text .libody .chakan1 {margin: 10px 0 0 5px;line-height: 20px;margin-top:2px;}
+						.t-t-f .tejia .body  .piclist .text .libody .chakan1 a {display: block;padding: 4px;background: #F0F0F0;}
+			
+			
+			
 		/***团队风采**********************************/
 		.t-t-f .tuandui .head {font-size:22px;line-height:30px;padding:30px 0 0 15px;height:60px;background: url("../images/idx-pic3.png") no-repeat 126px 0px;}
 			.t-t-f .tuandui .head .more a {display:block; font-size:14px; color:#b9b9b9;line-height:20px; padding:10px 3px 0 0;}
-		.t-t-f .tuandui .body {border: 1px solid #dfdfdf;border-top: 4px solid #ff390f;height:306px;overflow: hidden;}
+		.t-t-f .tuandui .body {border: 1px solid #dfdfdf;border-top: 4px solid #ff390f;height:260px;overflow: hidden;}
 			.t-t-f .tuandui .body ul {overflow: hidden; zoom: 1;}
 			.t-t-f .tuandui .body li {float:left;width:240px;height:241px;padding:30px 24px;box-sizing:content-box;}
 				.t-t-f .tuandui .body li .pic {width:240px; height:168px;}

@@ -50,6 +50,14 @@ class IndexController extends HomeBaseController {
 		);
 		$zhoumo = $img_M->where($where)->order('orderid DESC')->limit(10)->select();
 		$this->assign('zhoumo', $zhoumo); //周末去哪
+		
+		//特价旅游 6个
+		$classid = 17;
+		$where = " siteid=".C('SITEID')." AND checkinfo='true' and delstate='' AND (classid=".$classid." OR parentstr like '%,".$classid.",%') ";
+		$tejia = $img_M->where($where)->order('orderid DESC')->limit(6)->select();
+		$this->assign('tejia', $tejia); //特价旅游
+		
+		
 
 		//亲子游 3个
 		$flag = array('like','%q%');
